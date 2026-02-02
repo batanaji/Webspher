@@ -1,0 +1,109 @@
+SSL Certificate Overview and Configuration
+Viewing Web Server Certificates
+
+Before applying a certificate, you can view the web server certificate in a browser (including certificates from other websites). Common Certificate Authorities (CAs) include:
+
+DigiCert Global CA G2
+
+GlobalSign RSA OV SSL CA 2018
+
+Venafi
+
+IBM HTTP Server (IHS) SSL Configuration
+Key Management Utility
+
+IBM iKeyMan (Key Management Utility) is used for SSL certificate management in IHS.
+
+Certificate Formats / Extensions
+
+Key database: .kdb
+
+Stash file: .sth
+
+Request database: .rdb
+
+The .sth file stores the encrypted password for the .kdb file.
+
+Types of Certificates
+Self-Signed Certificate
+
+The certificate is signed by the same entity that creates it.
+
+Commonly used for testing or internal environments.
+
+Third-Party (CA-Signed) Certificate
+
+The certificate is signed by a trusted Certificate Authority (CA).
+
+Used in production environments for public trust.
+
+Self-Signed Certificate Configuration in IHS
+Steps to Create a Self-Signed Certificate
+
+Open iKeyMan Utility
+
+cd C:\Program Files\IBM\HTTPServer\bin\ikeyMan.sh
+
+
+Click Key Database File → New
+
+Select:
+
+Key Database Type: CMS
+
+File Name: Enter a suitable name
+
+Location: Specify the path for the key database file
+
+Click OK
+
+Enter a password for the key database.
+
+Set the Expiration Time (certificate validity period).
+
+Select Stash password to a file and click OK.
+
+Ensure:
+
+Database type is CMS
+
+The newly created key database is selected in the Key Database File field
+
+Under Key Database Content, select Personal Certificates and click New Self-Signed.
+
+Enter a suitable Key Label.
+
+Provide the required certificate details and click OK.
+
+In the Common Name (CN) field, specify the hostname.
+
+Restart IBM HTTP Server (IHS).
+
+Test access using:
+
+http://localhost:80
+https://localhost:443
+
+
+Generate and propagate the WebSphere plug-in.
+
+Enabling SSL in IBM HTTP Server
+
+Edit the httpd.conf file and uncomment or configure the following entries as required:
+
+LoadModule ibm_ssl_module modules/mod_ibm_ssl.so
+Listen 0.0.0.0:443
+## IPv6 support:
+Listen [::]:443
+SSLCheckCertificateExpiration 30
+
+<VirtualHost *:443>
+  ServerName localhost
+  SSLEnable
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</VirtualHost>
+
+KeyFile "C:/Program Files/IBM/HTTPServer/conf/ihsserverkey.kdb"
+SSLStashFile "C:/Program Files/IBM/HTTPServer/conf/ihsserverkey.sth"
+
+restat IHS webserver

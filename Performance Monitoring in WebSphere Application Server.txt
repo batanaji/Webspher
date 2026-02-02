@@ -1,0 +1,254 @@
+Performance Monitoring in WebSphere Application Server (WAS)
+1. Performance Monitoring Infrastructure (PMI)
+
+PMI (Performance Monitoring Infrastructure) is a WebSphere feature used to monitor application and server performance.
+
+PMI Levels
+
+Basic PMI
+
+Monitors application-level metrics
+
+Provides basic performance data
+
+Extended PMI
+
+Monitors application + major WebSphere components
+
+Includes detailed metrics for internal components
+
+Components That Can Be Monitored
+
+Using PMI and Tivoli Performance Viewer (TPV), we can monitor:
+
+Servlets
+
+EJBs
+
+JVM runtime
+
+Heap memory
+
+Garbage collection
+
+Thread pools
+
+Custom application modules
+
+2. Tivoli Performance Viewer (TPV)
+
+TPV (Tivoli Performance Viewer) is used to view real-time and historical PMI data.
+
+It helps analyze:
+
+JVM usage
+
+Heap memory consumption
+
+Thread activity
+
+Garbage collection behavior
+
+Application response time
+
+3. Heap Memory Analysis
+
+Heap memory issues usually cause:
+
+Poor server performance
+
+Automatic server restarts
+
+OutOfMemoryErrors
+
+Automatic heap dump generation
+
+When to Perform Heap Dump Analysis
+
+Server performance is degraded
+
+Server restarts automatically
+
+Heap dump is generated automatically
+
+JVM throws OutOfMemoryError
+
+Steps to Generate Heap Dump
+
+Enable Heap Dump
+
+In the WebSphere Admin Console, add a custom JVM property:
+
+Name: IBM_HEAP_DUMP
+
+Value: true
+
+Heap Dump Location
+
+Default profile location:
+
+C:\Program Files\IBM\WebSphere\AppServer_1\profiles\AppSrv01
+
+
+Heap Dump Content
+
+Contains detailed information about:
+
+Java objects
+
+Object references
+
+Memory usage patterns
+
+Garbage Collection
+
+JVM uses Mark and Sweep algorithm
+
+Identifies reachable (live) objects
+
+Frees memory occupied by unused objects
+
+Heap Dump Analysis
+
+Heap dumps are analyzed by:
+
+PMR / Support team
+
+IBM Heap Analyzer tool
+
+Reference links:
+
+IBM Heap Analyzer:
+
+https://www.ibm.com/support/pages/node/7159924?dest=/ibm-heapanalyzer
+
+Java Heap Dump Analysis Tools:
+
+https://www.ibm.com/support/pages/tools-analysing-java-heap-dumps
+
+After Analysis
+
+If memory leak is detected:
+
+Check for WebSphere fix packs
+
+Raise a ticket with the development team to analyze application-level memory leaks
+
+Heap Size Adjustment
+
+If heap memory is insufficient:
+
+Create a Change Request (CR)
+
+Increase JVM heap size
+
+Cluster Scaling
+
+Increase the number of cluster members if required
+
+Ensure infrastructure capacity supports scaling
+
+Important Considerations
+
+Always understand infrastructure capacity before increasing heap or cluster size
+
+Analyze:
+
+Object lifetime (how long objects remain in memory)
+
+Parent–child object relationships
+
+4. Thread Dump Analysis
+
+Thread dump (also called Java Core Dump) is used to analyze thread-related issues.
+
+What Thread Dump Helps Identify
+
+Thread initialization details
+
+Thread creation time (start and end)
+
+Hung threads
+
+Deadlock situations
+
+Common Scenarios
+
+In IBM BPM, thread count may increase (e.g., 100 → 101)
+
+System becomes slow or unresponsive due to thread exhaustion
+
+Deadlock Issues
+
+Deadlocks usually occur due to resource contention
+
+Actions:
+
+Raise a ticket with the development team
+
+Request application optimization or additional resources
+
+Thread Pool Issues
+
+If issue is server-related:
+
+Increase thread pool size
+
+Always raise a Change Request (CR) before changes
+
+Best Practice
+
+Always capture 2–3 dumps (heap and/or thread)
+
+Dumps should be taken at intervals during the issue
+
+5. Log Files and Tracing in WebSphere
+JVM Logs (App Server, NodeAgent, DMGR)
+
+Used for runtime issue analysis.
+
+SystemOut.log
+
+SystemErr.log
+
+Process Logs
+
+Useful for performance and memory-related issues.
+
+native_stdout.log
+
+native_stderr.log
+
+IBM HTTP Server (IHS) Logs
+
+Used for web server-related issues.
+
+access.log
+
+error.log
+
+Plugin Logs
+
+Used to analyze communication between IHS and WAS.
+
+http_plugin.log
+
+FFDC Logs (First Failure Data Capture)
+
+Automatically generated during failures.
+
+activity.log
+
+Only one activity log per profile
+
+6. Trace Enablement
+
+Tracing can be enabled in:
+
+WebSphere Application Server
+
+Web Server (IHS)
+
+WebSphere Plugin
+
+Tracing helps capture detailed diagnostic data for complex issues but should be enabled carefully due to performance impact.

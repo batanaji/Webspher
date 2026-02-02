@@ -1,0 +1,94 @@
+
+🔧 STEP 1 — Disable security TEMPORARILY on DMGR
+
+⚠️ This is safe if done exactly as below.
+
+On DMGR host:
+
+cd "C:\Program Files\IBM\WebSphere\AppServer_1\profiles\Dmgr01\bin"
+stopManager.bat
+
+
+Edit:
+
+C:\Program Files\IBM\WebSphere\AppServer_1\profiles\Dmgr01\config\cells\<CELL_NAME>\security.xml
+
+
+Change:
+
+<security:Security enabled="true">
+
+
+to:
+
+<security:Security enabled="false">
+
+
+Save.
+
+Start DMGR:
+
+startManager.bat
+
+🔧 STEP 2 — Sync node WITHOUT authentication
+
+On NODE:
+
+cd "C:\Program Files\IBM\WebSphere\AppServer_1\profiles\AppSrv01\bin"
+syncNode.bat localhost 8879
+
+
+✅ This will succeed now.
+
+🔧 STEP 3 — Re-enable security
+
+Stop DMGR again:
+
+stopManager.bat
+
+
+Edit the same security.xml back to:
+
+<security:Security enabled="true">
+
+
+Start DMGR:
+
+startManager.bat
+
+🔧 STEP 4 — Start nodeagent
+startNode.bat
+
+🔧 STEP 5 — Start server1 from DMGR
+
+Admin Console → Servers → WebSphere application servers → Start
+
+✅ FINAL STATE (EXPECTED)
+
+In DMGR Admin Console:
+
+🟢 Nodeagent → Running
+
+🟢 Server1 → Running
+
+No more SOAP auth errors
+
+🧠 WHY THIS IS THE RIGHT MOVE
+
+IBM officially supports temporary security disable for recovery
+
+Avoids reinstall, re-federation, or profile deletion
+
+Fixes all broken admin auth paths at once
+
+🧨 IF YOU WANT A CLEANER LONG-TERM FIX
+
+I can also guide you through:
+
+Resetting DMGR admin password properly
+
+Re-federating the node cleanly
+
+Hardening SSL after recovery
+
+Just tell me which one you want 👍

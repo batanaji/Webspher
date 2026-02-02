@@ -1,0 +1,1629 @@
+++++++++++++++++Calls+++++++++++++++++++++++++++++++++
+
+Hi All, My name is Tanaji Bajgire and I have 10 + years of exprence and i have started curries with IBM and then worked 
+
+1. Team lead call with Manager to provide the update.
+
+2. Daily Morning call,understand the all points from team whats going in team  major points, minor points, which you feel having blocker /impact on business/escalated, 
+   your sence this may get excalated then address the team or ask check with correct team /setup a call and understand issue in detailded and if required send the communication 
+   ASM/business and inform the current suitution and status the we start the day for activity
+   
+4. OPS call. impact 1 and 2 ticet call with  ( All business peoples ASM) need to present all application in case any issue.
+3. I am handing team and working as well we have 23 application and 6 are cloud and other are normal.
+4. Application is not working, order not able to send, document approval issue,password change activity, deployment,ladap password,certificat renewal,MQ migration.
+   server migration,database migration,or any interface changes or replacement.4
+   Group idp to cloud idp, APM F5, mailget to Bulk get , Server Migration from RHEL to VMware , Java Migation form 1.8 to 17 open JDK, DB migraiton, MQ migration.
+5. Server related issue (space, connectivity, after patching activity.
+6. Call with Business team. weekly 
+7. Call with Devolpment team weekly
+8. Call with ASM 
+9. Change release call with CAB board members. 
+10. Application transition call.
+11. Other interface team call 
+12. Internal call in case any help required.
+13. CSI Planning quatraly plan any improvment is environment and assing the task and get it done recent I done MLAAS setup to push the logs on frontend. every quertarly we implement one idea/automation.
+14. Call with user to understand the issue in details and reproducce the issue check logs. ified 
+15. Apfter deployment issues(application not workig/same functionality not working prepare rollback take decision depend on the impact and inform to Business team and follow the ITIL process I am ITIL certified
+16. Create change request -> create problem ticket -> Create Incident ticket and assign to devolpment team, hostfix,bugfix,major release, minor release, rollback process. 
+    Monthly retrospective call (what went wrong,what went write and appriciate for what went write and for what went wrong take in improvment point process 
+17. we will ask team to write the points what went wrong and write)
+18. Group IDP to Cloud IDP migration challenges (need to usderstand the impcat on user regen wise, what will be the wrong)
+19. Java migraiton orcal to opne JDK migraiton many issue after migratio application font size.
+20. Taking interviwes for my team and other project as well week ends. 
+21. END to END process interaction with stackholders product owner -> ASM -> key users -> Dev team -> users and taking the decision.
+
+Responsibilities.
+============================================
+1.Installation and configuration webspere,IHS,Plugin,WAS8.5.5.11.
+2.Installation of dynatrace of monitoring tool.
+3.Appliying fixpack.
+4.Configuration.
+5.Creating profile and Cluster.
+6.Setting up JDBC or DS, JC auto
+7.Applying SSL
+8.Creating SSl Certificate in Venafi tool and appling cert.  
+
+cp,scp,cd,pwd,rm,diff,ps -ef,more,vi,view,cat,tail,grep,find,uname,hostname,nslookup,ping,telnet,mv,tar,swap -l,du -sh *, df -h,Jmap,Jstat,free -g,mount -a.
+
+
+Day to Day activity
+======================
+
+1. we do use CMS,Service Now,JIRA,MXIMO. tool for ticking that my be IN,R,CH, 
+
+CALLS :- Will have IN,CH,Dail meeting,SEV CALL,Status call of new applciation.RBM meeting, and ongoing issues.
+ 
+
+IN -1.Performance slow issue
+	2.cpu uses more
+	3.Virtual Memory Swap Space is low at (62.6%) used (68014/108612 MB used
+	4.OOM Exception,
+	5.hung thread
+	6.Deploment fail.
+	7.To clear trans log.
+	8.mq related issues.
+	9.The amount of memory used by the JVM is high.ata
+	10.HTTP REQUEST TIMED OUT AFTER 30 seconds.
+	11.Static content (.js and .css) are not getting loaded and its sporadic and we would like to bounce all readiness web-servers.
+	12.repository database full.
+	13.URL not working.
+
+CH -1.Installation new ENV.
+	2.Setting up JVM argument.
+	3.Yearly DB password change.
+	4.Recycle cahnge 
+	5.Setting up 2 way SSL. console Security > SSL certificate and key management -> Manage endpoint security configurations > {Inbound | Outboundssl_configuration. Under Related items, click Dynamic outbound endpoint SSL configurations.
+	6.JBOSS start and stop activity.
+	7.Genrating SSL certificate and placing in VANAFI,NETSCALR,Sysmantec,Digicert.
+	8.Changing CA root and intermediat certificate.
+	9.Installation of Dyanatrace tool.
+	10.Vulnerability Fix - Weak Ciphers in UAT webserver | TLS 1.0 to TLS1.1 and chanching header like nosnnif.
+	11.Proxy setting change.
+	12.SSL replace certificate of new ssl set up.
+	13.Patching IBMHTTPD from 8.5.5.8 to 8.5.5.11 - Prod.
+	14.Services account password change.
+	15.Portal Insttalation
+	16.XML import or export.  
+	17.Portal rebuild if get failed.(Like dependencies dmgr and node)	
+
+
+R - 	1.Granting monitoring access to devolper. 
+		
+Tools	: CMS,SERVICE NOW, STAR, VENAFI CERTIFICATE TOOL,Netscalar,Symentec,Digicert,Maximo,Danatrace,repliweb,DBA,E2 tool.
+
+
+===================
+
+Hi .....
+
+This is Tanaji... i am MCA pass out 2014 working with Volkswagen as WAS Admin and L2 from 
+
+2015... and comming to roles and responsibility,and in my invironment front end having IIS,IHS and WAS datasbase oracle.
+1. Installation and configuration WAS and IIS and IHS and CWS.
+2. Creating profiles DMGR and APPSERVER and fedration to DMGR using addnode.sh command.
+3. Then we will start the crating cluster and adding the members on
+ cluster and give the weight depend upon the system RAM or AIB. and second members onword we will 
+
+create the new JVM.
+4. Successfully implemented horizantal cluste and vertical cluster 
+5. Admin User Group.
+6. Then we will update the properties configuration of JVM and websphere variables.
+7. We will send the request for SSL and datasourece configuration once it get details from both team will start the cofiguration of JDBC and Dadasource and appling the 
+
+SSL.
+8. IVT (Infrastrucer verification test)
+8. We will handhover to application team to deploy application once they deployed application it will come to under our scop.
+9. we will attent the regardig status of applicaiton and it may be inc4 or inc5 call or RBM metting call or change or defect call issues call runline call.
+=======================================================================================================================================================================
+
+
+=============================
+
+Day to Day Activities
+======================
+
+1. Checking mails and responding to them.
+2. Checking any ticket come in queue is there any ticket assinged to you.
+3. We will have the calls inc4&inc5 and status call these call are related to status of application .
+4. Defect call ,team metting ,technical metting bridge call,issue call,
+5. RBM metting or change call , IVT 
+
+
+
+Calls
+------
+
+1. OPS call
+2. Bridge call 
+3. Sev call 
+4. Incident call
+5. Team meeting call
+6. Defect call 
+7. Hadul call
+8. issue call
+
+Application flow 
+================
+
+1. We will get the mail regarding applicaton name and AIB and CWB for RBM metting  
+in my inv having near about 120 prducation boxe unix, linux AIX , and TSIT having more then 530 boxess applicaiton are near about more then 200 
+ 
+AIB and CWB:- Application Infrastructure BuildDesing and Componet Work Book.
+
+Before application comming to inv we will have the Runbook review metting in this metting we will decid the all basic need RAM size 1 GB /tmp size 1 or 2 GB and 16 GB 
+
+disk already provided by unix team,in this metting all repersentetive will be available with respective technology in the application also RBM 
+
+manager,architecture,client.....we will have discussion with all the componet what should be there in design and what is the use of tha how does it work and 
+
+connectivey id it effect any thing to your technology or successfuly working out as per the AIB (Application Infrastucture Build desing ) all the component we need to 
+
+check with your respective component weither it will supported version or comptability with any other things with the help of AIB desing work flow or is there any 
+
+thing need to modify in desing all the posibility we need to analyz before starting the application . this is the pre-req.
+Then build team will build the sever and hand over to middleware team then we will start the configuration .
+
+=======================================================================================================================================================================
+
+version 		9.5	8.5.		8.5		8.0		7.0 		6.1 		6.0 		5.1 		5.0 	4.0 	3.5  
+Latest fixpack 	9.0.5.10	9.0.0.6	8.5.5.9 	8.5.0.2 	8.0.0.11 	7.0.0.41 	6.1.0.47 	6.0.2.43 	5.1.1.19 	5.0.2 	4.0.7 	3.5.7 
+WebServer 
+Liberty version 20.0.0.5
+=======================================================================================================================================================================
+
+=============================
+
+JDBC AND DataSources configuration
+============================
+  
+Pre-req
+======= 
+
+Need to ask DB team to these details ...
+
+		DB Name
+		Hostname	
+		Port Number	
+		URL
+		userid and password of DB ex. oracle 
+
+jdbc provider
+=============
+1.scop:- CellLevel (cluster name / Node level.)
+2.Database Nmae:- oracle.
+3.ProviderType :- orcal universal ...
+4.ImplementaioinType:- XA connection Pool or connectioin Pool  ---> Next
+4.class path  of .jar files 
+  
+Data sourece
+============
+scop		 :- CellLevel (Cluster Name) 
+DS name		 :- SVRDS
+JNDI name 	 :- jdbc/svr
+DB name		 :- svrorcle 
+Servername	 :- Hostname oracle
+Port Number	 :- 1521
+
+if DB2 means we need to provide all above deatils if oracle means only URL.
+
+URL		 : URL = â€œjdbc:oracle:thin:@bmvap050wmgpx7:1521:grdwâ€? ( if DB2 configuration we have provide the all deatis, if ORACLE just one URL is enough it 
+
+will contain all details reg db)
+		
+J2C Authonticaiton
+==================
+Alias Name :- svr
+userid     :- (db2username)
+password   :- (db2pass)
+
+
+properties of connection pool
+================================
+		1.MaximumConnection --> 50 (10)
+		2.MinimumConnection --> 1 (0)	
+		3.ConnectionTimeOut --> 180 sec.
+		4.AgedTimeout	--> 0 
+		5.reaptimeout   --> 180 sec
+		6.unused timeout --> 1800 sec or 30 min.
+		
+Purge policy
+============
+    -Xgcpolicy:optthruput
+    -Xgcpolicy:optavgpause
+    -Xgcpolicy:gencon- (Nursery and Tenured)
+    -Xgcpolicy:balanced
+
+		1.Entire pool
+		2.FailingConnetion Only
+===============================================
+
+.jar file for oracle
+====================
+
+		1.ojdbc117.jar ---> oracle 10 G		
+		2.ojdbc5.jar  ---> oracle 11 G  or ojdbc6.jar ---> /opt/oracle/product/10.2.0/client/jdbc/ path of .jar file 	
+
+		or /oracle/product/11.1.0/jdbc/lib/ojdbc6.jar if orcal need to give this details. Like 
+
+		For Oracle.
+		===========
+		1.JDBC:-  1.scop 2.Name 3. Desription 4.Class path 5.Implementation class Name.
+		2.DS :- 1.scop 2.provider 3.DSName 4.JNDI Name 5.URL for Oracle.
+		3.J2C Auth:- 1.Alias Name 2. Uid 3. Pass.
+
+For DB2
+=======
+		1. db2jcc2.jar (10.1)
+		2. db2jcc.jar  (11.1)
+
+ 
+=======================================================================================================================================================================
+
+============================
+New concept .
+
+
+WAS 8.0
+
+1. Installation Manager 
+2.Liberty profile IBM to deploy only required custom features instead of deploying a big set of available JEE components. ---(less then 50 MB download ,server startup 
+time less then 5 sec,less 50 MB memory footprint)
+	- If web-application requires only a servlet engine, then rather than starting all other components liberty profile only starts the WAS kernel
+	- To Download 
+	https://developer.ibm.com/wasdev/downloads/
+
+ 	http://marketplace.eclipse.org/content/ibm%C2%AE-websphere%C2%AE-application-server-v85-liberty-profile-developer-tools-eclipse-helios-indigo
+
+	The Liberty Profile is free to use which is good but only in development environment not in production environment. If we want to move to production with the 
+
+Liberty Profile we will anyways need to pay the usual IBM WAS licensing cost which does not sounds good.
+
+3. Most of time used in development environment not in production environment
+
+4. Dynamic Clustering can proactively provision and start or stop new instances of application server Java Virtual Machines (JVMs) based on workload demands. It 
+
+provides the ability to meet Service Level Agreements when multiple applications compete for resources.
+
+I.Based on weight and performance and if the cluster member fails request will routed to other member cluste , cluster member start and stop its depends on workload 
+
+in the environment .
+Allow workloads to be classified, prioritized and intelligently routed
+5. ODR ( On Demand Router )
+6. HPEL :-  High Performance Extensible Logging  provides a convenient mechanism for storing and accessing log, trace, System.err, and System.out information produced by the application server or 
+
+your applications. It is an alternative to the basic log and trace facility, which provided the JVM logs, diagnostic trace, and service log files commonly named 
+
+SystemOut.log/SystemErr.log, trace.log, and activity.log.
+
+1. HPEL log data repository
+2. HPEL trace data repositoryLilberty profile.
+3. HPEL :- 
+
+logview -monitor - to view log
+
+WAS8.5
+OSGi Blueprint specification.
+Java SE 7.
+IDE options.
+Web 2.0 and mobile.
+Application migration
+3. Java7
+4. Dynamic Cluster
+5. EJB 3.1 Compatibility (EJB (Enterprise JavaBeans) 3.1 is supported from starting WebSphere 8 version).
+6. JDBC 4.1 Compatibility JDBC 4.1 Compatibility (JDBC (Java Database Connectivity) 4.1 is supported in WebSphere 8.5.5 version).
+
+=======================================================================================================================================================================
+
+=============================
+plugin 
+
+1. connectTimeout
+2. retryInterval
+
+WEB-INF/classes and WEB-INF/lib 
+
+=======================================================================================================================================================================
+
+=============================
+CPU utilization and JVM utilization 
+
+how to check CPU Utilization  ,  JVM Utilization 
+
+1 . top in linux 2 .AIX topas 3. top (SunOs)
+
+JVM Utilization 
+
+jstat -gccapacity [insert-pid-here] 
+
+=======================================================================================================================================================================
+
+=============================
+
+Security :-
+ 
+1. Globle security... ( user id and password i.e authontication and authorization )
+2. SSL :- Secure soket layer (to transfer the date between cliet and server with the help of encryption menthod symetric and asymetric)
+3. java 2 security :- file based security was.policy , java.policy ,client.policy,server.policy,fillter.policy.
+4. j2ee security :- It is based on rols , Admin,confg,operator,monitor,need to configure at the time of delpoyment.
+5. j2c :- To connect DB need user id and password to authonticate.
+6. jaas :- Java authontication and autorization services
+7. jacc :- Java authontication and contract with containers 
+=======================================================================================================================================================================
+
+=============================
+
+COMMANDS 
+========
+
+Nmon
+ps -ef | grep java
+
+In SunOs -- 
+
+/usr/ucb/ps -aluxww | grep java
+
+1.netstat   :- It  will display the network connection for both incomming and outgoing signls for TCP connection 
+
+2.ping :- This command is used to test the reachability of host or(server) ip  
+3.nslookup (n-name s- server lookup):-This command identifies which DNS server the computer is currently configured to use for its DNS lookups.(or to obtain the domain 
+
+name and ip address of any other specific recod.
+4. telnet :- Telenet command is used to communicate with a remote computer like ex:- telenet hostname portnumber
+
+1. top			To check JVM utilization in UNIX (sar -r user to check todays CPU utilization )
+3. topas 		To check JVM utilization in AIX it will shows the (user PI,PPID,CPU%,PAGESPCE You should look at first only CPU% utilization how much spac it 
+
+using )
+4. prstat		To check the CPU utiliztion  (solari
+5. prtconf		to check bit in AIX ()
+6. free		 	to check memory utilization 
+7. mstat		mpstat is used to monitor cpu utilization on your system (AIX)
+8. arch 		To check bit in linux
+9. Crontab 		Min:hour:DayOfMonth:month:DayofWeek example:- 0-59:0-23:0-31:0-12:0-6	 options -l,-e,-r 30:2:2:7
+10 iostat;sar;jstat -gc To check cpu utilization,IO and JVM utilzation (  iostat;sar;vmstat;jstat -gc)
+11 sar 			To check CPU utilization 
+12 sar -r		To check Memory utilization.
+13. cat /proc/cpuinfo	Total CPU, Memory, File System (Find out CPU Cores, MHz, CPU manufacturer, Model Name and much more by using)
+14. root@p01dxapp01e [/opt/IBMHTTPD/https-DX-Jacada-Prd-85]    # grep 10.20.94.169 /opt/IBMHTTPD/https-DX-Jacada-Prd-85/conf/httpd.conf Listen 10.20.94.169:80
+15. ulimit -n 18193
+16. ln -s sof link
+17. mount -a
+18. groupadd -g 400000000 wasgrp
+19. groupadd -g 400000000 loggrp
+20. groupmod -g 400000000 wasgrp
+21. useradd -u 200000000 -g wasgrp -d /home/wasadm -s /bin/bash
+22. chown wasadm:wasgrp /appvol/WP85
+23. usermode -a -G loggrp wasadm
+24. nohup - to run background command.
+25. mkdir -p /appval/WP85/etc/database
+26. rpm -ivh DBAocl030.03.x86.rpm    	
+
+
+1. Check all the runnuing process.
+2. If it is WAS process create thread dump at different level.
+3. using kill -9
+4. kill the process using kill -9
+5. Analyze the thread dump.  thread dump example:-  format javacore15_02_14_19_45_01.tar.gz
+
+How to Reduce Paging Space
+---------------------------
+svmon -G 
+prtconf -m
+lsps -s
+lsps -a
+
+svmon -Pu -t 5|grep -p Pid|grep '^.*[0-9]'
+
+# chps -d 4 
+to reduce paging space
+
+
+how to check taking more memory 
+
+find . -xdev -ls | sort -nrk 7 | head   ---  it will display which files are taking more sapce so we can remove it .
+
+How to check high space utilization or which file is taking more space
+=====================================================================
+df -ak * | sort -n | tail -20f
+
+
+find files by modification time
+===============================
+
+find . -mtime 1               # 24 hours
+find . -mtime -7              # last 7 days
+find . -mtime -7 -type f      # just files  ---> ( It will show the file last 7 day before modified )
+find . -mtime -7 -type d      # just dirs
+
+or
+
+		EX:- find -atime +15	
+
+		find atime +15 (a --> access time +15 is before 15 days file access it will display)
+		find ctime +10 (c --> cheange file before 10 days ... )
+		find mtime +10 (m --> Modify the file before 10 daysfi)
+
+Examples :-
+===========
+
+1.find / -name SystemOut.log / find /opt -name SystemOut.log
+
+
+1.Find out which file is using more then 100 MB
+
+find . -size +100M
+
+2.How to find out are using more disk 
+
+du -sm *|sort -nr|head -5 --No of files 
+
+3. To find out high CPU utiliztion of process 
+
+ps auxf |sort -nr -k 3 | head -5 
+
+4. How to find particular file and direcoty 
+
+find . -type -f -name SystemOut.log ( f means file)
+find . -type -d -name SystemOut.log ( D is dircoty)
+
+5. How to find out last who had been log in
+   
+	using last -a command 
+
+6. How to disaplay to total size of given folder along with other details 
+
+	du -hSc SystemOut.log
+
+7. How to find Admin console port no.
+
+grep -R "9060" * --exclude=*.log
+
+view SystemOut.log
+tail SystemOut.log
+cat filename
+du -g filename
+=======================================================================================================================================================================
+
+
+Plugin file configuration 
+
+1. loadBalanceWeight -----> starting value 2 to 20.
+2. ConnetTimeOut -----> ConnectTimeout value 0  means never time-out opening soket to connect applicaton server 
+3. ServerIOTimeOut -----> Recommended value = -900 (that is negative 900) response from application server.
+4. ServerIOTimeOutRetry -----> Recommended value = -1 (this is the default)
+4. RetryInterval -----> plugin will wait agin and agin trying to connect to applciation server. (number of appservers in cluster - 1) x (absolute ServerIOTimeout) - 1 
+
+ex.(2 - 1) x (900) - 1 = 899 seconds or less
+5. AffinityRequest -----> It contains session cookie ( JSESSIONID )IgnoreAffinityRequests="true   v6.1 or higher
+6. Maximum connection ----->  (-1) 
+7. Fail-over -----> It will check the cluster member if 1 cluster member down it goes to 2 if 2 then 3 ...
+=======================================================================================================================================================================
+
+
+Base distinguished name and Bind distinguished name
+--------------------------------------------------
+
+		1. Base distinguished name :- log in creadention user id and password LDAP Server 
+		2. Bind distinguished name :- Authorization of users.
+
+=======================================================================================================================================================================
+
+=============================
+
+heap dump 
+
+To generate heap dump
+========================
+wsadmin>set jvm [$AdminControl completeObjectName type=JVM,process=server1,*] (heap size depending upon (TOTAL_RAM_SIZE/2)/(JVM))
+
+To invoke heap dump
+=====================
+$AdminControl invoke $jvm generateHeapDump
+
+It will be generate heap dump at profile loction .
+
+
+Heap Dump and Thread dumps 
+
+JCAl
+====
+set jvm[$Admin Control Complet Object name type =JVM ,server=servername]
+$Admin control invoke $JVM Threaddump
+
+JYTHON
+========
+jvm=AdminControlCompleteObjectName[type=JVM,server=server_name]
+
+console --->Trubleshooting-->Java dump and core-->you will have heap dump ,java core , system dump
+
+
+
+=======================================================================================================================================================================
+
+=============================
+
+logs 
+-----
+		1. JVM Logs		SystemOut.log,SystemError.log
+		2. process logs		nativestderror.log,nativestdout.log
+		3. IHS logs		access.log error.log	
+		4. Activity log		activity.log
+		5. FFDC log		ffdc.log	
+		6. pluginlog		http-plugin.log
+		7. trace log		trace.log
+		8. Liberty logs  message.log/message_error.log/console.log3
+		9. Applicatioin logs order.log and servlet.log
+		
+
+=======================================================================================================================================================================
+
+=============================
+rollout update (FOR DEPLOYMENT) AND REPLESTAT FOR CLUSTER MEMBER 
+-----------------------------------------------------------------
+
+It will update the one by one member , stop ---> update ---> start .. roulluot option working function ...Automatic start and stop.
+
+update option will completelly stope the applicaiton for delpoyment.
+
+=======================================================================================================================================================================
+
+=============================
+SSL 
+====
+pre-req
+========
+1.first we  will take the back of inv or else security.xml file ,soap.client.prop and ssl.client.prop files,sas.client.prop.
+
+1. We will send the performa to security team SSL like cell level or node leve and (MCSA000C.wart7appap006l.tsit.wgbgrp.test)or webcell095 (Cell name and node name)
+2. Onc we get the reference numbere and authoriztion code and details form secutiry team then whit the help of we will create the .jks file (.csr)
+3. Then we will paste this info in CA site like entrust,symantec or verizon or etc , then will get the .cer file .
+4. The same file we will convert or import into .jks file and will add in that ROOTCA AND INTERCA CERT.
+5. Then will place the file in respective locaiton and provide the path of certificat in security.xml file ..and chenge the soap.client.props and ssl.client.props file 
+
+and bounce it and check...
+
+
+1.keytool -genkey -alias wart7appap047 -keyalg RSA -keystore wart7appap047.jks -keysize 2048  -- generate keystore
+2.keytool -certreq -alias wart7appap047 -keystore wart7appap047.jks -file wart7appap.csr	      -- .csr 
+3.keytool -import -trustcacerts -alias root -file rootca.crt -keystore wart7appap047.jks     -- import CA sllry .csr also
+
+
+IIS SSL:-
+========
+1. right click and properties certificate new certificate / save .csr file
+ 
+SSL Handshak
+============
+1. Client will send the Hello message with some cryptographic informaiton like TLS and SSL version. (with the help of private key)
+2. Server responsed with server hello message that contains ciphereSuite chosen by server from the list of provided by client (with the help of private key)
+
+
+Keys and Secrets during RSA SSL negotiation
+============================================
+The following is a standard SSL handshake when RSA key exchange algorithm is used:
+
+    Client Hello (client will send the hello with TLS ,SSL,version
+    - Information that the server needs to communicate with the client using SSL.
+    - Including SSL version number, cipher settings TLS,session-specific data.
+     
+    Server Hello
+    - Information that the client needs to communicate with the server using SSL.
+    - Including SSL version number, cipher settings,TLS session-specific data.
+    - Including Serverâ€™s Certificate (Public Key)
+     
+    Authentication and Pre-Master Secret
+
+    - Client authenticates the server certificate. (e.g. Common Name / Date / Issuer)
+    - Client (depending on the cipher) creates the pre-master secret for the session,
+    - Encrypts with the server's public key and sends the encrypted pre-master secret to the server.
+     
+    Decryption and Master Secret
+    - Server uses its private key to decrypt the pre-master secret,
+    - Both Server and Client perform steps to generate the master secret with the agreed cipher.
+     
+    Generate Session Keys
+    - Both the client and the server use the master secret to generate the session keys, which are symmetric keys used to encrypt and decrypt information exchanged 
+
+during the SSL session
+     
+    Encryption with Session Key
+    - Both client and server exchange messages to inform that future messages will be encrypted.
+
+=======================================
+Performance Monitoring and Tuning 
+
+1. Tune parameters, for example JVM settings, connection pools, thread pools, that affect WebSphere Application Server performance.
+2.Configure and monitor the WebSphere Application Server caching mechanisms. or configure dyanatrace tool to monitor.
+=======================================
+Venafi CSR genration .
+
+1.Go to Inventroy tab and select certificate --> Creare New Cerficate -->
+
+=======================================================================================================================================================================
+
+=============================
+
+Cluster:-
+========= 
+1. Cluster is a gourp of application server with simillere configuration.
+
+There are 2 types of cluster 
+
+1. Horizantal cluster
+2. Vertical Cluster 
+
+1. Horizantal Cluster :- If all the cluster member are different node or different physical box it is called as horizantal cluster.
+2. Vertical Cluster :- If all the cluster member are same node or same box it is call as vertical cluster . (0 to 20)
+
+Feature of Cluster:-
+=====================
+1. WLM :- Workload Load Management
+2. High Availability
+3. Scalability
+
+=======================================================================================================================================================================
+
+=============================
+
+Response file for WAS 6.0
+===========================
+-OPT silentInstallLicenseAcceptance="true"
+-OPT allowNonRootSilentInstall="true"
+-OPT disableOSPrereqChecking="true"
+-OPT disableNonBlockingPrereqChecking="true"
+-OPT installType="installNew"
+-OPT feature="noFeature"
+-OPT profileType="none"
+-OPT installLocation="/usr/WebSphere/AppServer"   
+go to updateinstaller location and run command both install  or update.sh
+
+./install -options resp.txt -silent & 
+
+./install -js:javaconsole -options resp -silent  6.1
+
+Fixpack
+=======
+
+steps to apply fixpack 
+=======================   
+pre -req
+========
+1. Firt stop all the process (jvm,nodeagent,dmgr) and take the backup of product binaries.
+2. Confrim that no process are running  using ps -ef | grep java -ef | grep httpd and -ef | grep LLAWP  out put shot be none.
+
+1. First install update installer 
+2. Download fixpack or copy from repository server and unzip 
+3. Copy it to maintenance direcoty of update installer 
+4. run the command ./update -options "responsefile.txt" -silent 
+5. and check the ./versionInfo.sh
+
+=======================================================================================================================================================================
+
+=============================
+
+SSL
+===
+
+1. SSL HandShake Error (DNS)
+======================
+1. Applied SSL on IHS ,IHS team getting error like SSL HandShake i have checke the certificate entries personal certificate ,root CA certificat and InterCA certificate.
+2. Everything is fine but still getting the error SSLHandShake then i checked in httpd.conf ssl modul.so (key file .sth file) there also everything is fine comman name 
+
+cn=www.ysf.web.wgbrp.test.
+3. Then i have cheked basic command weither this comman name is configured in DNS or not nslookup hostname then i found DNS entry is not availble in DNS server command 
+
+name.
+4. once it configured DNS and then itis working fine.
+
+2. SSL HandShake Error  (Certificate comman name missmatch entery)
+======================
+1. Getting SSL HandShak Error when they are hitting applicaiton or log in to applicaiton.
+2. Then i have checked the certificate .pfx or .jks ( personal certificate of ROOTCA and INTERCA but in personal certificate having 2 entries.
+    1. Keyentry 2. trustedEntery.
+
+3. With the help of openssl command i opend .pfx file or .jks
+
+	EX:- openssl pkcs12 -info -in /web/build/YourSafe/www.ysf-t1.tsit.wgbgrp.test.pfx
+	
+
+4.  Then have found that keyentry of certificate lable name are line some different numric charctore ( genration of certificate infosys team) i took backup file and 
+
+chenaged the Label name.
+
+	keytool -changealias -alias {3bb1f116-e548-4e85-8df5-b68eeb7f2f11} -destalias www.gfsobiee.wgbgrp.net -keystore /web/build/YourSafe/Certificate_5July/ysf.kdb 
+5. Then done bounce the webserver and WAS it's resovled.
+
+3.Console is taking more time to open some time 10 some time 15 min
+===================================================================
+
+---> There was LDAP is integrated with application and to open the admin console it is taking more time , so there is the option called Reuse_connection this option 
+
+every time it will use the old connection and to check the user id and password so its take the more time , so we have uncheck the Reuse_Connection so it will create 
+
+the new fresh connection and it will connect the directly ... without takeing time .
+
+
+
+4.Unable to login in application home page
+----------------------------------------------
+SSl certificate expired not able login in application login home page 
+1. Replaced SSL certificate in WAS level.(still not able to login to application login page).
+2. Once WebServer bounced then working fine (or else do generate and propagate plugin_cfg.xml file.
+==================================
+
+
+5. Got application initilizaiton fail.
+====================================
+There were heap memory  problem getting error in sysout heap memory not sufficient we have increse the heap memory of JVM with the of CR the now working fine.
+
+====================================
+
+6. Application Performance issues too slow .
+===========================================
+There was applicaiton performance issues i have taken the heap and thread dump there was pool object issue i have ananlyzed and code level has been modified the 
+
+application performance was good 
+
+7. Applicationi deploy succesfull but not able to synch 
+=======================================================
+it was problem with IHS admin process it is hung state just we restated then it regenrated and propogeted to 
+
+webserver then successfull deployment.
+
+=======================================
+
+8. Deploment fauilr plugin genration and propogation issues.
+
+There was issues with connectivity between appserver and webSere i have chekced ping to appserver to webserver with ip of webserver it was not reaching to webspere , 
+
+Then i have chekced with load balance team,they bounce the VIP from there end and issue got reslove.
+
+=========================================
+
+9. portalURL is not working   
+
+Just I have cleared temp and wstemp ( taken backup and cleard)                                                          
+
+===========================================
+10.SQLException thrown while trying to get Connection from Datasource (java:comp/env/xmeta_defaultDS)
+
+Please check if the repository table space is full . Please confirm with Oracle and let us know once Oracle is working we will be able to restart the ISF server , 
+Logging agent and Data stage
+
+11. Applied 7.0.0.39 to 7.0.0.41 but application is not able to work proper. 
+===========================================================================
+Good resolution is befor appling fixpack 7.0.0.41 just chane the JVM proprty to  for JVM which is going to apply PF or node. 
+So that while starting the applicaiton you will not get any problem if not you will get problem.
+Application servers > CEBNG_Sys_d05jbapp08 > Global security > Custom properties
+
+Name: com.ibm.websphere.tls.disabledAlgorithms, Value : none
+Name: com.ibm.websphere.certpath.disabledAlgorithms, Value : none
+
+After updating WAS7 with FP41 we had an issue of starting of applications which uses SSLv3 and TLS1.0. FP41 which programmatically disables the connections which are 
+
+made with SSLv3 and TLS1.0. we should manually enable the below parameters to work on. This was corrected in the lower environments. I am adding @Budhia, Amiya R from 
+
+CEB  he will provide the Prod jvm’s which we need to take care. 
+
+
+11.Received fatal alert: handshake_failure No ciphers specified (Disbled TLSv.0  and enalbed TLSv1.2 in webserver level not working then enabled TLSv1.0 then working fine)
+==========================================
+
+this time we need to enable TLSv1.1 and TLSv1.2 on Load Balancer then it will work.
+
+--> We had disbled TLSv1.o and enabled TLSv1.1 and TLSv1.2 in webserver because of that it is not working once it is enabled TLSv1.0 it is working fine.
+I have 2 important points to make:
+
+1)The change I made yesterday will not work completely until Mark makes the corresponding changes on the load balancer so that it does not use TLS 1.0.  So you 
+
+will see the cipher errors until that is done and it is an outage for those apps until the change is done.  He mentioned yesterday he hopes to get to that by the end 
+
+of today (Tuesday).
+
+2)It looks like another issue exists that will make this implementation more complicated.  It appears the EBT app talks to Useradmin using TLS 1.0, so by 
+
+disabling TLS 1.0 yesterday, we broke their app.  So you need to start including EBT and I would also advise including RISK/CheckSystems in your validation as they 
+
+have hooks into UserAdmin as well.  There most likely will need to be a corresponding change on the EBT Edge appservers to disable TLS 1.0 and use TLS 1.1/1.2.  I 
+
+12. Applied 8.0.0.13 getting Conneciton has been shutdown Javax.net.ssl.SSLHandshakeExceptio. then i have changed Quality of protection SSL_TLS2 now working fine.
+=============================================================================
+1.|ERROR|2017-07-30 18:13:42.278 - CDT|ac638fd0-757c-11e7-a1e5-00000a1ef4be|JSession Unknown|EASRetrieveBankAlertInfoXmlDAO.composeSdnMatchSummarySvcRequest
+
+():RemoteException javax.net.ssl.SSLException: Connection has been shutdown: javax.net.ssl.SSLHandshakeException: No appropriate protocal 
+
+--> May be need to change protocal SSL_TLS to SSL_TLS2 SSL certificate and key management > SSL configurations > CellDefaultSSLSettings > Quality of protection (QoP) 
+
+settings -> Protocol is set to : “SSL_TLS2”
+
+
+13. Application not able to log in just got hung status. 
+
+	There was problem with user reporsiotry table was empty, it was not loaded all user , I have checked the table and imported user in cronjob and run cronjob manually.
+	
+14.
+=======================================================================================================================================================================
+
+Team,
+
+Effective April 30, 2018, IBMÂ® will withdraw support for the following programs licensed under the IBM International Program License Agreement: WAS 7.0 & 8.0
+
+IBM WebSphere Application Server V9.0 delivers the next-generation application infrastructure for modern applications to support seamless portability across hybrid 
+
+cloud landscapes
+
+WebSphereÂ® Application Server V9.0, with its traditional and Liberty run times, continues to offer industry-leading, production-ready, standards-based Javaâ„? EE 7 
+
+compliant architecture.
+
+Highlights of Version 9.0 include:
+
+Certification to the Java EE 7 Web Profile and Java EE 7 Full Platform for WebSphere Application Server traditional, which provides assurance that applications 
+
+leverage standards-compliant programming models. WebSphere Liberty was certified to JavaEE 7 Web Profile and Full Platform in June, 2015.
+Ease of connecting existing on-premises applications with BluemixÂ® services, which include IBM Watsonâ„? cognitive for optimal business outcomes.
+Enhanced support for creating, documenting, and discovering APIs, and also integrating with API platforms, such as IBM API Connectâ„?.
+Significant improvements in software delivery lifecycle times through seamless integration into DevOps workflows. This enables continuous delivery and removes cross-
+
+team dependencies for deployment.
+Accelerated pace of development and deployment by taking advantage of container technology that includes IBMÂ® Container Services and Docker container with support for 
+
+Docker Data Center. This enables seamless deployment of WebSphere applications to best meet business needs.
+Increased flexibility to deploy WebSphere Application Server workloads with speed and agility on Pivotal Cloud Foundry, Amazon Web Services, Microsoftâ„? Azure, and 
+
+Openshift, in addition to IBM Bluemix.
+New WebSphere Application Server on Bluemix, single-tenant offering, which provides an option for deploying WebSphere Application Server applications on an isolated, 
+
+single-tenant hardware.
+New option to enable VMware customers to quickly provision new or scale existing workloads to the IBM Cloud. This enables clients who start locally and scale globally 
+
+with cloud capabilities to scale more easily and also comply with data residency and other regulatory mandates.
+Updated WebSphere Extreme Scale that provides ease-of-use enhancements for caching to help improve response times for the most demanding applications and dramatically 
+
+speed configurations.
+Use of Liberty App Accelerator to provide a quick start development of Java microservices. Spring Boot, Watsonâ„? services, and other technologies can be used with 
+
+Liberty App Accelerator to easily deploy projects to Bluemix.
+Best practices for creating new Java microservices by using Game On!, an exemplar application, which helps explore microservices concepts.
+
+WebSphere Application Server V9.0 continues to offer the leading, open-standards-based application foundation for traditional workloads and also modern applications 
+
+that tend to be delivered as services. It enables accelerated delivery of innovative applications with unmatched operational efficiency, reliability, administration, 
+
+security, and control.
+
+=======================================================================================================================================================================
+
+=============================
+
+Profile Templates WAS7
+====================== 1. cell 2.Default 3. managed 4.dmgr 5.management 6.secureproxy.
+
+=======================================================================================================================================================================
+
+=============================
+How will you handel hight space utilization 
+
+1. first i will check which file system is taking more space 
+
+==================================
+How to check password expiration in WAS
+
+gsk7capicmd -keydb -expiry -db "C:\temp\plugin-key.kdb" -pw WebAS 
+
+How to change password 
+-------------------_---------------------
+
+gsk7capicmd -keydb -changepw -pw xxxx -new_pw yyyy -stash -db plugin 
+-key.kdb 
+
+
+Transition project workflow
+----------------------------
+
+Below are the documents that we have discussed in our meeting. Please revert in case of any discrepancy!
+
+1. Demand / Scope file -  which should contain FTE and support window. ( In case of any issues with these file, let all transition / people managers know about the 
+
+same )
+
+2. Base line - It should contain Server , IP , Instance details
+
+3. Compare baseline with FTE ( In case of any issues with these file, let all transition / people managers know about the same )
+
+4. DDQ questionnaire. Counterpart has to answer them.
+
+5. PAW ( Project access work book - with scope, skill , FTE , support window )
+
+6. SRM - Service responsibility matrix ( RACI Matrix )
+
+7. Escalation matrix
+
+8. SLA / SOP signed by accounting team or customer.
+
+9. Process flow / instructions document ( PPIW )
+
+10. In case of legacy systems, ask for risk letters
+
+11. Exit criteria
+
+Note:  
+
+1. Proper KT agenda should be there. Send MOM after every KT session. 
+
+2. You can ask for WIKI/Box access where all project related documents are stored.
+
+3. Documents mentioned from 1 to 5 above are required prior to the beginning of KT.
+
+4. If you entring in environment please check all DataSource test connection details.
+
+
+
+=======================================================================================================================================================================
+
+=============
+
+
+Here are 10 things confident people avoid doing:
+
+1. They don’t ask other people for approval.
+2. Confident people don’t blame other people or situations for what happens to them in life.
+3. They aren’t scared of things that will challenge them, mentally and physically.
+4. They don’t second-guess themselves.
+5. Confident people don’t tear others down to boost their self-esteem.
+6. They don’t care what other people think of them.
+7. They don’t give up on their dreams and goals.
+8. Confident people don’t try to impress others.
+9. They avoid putting things on the back burner.
+10. Confident people don’t agree with people just to make them feel comfortable.
+
+=================================================================================================
+Adhar card link
+
+Centralized Authsupport Help Desk:
+Email ID - authsupport@uidai.gov.in
+On-boarding Support:
+Email ID - onboarding@uidai.net.in  
+Email ID - gracy.james@uidai.net.in 
+Email ID - pawan.dagar@uidai.net.in
+Technical Support for AUA/ASA application integration:
+Email ID - authsupport@uidai.gov.in
+Mr. Sachin Syal
+Email ID - sachin.syal@uidai.net.in
+===================================================================
+
+Commands
+
+To check process grep
+---------------------
+find . -type f -mtime -5 -exec ls -l {} \; | sort -nrk 5 | head -10
+
+grep a | grep b | sort 
+
+e1009409@r02jbapp16b [/opt/WebSphere]
+# find . -name *pid
+
+find . -name *SystemOut* -exec grep "OutOfMem" '{}' \; -print
+
+find / -name file name
+
+grep -i "e-business" GO_Homepage_Unit_d05dxapp05_SystemOut.log
+egrep -ni "starv|hung" DX_Messaging_SRM_Prd_p01mdapp01a_1_SystemOut.log to check CPU starvation
+# egrep -ni "full gc|java_pid|e-bus" DX_Insight_Prd_P01dxapp01h_6_native_stdout.log | more
+# egrep -ni "starv|hung|socket|fatal|critical" MBOFX_FFS_A_Prd_p01jbapp31_SystemOut.log | grep -i "11/16/17" |more
+
+grep -i "e-business" /applogs/CEBNG/WAS7/logs/CEBNG_Rdy_r02jbapp06_E_3_SystemOut.log
+
+/applogs/bpm/WAS7/logs/grep -i "e-business" BR_BPM_Sys_d05jbapp11_A_1_SystemOut.log
+
+To cehck zombies process ps -ef | grep -i def in solaries os 
+ 
+ps -ef | grep java > beforeJava.txt  a append and x for delete in Solaries. 
+ 
+grep -i "WsServerImpl  E   WSVR0009E" GO_Homepage_Unit_d05dxapp05_SystemOut.log
+
+grep -i "Connection has been shutdown: javax.net.ssl.SSLHandshakeException: No appropriate protocol" DX_Insight_Perf_r02dxapp01d_1_SystemOut.log
+e3011218@r02dxapp01d [/applogs/dx/logs/WAS8]
+# grep -i "SSLHandshakeException" DX_Insight_Perf_r02dxapp01d_1_SystemOut.log | grep "7/31/17"
+
+scp agent.installer.linux.gtk.x86_64_1.8.4001.20160217_1716.zip e3014724@pdc8repscdewb01:/tmp
+
+grep -i CEBNG_Rdy_r02jbapp05_C_1 
+
+Services.msc
+
+ grep <ip> * | grep YES 
+ 
+ sdiff r02jbweb07.beforePatchHttpd_201711.sort r02jbweb07.afterPatchHttpd_201711.sort
+ 
+how to check file system
+==========================
+find . -xdev -ls | sort -nrk 7 | head
+
+# df -h /sysap
+Filesystem             size   used  avail capacity  Mounted on
+/dev/md/dsk/d404       7.9G   7.0G   869M    90%    /sysap
+
+e5515299@r02dmapp01b [/sysap]
+# df -k /sysap
+Filesystem            kbytes    used   avail capacity  Mounted on
+/dev/md/dsk/d404     8261365 7288390  890362    90%    /sysap
+
+#swap -s 
+
+du sg *
+# df -kh /weblogs
+
+Example 
+root@p01dxapp01e [/home/root]
+# df -h /opt/WebSphere/7
+Filesystem             size   used  avail capacity  Mounted on
+/dev/vx/dsk/appldg/opt_WebSphere_7
+8.0G   6.7G   1.2G    85%    /opt/WebSphere/7
+
+root@p01dxapp01e [/home/root]
+# du -sh /opt/WebSphere/7/* | grep G
+6.6G   /opt/WebSphere/7/AppServerBase1
+
+root@p01dxapp01e [/home/root]
+# ls -ld /opt/WebSphere/7/AppServerBase1
+drwxrwxr-x  34 wasadmin wasadm      1024 Nov 26 01:03 /opt/WebSphere/7/AppServerBase1
+
+==============================================================
+date;hostname;uptime
+Fri Aug  4 08:01:24 EDT 2017
+cicckdbp402or
+  08:01AM   up 78 days,   6:22,  1 user,  load average: 3.04, 2.40, 2.21
+date;hostname;uptime
+Fri Aug  4 08:01:24 EDT 2017
+cicckdbp402or
+  08:01AM   up 78 days,   6:22,  1 user,  load average: 3.04, 2.40, 2.21
+=========================================================== 
+
+OR
+==
+# du -sh * | grep -v K
+479M    files
+16M     IHS
+3.0G    IHS8_5
+2.1G    native
+1.6M    Offerings
+6.8M    plugins
+
+OR
+==
+du -sg r02ihwdm01a.20170712.7100-04-03-1642.mksysb
+
+OR
+==
+# prstat -s size
+prstat -s size
+/usr/ucb/ps -auxww | grep java| grep /opt/WebSphere/7/ -- to find out proces
+
+To check process 
+==================
+
+for i in $(ls | grep https- | grep 8 ); do echo $i $(more $i/version.signature | grep "IBM"); done
+
+ps -auxww |grep java
+
+
+OR
+==
+du -sg r02ihwdm01a.20170712.7100-04-03-1642.mksysb
+
+/usr/ucb/ps -auxww | grep CEBWS_Sys_d05jbapp09
+
+/usr/ucb/ps -auxww | grep java| grep /opt/WebSphere/7/ -- to find out proces
+
+
+
+df -k | grep /home
+df -gt /home
+./imcl listInstalledPackages -long accessRight nonAdmin - To check packes installed
+
+To Check system info
+---------------------
+~]# cat /proc/cpuinfo
+su - wasadmin
+
+======================================
+ipc -am -- To check   The ipcs command can be used to obtain the status of all System V IPC objects
+
+======================================
+
+prstat
+
+691 wasadmin 116  30    0  571M  491M sleep   29:58  0.11% java
+wasadmin   691   636   0 18:01:15 ?          30:00 /opt/WebSphere/6_1/Unit/AppServerBase1/java/bin/sparcv9/java -XX:+UnlockDiagnos
+wasadmin 26573 16374   0 01:00:42 ?          14:48 /opt/WebSphere/7/Unit/AppServerBase1/java/bin/sparcv9/java -client -Dwas.status
+
+
+How to slove cpu utilization more 
+
+ 1. check top
+ 2. check swpa -l , swap -s 
+ 3. prstat
+ 4. search wasadmin id which process is taking more space. or recycle if neccessry (JVM) ps -ef | grep pid search 
+ 5.free -h 
+ 6. may not work in SunOS atop
+ # /usr/ucb/ps -auxww |grepp 10954    or prstat | grep 2670  - It will show the details of process id 
+ # /usr/ucb/ps -auxww| grep /opt/WebSphere/8_5/AppServerBase1/java_1.7_64/bin/sparcv9 | grep 52001
+wasadmin  2670  0.1  1.013701441330328 ?        S   Jun 18 7074:11 /opt/WebSphere/8_5/AppServerBase1/java_1.7_64/bin/sparcv9/java -server -Dwas.status.socket=52001
+ 7. do like this also  /usr/ucb/ps -auxww |grepp 10954 -- you will get more details which process JVM is consuming more space or CPU
+========================================
+
+Chmod -R wasadmin:wasadm AppServerBase1
+Chown -R wasadmin:wasdm DeploymentManager
+
+chown -R wasadmin:wasadm /opt/WebSphere/8_5/AppServerBase1 ; chmod -R 775 /opt/WebSphere/8_5
+=========================================
+
+0 2 * * * /sysap/operation/scripts/weblog_clean.ksh | tee -a /sysap/operation/scripts/logs/weblog_clean.out
+
+==========================================
+
+=========================================
+
+Port Conflicate 
+
+	lsof -i | grep 44175
+lsof -i:port number --> You will get which process are using same process.(once you get id related to that you may kill id and restard the services )
+I have tried a couple of options, but I want something quick:
+ 1. lsof -i :445 (Takes seconds)
+ 2. netstat -an |grep 445 |grep LISTEN (Takes seconds)
+ 3. telnet (it doesn't return)
+ 4. nmap, netcat are not available on the server 
+ 
+Example:-
+root@bdc1rctoihap11 WAS85]# lsof -i | grep 44175
+main      10067     root  112u  IPv4   37188      0t0  TCP bdc1rctoihap11:44175->63.141.177.31:can-nds (ESTABLISHED)
+[root@bdc1rctoihap11 WAS85]# ps -ef | grep 10067
+root     10067     1  0 03:52 ?        00:03:10 /opt/IBM/ITM/lx8266/yn/bin/kynagent
+root     10119 10067  0 03:52 ?        00:00:00 /bin/sh /opt/IBM/ITM/dchome/7.2.0.0.13/jmxdc/bin/JMXServer.sh -temaport=63335
+root     30245 56195  0 12:15 pts/2    00:00:00 grep 10067
+
+
+=========================================
+
+[?11-?09-?2017 12:06]  
+8.0.0.13-WS-WAS-IFPI76509_8.0.13.20170307_1952 
+bash-4.2#
+bash-4.2# ./imcl listAvailableFixes com.ibm.websphere.ND.v80_8.0.13.20170202_0013 -repositories /middleware/WebSphere/2017_FixPacks/8/jdk_fix 
+8.0.0.13-WS-WAS-IFPI76509_8.0.13.20170307_1952
+bash-4.2# .imcl <IFIX on the server> -repositories location
+
+
+
+./imcl install 8.0.0.13-WS-WAS-IFPI76509_8.0.13.20170307_1952 -repositories /middleware/WebSphere/8/WAS8_iFix -installationDirectory /opt/WebSphere/8/AppServerBase1 -
+
+acceptLicense -sVP &
+
+
+./imcl install 8.0.0.13-WS-WAS-IFPI76509_8.0.13.20170307_1952 -repositories /middleware/WebSphere/8/WAS8_iFix -installationDirectory /opt/WebSphere/8/AppServerBase1 -
+
+acceptLicense -sVP &  
+ 
+============================================
+how to find out  what JVM is behind 192.168.84.20 port 80 on r02jbweb06.
+
+Just type goto /opt/IBM/HTTPD/./findip usethis command  you will get all ips are bindded to JVM
+
+===============================
+
+Take a back up of this file befor patching
+/opt/WebSphere/7/ AppServerBase1/java_1.7*/jre/lib/security
+/opt/WebSphere/7/AppServerBase1/java/jre/lib/security
+US_export_policy.jar
+local_policy.jar
+java.security
+cacerts
+
+tar -cvf /opt/IBMHTTPD/Https-EB-EPSOPS-Perf-A-Rdy-7_1.tar https-EB-EPSOPS-Perf-A-Rdy-7_1 same location of webserver 
+=====================================
+
+RUN--> \\Ip
+
+\\ Ip \drive Location$
+
+========================================
+Crontab
+
+Adding the crontab entry:
+You need to be careful when adding a new crontab schedule as if there are existing crontabs that you do not overwrite them, but add them to the existing file.
+
+As root
+
+1.Write the current crontab entry to a file:
+crontab -l > cron_file
+
+Edit the file and add the following lines to the end of the file:
+#
+# Self-heal - supported by DSS_Middleware
+#
+0,15,30,45 * * * * /sysap/selfheal/selfheal.sh /sysap/selfheal/selfheal.properties >/dev/null 2>&1
+
+Submit the crontab:
+crontab cron_file
+
+
+2.Verify the cron schedule was added by checking the output of:
+crontab -l
+
+bash-3.2# /sbin/ifconfig -a|grep 'IP'
+=====================
+
+heap dump clear 
+
+ls -ltrh heapdump*
+
+[/opt/WebSphere/7/AppServerBase1/java/bin]
+# ./jmap -d64 -dump:format=b,file=heap.dump.out -F 11942  (this also worlking)
+Attaching to process ID 11942, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 20.65-b04
+Dumping heap to heap.dump.out ... 
+11942 is PID
+====================================================================================
+
+When you get nodagnet conflict problem you have go this path 
+/opt/WebSphere/8/AppServerBase1/profiles/AppServerBase2/logs/nodeagent
+
+and do 
+
+wasadmin@r02dmapp11x [/opt/WebSphere/8/AppServerBase1/profiles/AppServerBase2/logs/nodeagent]
+# more nodeagent.pid
+8705
+wasadmin@r02dmapp11x [/opt/WebSphere/8/AppServerBase1/profiles/AppServerBase2/logs/nodeagent]
+# kill -9 8705
+
+wasadmin@r02dmapp11x [/opt/WebSphere/8/AppServerBase1/profiles/AppServerBase2/logs/nodeagent]
+# /usr/ucb/ps -auwwxx | grep nodeagent | grep /opt/WebSphere/8/AppServerBase1/profiles/AppServerBase2
+
+wasadmin@r02dmapp11x [/opt/WebSphere/8/AppServerBase1/profiles/AppServerBase2/bin]
+# ./startNode.sh
+ADMU0116I: Tool information is being logged in file
+           /opt/WebSphere/8/AppServerBase1/profiles/AppServerBase2/logs/nodeagent/startServer.log
+ADMU0128I: Starting tool with the AppServerBase2 profile
+ADMU3100I: Reading configuration for server: nodeagent
+ADMU3200I: Server launched. Waiting for initialization status.
+ADMU3000I: Server nodeagent open for e-business; process id is 16623
+
+====================================================================================
+
+Ho to check the old Gen full try following 2 options
+1./usr/ucb/ps -aluxww | grep DX_Insight_Prd_P01dxapp01h_9
+This give you the PID for the JVM = 761
+
+Now use JVM’s java path and run the following command:
+
+# /opt/WebSphere/8/AppServerBase1/java/bin/jstat -gcold -h10 761 2500
+
+2.
+Option 2  - tail the  GC log
+
+# tail -f DX_Insight_Prd_P01dxapp01h_9_native_stdout.log
+
+
+==========================================
+To check GC memory 
+/opt/WebSphere/8/AppServerBase1/java/bin/jstat -gcold -h10 21538 2500  21 is process id 
+
+========================================
+how to get JVM name with the help of port number 
+
+1. lsof -i:29629   or /usr/ucb/ps -aluxww | grep pid
+2. root@r02ihapp01a: # ps -ef | grep  7012858
+
+===============================================
+
+cd /opt/W*
+cd A*1 
+================================================
+
+mqm@mke5afismqap2: $ lsgroup cspprod
+3004-686 Group "cspprod" does not exist. 	
+
+
+================================================
+
+===============================================
+To create .war to .ear file 
+
+To create an .ear file for your EJB
+
+jar -cvf myApplication .ear myService.jar 
+
+https://supportline.microfocus.com/documentation/books/Server_EE_60_for_UNIX/thdpoy10.htm
+===============================================
+
+"you can check queue manager is running any place using dspmq just run or dspmq -o all or dspmqm or  ps -ef | grep mqm
+1.dspmq
+2.ps -ef | grep mqm
+
+1. runmqsc Qmgrname
+
+2. display qlocal(qname)
+   curdepth
+3. display lsstatus(*)
+
+4.display chstatus(chlname)
+
+1. The following command displays queue managers on this server:
+
+dspmq -o all"
+
+"su - mqm you should be in this id 
+
+1. ps -ef | grep mqlsr    1 first step 
+
+2. ps -ef | grep SH.FSE.P.QM1  2 Second step 
+
+3. runmqsc SH.FSE.P.QM1  Then run this one  you need to check all mq local queue in give mail like this below 
+
+4. DISPLAY QLOCAL(SH.FSE.ACCEPT.MESSAGE.LQ) LQ local queue 
+DISPLAY QLOCAL(SH.FSE.STATUS.UPDATE.LQ)
+DISPLAY QLOCAL(SH.FSE.STOP.LQ)
+DISPLAY QLOCAL(SH.FSE.MO.LQ)
+
+SH.FSE.ACCEPT.MESSAGE.LQ 
+SH.FSE.STATUS.UPDATE.LQ
+SH.FSE.STOP.LQ
+SH.FSE.MO.LQ"
+To take queue manager backup 
+mqbackup -m QM_name  
+ 'MBCS!MBSVR!552!LOGTXN!LQ'
+cd /opt/mqm/install/MQ_LogRotate
+./cleanmqlogs -z MBCS.MBSVR.P.QM1
+cd /var/mqm02/log/MBCS\!MBS/active/
+
+
+ dspmq -o installation - It will show the instllation directory
+ /var/mqm/qmgrs/SH!FSE!U!QM1  -- In this directory you will get all details
+ 
+ channel,errors,listener,topic,ssl,queues,
+ 
+ all these are below
+@app           @qmpersist     authinfo       clntconn       listener       namelist       qm.ini         queues         ssl
+@ipcc          active         blockaddr.ini  comminfo       master         plugcomp       qmanager       scratch        startprm
+@qmgr          amqalchk.fil   channel        errors         mqat.ini       procdef        qmstatus.ini   services       topic
+
+===============================================
+Error
+
+
+
+2. |ERROR|2017-07-30 18:17:09.366 - CDT|bc1b7500-757c-11e7-a1e5-00000a1ef4be|JSession Unknown|EASRetrieveBankAlertInfoXmlDAO.composeSdnMatchSummarySvcRequest
+
+():RemoteException javax.net.ssl.SSLException: Connection has been shutdown: javax.net.ssl.SSLHandshakeException: No appropriate protocol|null||||RUNNING|r02dxapp01d|
+
+Session Unknown|null||Thread[WebContainer : 2,5,main]|2017-07-30 18:17:09.366 - CDT||error|null|||IPV4|ICS|READINESS|WASX|PRESENTATION_TIER|2.0|UNK|||||||||jvm|
+Answer 
+=====
+
+2.I have patched  WAS8 AppServerBase1 to 8.0.0.13 on r02dmapp01a
+
+These are the nodes present on that
+
+r02dmapp01a_base1_node1 
+
+r02dmapp01a_base1_node2 
+
+
+rest all the changes were already in place I have verified them
+
+1.SSL certificate and key management > SSL configurations > CellDefaultSSLSettings > Quality of protection (QoP) settings
+
+2.and in profiles/ProfileNAme/properties
+ssl.client.properties
+soap.client.props
+sas.client.props
+change SSL_TLS
+to SSL_TLSv2
+
+3.and  in java/jre/lib/security
+edit java.seurity
+and in last line 
+jdk.tls.disabledAlgorithms=TLSv1
+
+===============================
+
+=================================
+bdc1afismqap1	Production		MQ Series: The Percentage of the Maximum Active Channels is high (91.0%).
+===================================
+# ./apachectl start
+httpd: Could not reliably determine the server's fully qualified domain name, using 10.20.94.151 for ServerName
+(126)Cannot assign requested address: make_sock: could not bind to address 10.20.94.169:80
+no listening sockets available, shutting down
+Unable to open logs 
+
+
+once the unix pacthing done webserever not able to start it is missing the ip  , then unix team configured ip in server the working fine.
+
+root@p01dxapp01e [/opt/IBMHTTPD/https-DX-Jacada-Prd-85]
+# grep 10.20.94.169 /opt/IBMHTTPD/https-DX-Jacada-Prd-85/conf/httpd.conf
+Listen 10.20.94.169:80
+===========================================
+
+Subject: I170770880 || Could not generate DH keypair
+
+1)	Upgrade the java sdk to the latest 
+2)	Add “ jdk.tls.disabledAlgorithms=DHE “ in java.security file under “/opt/WebSphere/8_5/AppServerBase1/java_1.7_64/jre/lib/security/”
+
+Both requires a change record and has to be troubleshooted post the change and see which can help us fix the issue 
+============================================
+Receving MQ EXCEPTON:MQJE001: COMPLETION CODE '2', REASON '2035' on eWire System environment
+Dear Team,
+
+eWire has MQ based connection to OLB application. eWire System environment is not able to get messages from OLB.
+
+Error : MQ EXCEPTON:MQJE001: COMPLETION CODE '2', REASON '2035'
+
+eWire System Server Details:
+Host Name : d05jbapp08
+IP Address : 10.8.226.62
+
+MQ Details:
+Host name : mke5afismqap2.fnfis.com
+Port : 4525
+Queue Manager Name : GWGFTSQ1
+Channel : SYS.SVRCONN.TCP.CHL2
+Queue : GW.OLB.EWIRE.PAYMENT.LQ
+============================================================
+
+[11/15/17 5:16:48:125 CST] 00000033 SystemOut     O CWPKI0022E: SSL HANDSHAKE FAILURE:  A signer with SubjectDN "CN=d05jbapp06" was sent from target host:port 
+
+"localhost:33904".  The signer may need to be added to local trust store 
+
+"/opt/WebSphere/7/AppServerBase1/profiles/AppServerBase1/config/cells/System_Cell/nodes/d05jbapp08_base1_node1/trust.p12" located in SSL configuration alias 
+
+"NodeDefaultSSLSettings" loaded from SSL configuration file "security.xml".  The extended error message from the SSL handshake exception is: "PKIX path building 
+
+failed: java.security.cert.CertPathBuilderException: unable to find valid certification path to requested target".
+[11/15/17 5:16:48:126 CST] 00000033 SystemOut     O 
+
+[11/15/17 5:16:48:127 CST] 00000033 SystemOut     O 
+[11/15/17 5:16:48:127 CST] 00000033 SystemOut     O CWPKI0428I: The signer might need to be added to the local trust store. You can use the Retrieve from port option 
+
+in the administrative console to retrieve the certificate and resolve the problem. If you determine that the request is trusted, complete the following steps: 1. Log 
+
+into the administrative console.  2. Expand Security and click SSL certificate and key management. Under Configuration settings, click Manage endpoint security 
+
+configurations. 3. Select the appropriate outbound configuration to get to the (cell):System_Cell:(node):d05jbapp08_base1_node1 management scope. 4. Under Related 
+
+Items, click Key stores and certificates and click the NodeDefaultTrustStore key store. 5. Under Additional Properties, click Signer certificates and  Retrieve From 
+
+Port.  6. In the Host field, enter localhost in the host name field, enter 33904 in the Port field, and localhost_cert in the Alias field. 7. Click Retrieve Signer 
+
+Information.  8. Verify that the certificate information is for a certificate that you can trust. 9. Click Apply and Save.
+
+Can this be renamed to idp_root.cer and can the old root.cer be restored?  This is causing other teams issues.  I didn’t consider that the certs were added to the 
+
+truststore this morning when I was informed that the TLS1.2 change would not work as requested.
+
+===================
+Business Impact:
+Everbank and Bank of Leumi had issues connecting the MQ server using their prime applications
+
+Current Status:
+An issue with Primary group association for mqm ID which was introduced by BoKs at some point which caused some Queue managers to not start, its a WebSphere MQ 
+
+behavior to not start the Queue manager if the mqm ID is NOT associated with Primary group mqm.
+There is a possibility that Boks had created application group for CIBC and the two BDOC MQ servers were for some reason part of this group.
+So they were getting incorrect group assignments. To resolve the issue UNIX team modified the /etc/passwd file for proper UID-GID mapping at 1:50 CT. 
+Later at 4:45 CT, Boks team removed the two MQ servers from the larger BoKS Application group to be moved to a dedicated group with proper UID and GUID combination, so 
+
+that the incorrect UID and GID mappings do not resurface when the /etc/passwd file is pushed. 
+
+Resolution Time: 01:50 CT
+Bridge disbanded at : 04:54 CT
+
+
+Scope of Impact:
+Everbank and Bank of Leumi had issues connecting the MQ server using their prime applications
+
+Root Cause and Resolution:
+The root cause is still being researched. 
+
+======================
+We(CeB) are not receiving the Authentication related messages from eAM at this point of time. Could you please assign this to someone to validate the below:
+MQ related.
+Answer :- Listern prot was down so we have start then working fine.
+
+take one more issue form subbu mail
+
+247 Error messages form detailded logs
+
+stirng was not recognized as a valid date time
+
+there were 8 messages was stucked in queue so we have cleared the working fine .
+
+=============================================
+
+
+Listener
+=======
+A listener port is a component of the application server that monitors a JMS destination, looks for messages, and is managed by the message listener service.
+
+Server->server1->communication->messaning->Message Listener Services -> Listener port
+Applicatioin -
+
+Steps to create JMS and Q in admin console. 
+
+1. JMS:- It provides Connection factory for JVM destinaiton.A JMS provider enables messaging based on the Java Message Service (JMS). It provides J2EE connection factories to create connections for JMS destinations
+
+click on Queue conneciton factory -> New -> select the socp of may be cell level of node level -> select provide  -> give the name of CF -> JNDI NAME -> Queue Manager name -> transprot type - client -> hotstname -> port number -> server connetion channel name -> 
+1.Scop :- Celllevel or node level.
+2.Select provide :-  Websphere MQ messaging provider.
+3.Give the name of CF :- 
+4.JNDI Name :- 
+5.Queue Manager name :- 
+6.Transport type :- Client
+7.Host Name :- 
+8.Port number :- 4501
+9.Server Connection channel:-
+
+2. Creating Q in Admin cosole 
+
+	click on Queues and provide scop,providertype,Name,JNDIName.
+
+
+
+2. Connetion Factory :- A connection factory is used to create connections to the associated JMS provider. These connection factories can be used for accessing JMS Queue and JMS Topic destinations. 
+
+3. Queue connection factories :- A queue connection factory is used to create connections to the associated JMS provider of the JMS queue destinations, for point-to-point messaging.
+
+4. Activation Specificaiton :- A JMS activation specification is associated with one or more message-driven beans and provides configuration necessary for them to receive messages.
+
+======================================
+C9510-401
+
+Candidate Testing ID: IBM000195871
+
+C9510-401: IBM WebSphere Application Server Network Deployment  V8.5.5 and Liberty Profile System Administration
+======================================
+
+
+complet remove portal server or WAS server 
+==========================================
+goto->InsatallationManager->eclips_->tools-> imcl listInstalledPacakges
+1. imcl unInstallAll (websphere,webSere,Plugin) , page name 
+2. imcl unInstall installaion manager package  
+3. Killall -9 java
+4. cd /opt/IBM/;rm -rf *
+5. cd /home/wasadm/; rm -rf *
+6. cd /var; rm -rf .java
+7. cd /root; rm -rf .java
+8. cd rm -rf /opt/.ibm/
+
+==========================================
+
+
+
+
+1.X-XSS-Protection
+Header set X-XSS-Protection "1; mode=block"
+
+2.HTTP Strict Transport Security
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+3.X-Frame-Options
+Header always append X-Frame-Options DENY
+
+4.X-Content-Type-Options or Probable mime sniffing
+Header set X-Content-Type-Options nosniff
+
+5.Content Security Policy
+Header set Content-Security-Policy "default-src 'self';"
+
+Please Note: Test it in UAT and then move to Production or DR as the case may be.
+
+===================================================
+
+grep -iE "error|exception|fail|Caused by" /opt/IBM/WAS/8.5/logs/manageprofiles/AppSrv01_create.log | tail -n 20
+
+
+
+
+

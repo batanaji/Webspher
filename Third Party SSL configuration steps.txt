@@ -1,0 +1,186 @@
+SSL Certificate Creation and Configuration Process
+1. Key Database and CSR Creation
+
+Create the key database file (.kdb).
+
+Generate a Certificate Signing Request (CSR) by providing all required details.
+
+Send the generated CSR to the Certificate Authority (CA).
+
+Receive the certificates from the CA:
+
+Server (Personal) Certificate
+
+Root Certificate
+
+Intermediate Certificate(s)
+
+Import the received certificate files (.arm) into the .kdb file.
+
+Restart the web server.
+
+2. Certificate Validity
+
+Personal (Server) Certificate: Valid for 365 days
+
+Root and Intermediate Certificates: Valid for 10/5 years (as per organizational policy)
+
+3. Third-Party CA Certificate Configuration
+
+CSR generation URL:
+https://getacert.com/cert/getacert_csr.pl
+
+CA website:
+https://getacert.com/
+
+4. Certificate Types
+
+Personal (Server) Certificate: Contains the private key
+
+Signer / Root CA Certificate: Contains the public key
+
+Note: Web server CSR extension is .arm, and the returned certificate is usually in .cer format.
+
+Common Error
+Cannot parse certificates in file 
+'C:\Program Files\IBM\HTTPServer\conf\localhost-2026-01-06-045528.rdb'.
+It is not a valid certificate file.
+
+Creating the Key Database Using iKeyman
+
+Open the iKeyman utility:
+
+cd C:\Program Files\IBM\HTTPServer\bin\ikeyMan.sh
+
+
+Click Key Database File → New
+
+Select:
+
+Key Database Type: CMS
+
+File Name: cacertkey.kdb
+
+Location: Specify the desired path
+
+Enter a password for the key database.
+
+Set the expiration time for the database.
+
+Select Stash password to a file and click OK.
+
+Ensure:
+
+Database type is CMS
+
+The newly created key database is selected
+
+CSR Creation
+
+In Key Database Content, select Personal Certificate Requests
+
+Click New
+
+Enter the following CSR details:
+
+PostalCode : 545654
+ST         : KA
+L          : Bengaluru
+O          : IT
+OU         : Development
+CN         : localhost / FQDN
+C          : IN
+
+
+Enter a name for the CSR file and click OK
+
+A confirmation message will appear indicating that the CSR has been created.
+
+Send the generated CSR file to the Certificate Authority.
+
+Certificates Received from CA
+
+The CA will sign the CSR and return:
+
+Server Certificate (Personal Certificate)
+
+Root Certificate
+
+Intermediate Certificate(s)
+
+Installing Certificates
+1. Install Root Certificate
+
+Open the iKeyman utility.
+
+Open the existing key database file.
+
+Select Signer Certificates.
+
+Click Add, browse to the root certificate, and click OK.
+
+2. Install Server (Personal) Certificate
+
+In Key Database Content, select Personal Certificates.
+
+Click Receive.
+
+Browse to the server certificate file.
+
+On successful validation, click OK.
+
+IBM HTTP Server (IHS) SSL Configuration
+
+Add the following configuration to the IHS configuration file:
+
+LoadModule ibm_ssl_module modules/mod_ibm_ssl.so
+
+Listen 0.0.0.0:443/
+# IPv6 support:
+Listen [::]:443
+
+SSLCheckCertificateExpiration 30
+
+<VirtualHost *:443>
+  ServerName localhost
+  SSLEnable
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</VirtualHost>
+
+KeyFile "C:/Program Files/IBM/HTTPServer/conf/cacertkey.kdb"
+SSLStashFile "C:/Program Files/IBM/HTTPServer/conf/cacertkey.sth"
+
+
+Restart the IBM HTTP Server and verify the SSL certificate.
+
+Certificate Chain Order
+
+Root Certificate
+
+Intermediate Certificate
+
+Server Certificate (Personal Certificate)
+
+Example OpenSSL CSR Command
+openssl req -new -newkey rsa:1024 -nodes \
+-out own_getacert_com.csr \
+-keyout own_getacert_com.key \
+-subj "/C=US/ST=Washington/L=Seattle/O=getaCert/CN=*.getacert.com"
+
+Common Issues After Applying SSL Certificates
+
+DNS hostname mismatch
+
+Typographical errors in certificate details
+
+Missing root or intermediate certificates in the chain
+
+SSL handshake errors
+
+SSL handshake failure due to DNS issues (when another system communicates with the mainframe)
+
+SSL handshake failure due to Common Name (CN) mismatch
+
+Application login failure due to SSL errors
+
+Handshake errors originating from specific hostnames

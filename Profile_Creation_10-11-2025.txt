@@ -1,0 +1,53 @@
+
+./manageprofiles.sh -create -profileName AppServ03 -profilePath /opt/IBM/WAS/9.0/profiles/AppServ03 -templatePath /opt/IBM/WAS/9.0/profileTemplates/default/
+  cd /opt/IBM/WAS/9.0/profiles/AppServ03/
+  ps -ef | grep java
+  ps -ef| grep j
+  clear
+  ps -ef | grep java
+  top
+  cd bin/
+  pwd
+  clear
+  pwd
+  ./startServer.sh server3
+  ./startServer.sh server1
+  ./stopServer.sh server1
+  grep -i "Stopped" /opt/IBM/WAS/9.0/profiles/AppServ03/logs/server1/
+  grep -i "Stopped" /opt/IBM/WAS/9.0/profiles/AppServ03/logs/server1/stopServer.log
+  tail -f /opt/IBM/WAS/9.0/profiles/AppServ03/logs/server1/stopServer.log
+  clear
+  pwd
+  cd ..
+  cd ../profileTemplates/
+  ll
+  history
+  pwd
+  clear
+  cd ..
+  cd bin/
+  pwd
+  ./manageprofiles.sh -create -profileName dmgr -profilePath /opt/IBM/WAS/9.0/profiles/dmgr -templatePath /opt/IBM/WAS/9.0/profileTemplates/dmgr/
+  cd ..
+  pwd
+  cd profiles/dmgr/bin/
+  clear
+  history
+  history |grep -i "start"
+  clear
+  ./startManager.sh dmgr
+  ./startManager.sh
+  ps -ef | grep 129231
+  clear
+  top
+  ps -ef | grep jvaa
+  ps -ef | grep java
+  ./stopManager.sh
+  history
+  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.PLG.v90_9.0.5024.20250528_1830 com.ibm.java.jdk.v8_8.0.8055.20251007_2253 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.PLG.v90 -installationDirectory /opt/IBM/Plugins -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+  clear
+  /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages   -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.PLG.v90 -prompt
+  history
+  history | grep -i "manage"
+  history
+[ip-172-31-19-246 bin]#
