@@ -1,0 +1,36 @@
+Installing...
+If there are enterprise beans in the application, the EJB deployment process can take several minutes. Do not save the configuration until the process completes.
+
+Check the SystemOut.log on the deployment manager or server where the application is deployed for specific information about the EJB deployment process as it occurs.
+
+ADMA5016I: Installation of Dynamic Cache Monitor started.
+
+ADMA5067I: Resource validation for application Dynamic Cache Monitor completed successfully.
+
+ADMA5058I: Application and module versions are validated with versions of deployment targets.
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+ADMA5081I: The bootstrap address for client module is configured in the WebSphere Application Server repository.
+
+ADMA5053I: The library references for the installed optional package are created.
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+ADMA5001I: The application binaries are saved in /opt/IBM/WAS/9.0/profiles/dmgr/wstemp/0/workspace/cells/ip-172-31-19-246Cell01/applications/Dynamic Cache Monitor.ear/Dynamic Cache Monitor.ear
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+SECJ0400I: Successfully updated the application Dynamic Cache Monitor with the appContextIDForSecurity information.
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+ADMA5113I: Activation plan created successfully.
+
+ADMA5011I: The cleanup of the temp directory for application Dynamic Cache Monitor is complete.
+
+ADMA5013I: Application Dynamic Cache Monitor installed successfully.
