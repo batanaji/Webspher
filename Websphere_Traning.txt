@@ -1,0 +1,2966 @@
+
+https://meet.google.com/yax-qccx-gdw?pli=1
+
+https://drive.google.com/drive/folders/1Gu4zY0_RJ1vxen80povKX4-7rztfkfRN?usp=drive_link
+
+[root@ip-172-31-19-246 ~]# sudo systemctl stop firewalld
+[root@ip-172-31-19-246 ~]# sudo systemctl disable firewalld
+Removed '/etc/systemd/system/multi-user.target.wants/firewalld.service'.
+Removed '/etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service'.
+[root@ip-172-31-19-246 ~]# sudo systemctl stop firewalld.service
+[root@ip-172-31-19-246 ~]# sudo systemctl disable firewalld.service
+
+
+sudo firewall-cmd --permanent --add-port=8879/tcp
+sudo firewall-cmd --permanent --add-port=9043/tcp
+sudo firewall-cmd --permanent --add-port=9061/tcp
+sudo firewall-cmd --permanent --add-port=8878/tcp
+sudo firewall-cmd --permanent --add-port=9080/tcp
+sudo firewall-cmd --permanent --add-port=9443/tcp
+sudo firewall-cmd --reload
+
+id - tanajibajgire75@gmail.com
+pass - R@inbow@7878
+
+R@inbow@7878
+
+custom profile - managed. 	
+
+
+IM ( Installation Manager)
+D:\IBM\Installation Manager\eclipse\tools\imcl - Linux / ZOS
+D:\IBM\Installation Manager\eclipse\IBMIM
+
+Liberty profiles
+
+D:\IBM\wlp-kernel-21.0.0.2\wlp\templates\servers
+
+Application SSL keystore format : - .jks,.p12 (.pfx - windows)
+Plugin SSL - (we have to get import turstsotre and keystore cert from applicaiton 
+Webserve - .kdb and .sth ( - kdb - main cer and .sth - password. )
+
+server load - 0 - 20 by default ( algorithm)
+
+Fedration change . 
+
+2 types fedration (Admin consle and command ) port number 8879 SOAP 
+
+./addNode.sh hostnamedmgr SOPA (8879)
+1. Cell name of application server will be replace with DMGR cell name 
+2. syn between node and Cell will enable 
+3. epoch number 
+4. we will get nodeagent 
+5. Nodeagent you can start and stop using command line statNode.sh and stopNode.sh 
+
+webserver - 
+Manged node - We will have syn in admin consle
+Unamanged node - we have to copy the copy manully 
+
+
+Steps to instal WAS 
+
+First we have to install Installation manager
+1. WebSphere 
+2. Webserve 
+3. Plugin
+
+Need to check with you manager on below points
+
+1. Creating servers
+2. Creating Cluster 
+3. Creating DMGR, 
+4. Log in server and do the installtion
+
+
+Softwares Putty and WinSCP installtion and configuraitn
+Basic Linux commnads.
+
+3 types of installation (GUI, command line , online)
+
+WebSphere Edition and Installation methtods 
+
+Hydbrd , ND, BASE
+websphere Edition (ND,BASE,Liberty core)
+
+sudo mkdir -p /opt/IBM/InstallationManager
+cd /opt/IBM/InstallationManager
+/opt/IBM/WebSphere/AppServer 
+
+Installation Manage steps to install in Linux
+
+1. Using downloade software
+2. Online using IBM id
+
+WebSphere Application server installtion 
+
+1. GUI - 
+2. command - imcl 
+	 1. Installation Manager 
+		
+ 
+3. Using IBM UID and password 
+
+Types of Packages
+
+1. WebSphere Basic - Here we will have standaloe profiles ( 
+2. WebSphere ND - ( Cluster, DMGR, HA,LB)
+3. Hydbrd
+
+
+
+-install	- Installs one or more packages.
+-updateAll - 	Updates all installed packages.
+-update	- Updates specific packages.
+-uninstall - 	Removes packages.
+imcl unInstallAll (websphere,webSere,Plugin) , page name 
+-listInstalledPackages	- Lists installed packages.
+-listAvailablePackages	- Lists available packages in a repository. 
+-listInstalledPackages -long	Shows detailed info on installed packages.
+-help	- Displays help for specific commands.
+-repositories [URL	path]`
+-installationDirectory [path]	Target installation directory.
+-showProgress	Displays progress while running.
+-acceptLicense	Accepts license agreements automatically (required for silent mode).
+-secureStorageFile [file]	Specifies a secure storage file for credentials.
+-masterPasswordFile [file]	Specifies the master password file used with secure storage.
+-log [file]	Specifies a log file.
+-verbose	Displays detailed output.
+-preferences [key=value,...]	Sets installation preferences.
+`-accessRights [admin	nonAdmin]`
+-input [responseFile.xml]	Uses a response file for silent installations.
+-connectPassportAdvantage	Connects to IBM Passport Advantage site. - User and password - connect to ibm software repositories
+-dataLocation [path]	Specifies shared resources directory.
+
+
+Example : - 
+
+Installation manager 
+
+you need to crete the directories 
+/opt/IBM/InstallationManager/ - IM
+/opt/IBM/AppServer/AppServer - WebSphere
+/opt/IBM/Webserve - Webserve
+/opt/IBM/Webserve/Plugin - Plugin
+
+./imcl install com.ibm.cic.agent~1.10.1000.20241118_1329 
+    -repositories /opt/IBM/InstallationManager/InstallationManagersoftware/repository.config
+    -installationDirectory /opt/IBM/InstallationManager/
+    -acceptLicense
+	-logs /tmp/IMinstalltion.log
+
+2. ./imcl install com.ibm.websphere.ND.v90_9.0.5005.20181115_1821 \
+  -repositories /software/repo/
+  -installationDirectory /opt/IBM/WebSphere/AppServer \
+  -acceptLicense -showProgress -log /tmp/imcl_install.log
+  
+  
+1. Webserve Application
+2. Webserve
+3. Plugin 
+  
+imcl listInstalledPackages -long
+
+
+imcl uninstall com.ibm.websphere.ND.v90_9.0.5005.20181115_1821 \
+  -installationDirectory /opt/IBM/WebSphere/AppServer \
+  -log /tmp/imcl_uninstall.log
+
+imcl updateAll -repositories /software/repo \
+  -acceptLicense -installationDirectory /opt/IBM/WebSphere/AppServer
+  
+8.0.5.10 
+8.0 - Verison 
+5 - Refresh apck - minore change form IBM 
+11 - fix - Security Vul, applicaiton, DB, Infratsture, OS fix ect. 
+
+imcl listAvailablePackages -repositories /software/repo
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+/opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages \
+    -repositories /mnt/was/repository
+
+./imcl /opt/IBM/InstallationManager/agent.installer.linux.gtk.x86_1.4.4000.20110525_1254
+
+/opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.ND.v90 \
+    -repositories /mnt/was/repository \
+    -installationDirectory /opt/IBM/WebSphere/AppServer \
+    -acceptLicense \
+    -silent \
+    -showProgress \
+    -log /tmp/was_silent_install.log
+	
+	com.ibm.cic.agent_1.4.4000.20110525_1254
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+IBM software repositories 
+
+https://www.ibm.com/support/fixcentral/swg/selectFixes?fixids=8.0.2.0-Rational-RAD-groupfixpack&product=ibm%2FRational%2FIBM%20Rational%20Application%20Developer%20for%20WebSphere%20Software&source=dbluesearch&mhsrc=ibmsearch_a&mhq=Websphere%20&function=fixId&parent=ibm/Rational
+https://www.ibm.com/support/fixcentral/swg/selectFixes?parent=ibm%7ERational&product=ibm/Rational/IBM+Installation+Manager&release=1.10.1.3&platform=All&function=all&useReleaseAsTarget=true
+
+Installation manager will install once you unzip the package of IM
+
+Steps 1. Installation manager steps
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/opt/IBM/InstallationManager
+unzip agent.installer.linux.gtk.x86_64_1.10.1000.20241118_1329.zip
+
+[root@ip-172-31-19-246 InstallationManager]# ./installc -acceptLicense
+Installed com.ibm.cic.agent_1.10.1000.20241118_1329 to the /opt/IBM/InstallationManager/eclipse directory.
+[root@ip-172-31-19-246 InstallationManager]#
+
+[root@ip-172-31-19-246 uninstall]# ./uninstallc
+Uninstalled com.ibm.cic.agent_1.10.1000.20241118_1329 from the /opt/IBM/InstallationManager/eclipse directory.
+[root@ip-172-31-19-246 uninstall]#
+
+
+Lists
+
+[root@ip-172-31-19-246 tools]# ./imcl listInstalledPackages -long
+
+
+[root@ip-172-31-19-246 tools]# ./imcl -version
+Installation Manager (install kit)
+Version: 1.10.1
+Internal Version: 1.10.1000.20241118_1329
+Architecture: 64-bit
+
+Unzip packages
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+unzip CZM9KML.zip
+unzip CZM9LML.zip
+unzip CZM9MML.zip
+
+[root@ip-172-31-19-246 tools]# /opt/IBM/InstallationManager/tools/imcl version
+
+List available packages for WebSphere
+
+[root@ip-172-31-19-246 tools]# /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages -repositories /opt/IBM/WAS/8.5/repository.config
+com.ibm.websphere.ND.v80_8.0.0.20110503_0200
+[root@ip-172-31-19-246 tools]#
+
+/opt/IBM/AppServer/AppServer/profiles/config/DMGR/
+/opt/IBM/AppServer/AppServer/profiles/config/DMGR/Config/cell/cell name/node/ different node1, node1, 
+
+Cell.xml - ( all nodes)
+security.xml ( SSL 1.2, TLS1.2, user and password of certifcate in this file we can see.)
+Virtualhost.xml (conext root info) https:hostname:port:/apt
+resources.xml - ( all resources)
+Variable.xml 
+ssl.client.prop. - This wll have SSL configuration
+soap.client.prop. - 
+node.xml - here we will have node level config.
+server.xml - This file will conten all the server releared info. 
+serverindex.xml - This will conetent all port number ( 80, http, 443 https , 9060 admin console , 9043 Sercure port. other port soap - 8879)
+
+http://hostname:9061/ibm/console
+
+Logs :- 
+
+
+/opt/IBM/AppServer/AppServer/profiles/DMGR/logs/server/
+
+Websphere log 											   /Nodeagent/
+1. systemout.log - All activity will record (info,debug)
+2. systemerror.log - (Error logs will print) 
+3. FFDC logs - This is first faluire log will be print. 
+4. addNode.log - fedration - all the activity it will print in this log.
+5. 
+
+WebServer logs 
+
+1. access.logs - ( 200,203, all info. 500)
+2. error.log - ( error will print)
+
+Plugin 
+
+1. plugin.log - 
+
+
+Database logs. 
+
+
+
+To create profile  command 
+
+/opt/IBM/AppServer/AppServer/profileTempalates 
+
+											1. Cell   - Cell profiles 
+											2. default - Application defauls 
+											3. managed - Admin agent profile.
+											4. managemenet - 
+											5. secureporxy - secure profile 
+											6. dmgr 
+											
+/opt/IBM/AppServer/AppServer/bin/manageprofiles.sh 
+
+To start and sotp WebSphere applicaiton server  (DMGR)
+
+startManager.sh  | stopManager.sh
+
+To Star and stop the node agent 
+
+startNode.sh (you don't have option to strart)
+stopNode.sh
+
+To Start and stop server 
+
+startServer.sh applicaiton server name 
+
+stopServer.sh applicaiton server name 
+
+startServer.sh adminagent
+stopServer.sh adminagent.
+
+
+											
+
+/opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.ND.v80_8.0.0.20110503_0200 -acceptLicense -repositories /opt/IBM/WAS/8.5/repository.config -installationDirectory /opt/IBM/WAS/8.5/ -record /opt/IBM/response_WebSphereAppServer.xml -sP
+
+1. Installation of Websphere 
+2. Creating profile
+3. Config
+4. Fedration 
+
+OneLine installation
++++++++++++++++++++++++++++
+
+Step 1 : List out the package using IBM login user and password 
+
+[root@ip-172-31-19-246 tools]# /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.ND.v90 -prompt
+
+
+IBM account uid and password : - 
+
+Step 2 : Installation of WebSphere Application server
+
+[root@ip-172-31-19-246 tools]# /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.ND.v90_9.0.5024.20250528_1830 com.ibm.java.jdk.v8_8.0.3000.20160526_1317 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.ND.v90 -installationDirectory /opt/IBM/WAS/8.5 -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+Enter the master password to unlock credentials storage:
+                 25%                50%                75%                100%
+------------------|------------------|------------------|------------------|
+............................................................................
+Installed com.ibm.websphere.ND.v90_9.0.5024.20250528_1830 to the /opt/IBM/WebSphere/AppServer directory.
+Installed com.ibm.java.jdk.v8_8.0.3000.20160526_1317 to the /opt/IBM/WebSphere/AppServer directory.
+[root@ip-172-31-19-246 tools]#
+
+Step 3. check the version 
+
+cd /opt/IBM/WebSphere/AppServer/bin
+[root@ip-172-31-19-246 bin]# ./versionInfo.sh
+
+
+/opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.ND.v85_8.5.5018.20200910_1821 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.ND.v85 -installationDirectory /opt/IBM/WAS/8.0 -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+com.ibm.websphere.ND.v85_8.5.5018.20200910_1821
+
+
+https://www.ibm.com/software/repositorymanager/com.ibm.websphere.ND.v90
+
+uid - batanaji75@gmail.com /R@inbow@7878
+
+master password - R@inbow@7575
+
+Step 4 : Installation of IHS webServer
+
+ a. First list the packages. 
+ 
+  /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages   -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.IHS.v90 -prompt
+  
+  /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages   -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.ND.v85 -prompt
+  
+  https://www.ibm.com/software/repositorymanager/com.ibm.websphere.ND.v85
+
+ b. To install IHS use below command
+ 
+	[root@ip-172-31-19-246 bin]# /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.IHS.v90_9.0.5024.20250528_1830 com.ibm.java.jdk.v8_8.0.8055.20251007_2253 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.IHS.v90 -installationDirectory /opt/IBM/WAS/IHS -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -properties "user.ihs.httpPort=7777,user.ihs.allowNonRootSilentInstall=ture"  -prompt
+			Enter the master password to unlock credentials storage:
+							25%                50%                75%                100%
+			------------------|------------------|------------------|------------------|
+			............................................................................
+			Installed com.ibm.websphere.IHS.v90_9.0.5024.20250528_1830 to the /opt/IBM/HTTPServer directory.
+			Installed com.ibm.java.jdk.v8_8.0.8055.20251007_2253 to the /opt/IBM/HTTPServer directory.
+			
+			com.ibm.websphere.NDDMZ.v85_8.5.5018.20200910_1821
+	
+Step 5.  check the version of IHS use belw command
+
+[root@ip-172-31-19-246 bin]# pwd
+/opt/IBM/HTTPServer/bin
+[root@ip-172-31-19-246 bin]# ./versionInfo.sh
+
+
+Step 6. Install Plugin in 
+
+ a. First list the packages. 
+ 
+  /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages   -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.PLG.v90 -prompt
+
+ b. To  install Plugin use below command
+
+    [root@ip-172-31-19-246 bin]# /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.PLG.v90_9.0.5024.20250528_1830 com.ibm.java.jdk.v8_8.0.8055.20251007_2253 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.PLG.v90 -installationDirectory /opt/IBM/Plugins -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+			Enter the master password to unlock credentials storage:
+							25%                50%                75%                100%
+			------------------|------------------|------------------|------------------|
+			............................................................................
+			Installed com.ibm.websphere.PLG.v90_9.0.5024.20250528_1830 to the /opt/IBM/Plugins directory.
+			Installed com.ibm.java.jdk.v8_8.0.8055.20251007_2253 to the /opt/IBM/Plugins directory.
+			WARNING: Review the known side effects in 8.5.5.24/9.0.5.16 and later pertaining to: "PH48747: WebSphere web server plug-in changes to certificate hostname validation" (https://www.ibm.com/support/pages/node/6982543)
+			[root@ip-172-31-19-246 bin]#
+
+Step 7 Create Standalone Application server profile
+
+[root@ip-172-31-19-246 bin]# ./manageprofiles.sh -create -profileName AppServ01 -profilePath /opt/IBM/WAS/9.0/profiles/AppServ01 -templatePath /opt/IBM/WAS/9.0/profileTemplates/default/
+INSTCONFSUCCESS: Success: Profile AppServ01 now exists. Please consult /opt/IBM/WAS/9.0/profiles/AppServ01/logs/AboutThisProfile.txt for more information about this profile.
+[root@ip-172-31-19-246 bin]#
+
+Application server environment to create: Application server
+Location: /opt/IBM/WAS/9.0/profiles/AppServ01
+Disk space required: 200 MB
+Profile name: AppServ01
+Make this profile the default: True
+Node name: ip-172-31-19-246Node01
+Host name: ip-172-31-19-246.eu-north-1.compute.internal
+Enable administrative security (recommended): False
+Administrative console port: 9060
+Administrative console secure port: 9043
+HTTP transport port: 9080
+HTTPS transport port: 9443
+Bootstrap port: 2809
+SOAP connector port: 8880
+Run application server as a service: False
+Create a Web server definition: False
+Performance tuning setting: Standard
+
+
+ip-172-31-19-246.eu-north-1.compute.internal:9060/ibm/console
+
+ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:9061/ibm/console
+
+ec2-172-31-19-246.eu-north-1.compute.amazonaws.com:9062/ibm/console
+
+
+./startManager.sh dmgr ( Server name )
+
+./startServer.sh server1 ( Server name )
+
+statServer.log
+
+StopServer.log
+systemerror.log
+syserror.log
+addNode.log
+
+
+Problem with Momery releated logs will be write in
+
+
+server1.pid - it will have the process id 
+
+native_stdout.log
+native_stderro.log 
+ ./manageprofiles.sh -create -profileName dmgr -profilePath /opt/IBM/WAS/9.0/profiles/dmgr -templatePath /opt/IBM/WAS/9.0/profileTemplates/dmgr/
+ 
+ 1. AppServ01  - we will log in and chcck server detaile  ( Admin console will be disable this server we can see in DMGR)
+ 
+		1. Cell name will change to DMGR cell 
+ 
+ 2. dmgr - we will DMGR console and we will check all option (ip-172-31-19-246Cell01) 
+ 
+ AppServ01 - We will have fedration process using command line - This ( many changes 
+ 
+ 
+
+
+./manageprofiles.sh -create -profileName AppServ04 -profilePath /opt/IBM/WAS/9.0/profiles/AppServ04 -templatePath /opt/IBM/WAS/9.0/profileTemplates/default/
+  cd /opt/IBM/WAS/9.0/profiles/AppServ03/
+  ps -ef | grep java
+  ps -ef| grep j
+  clear
+  ps -ef | grep java
+  top
+  cd bin/
+  pwd
+  clear
+  pwd
+  ./startServer.sh server3
+  ./startServer.sh server1
+  ./stopServer.sh server1
+  grep -i "Stopped" /opt/IBM/WAS/9.0/profiles/AppServ03/logs/server1/
+  grep -i "Stopped" /opt/IBM/WAS/9.0/profiles/AppServ03/logs/server1/stopServer.log
+  tail -f /opt/IBM/WAS/9.0/profiles/AppServ03/logs/server1/stopServer.log
+  clear
+  pwd
+  cd ..
+  cd ../profileTemplates/
+  ll
+  history
+  pwd
+  clear
+  cd ..
+  cd bin/
+  pwd
+  ./manageprofiles.sh -create -profileName dmgr -profilePath /opt/IBM/WAS/9.0/profiles/dmgr -templatePath /opt/IBM/WAS/9.0/profileTemplates/dmgr/
+  cd ..
+  pwd
+  cd profiles/dmgr/bin/
+  clear
+  history
+  history |grep -i "start"
+  clear
+  ./startManager.sh dmgr
+  ./startManager.sh
+  ps -ef | grep 129231
+  clear
+  top
+  ps -ef | grep jvaa
+  ps -ef | grep java
+  ./stopManager.sh
+  history
+  /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.PLG.v90_9.0.5024.20250528_1830 com.ibm.java.jdk.v8_8.0.8055.20251007_2253 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.PLG.v90 -installationDirectory /opt/IBM/Plugins -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+  clear
+  /opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages   -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.PLG.v90 -prompt
+  history
+  history | grep -i "manage"
+  history
+[ip-172-31-19-246 bin]#
+controller and servant regions
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++ WAS installation +++++++++++++++++++++++++++++++++++++++++++++++++++
+Install lower version
+
+/opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.ND.v90_9.0.5.20170918_1844 com.ibm.java.jdk.v8_8.0.8025.20241024_0108 -reposi+tories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.ND.v90 -installationDirectory /opt/IBM/WAS/9.0 -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+
+/opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages   -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.IHS.v90 -prompt
+
+IHS list out the packages to install the webserver.
+
+/opt/IBM/InstallationManager/eclipse/tools/imcl listAvailablePackages   -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.IHS.v90 -prompt
+
+ 9.0.0.5
+ com.ibm.websphere.ND.v90_9.0.5.20170918_1844
+ com.ibm.websphere.IHS.v90_9.0.5.20170918_1844
+ 
+ Installtion of websrver IHS 
+ 
+ /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.IHS.v90_9.0.5.20170918_1844 com.ibm.java.jdk.v8_8.0.5027.20190108_0527 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.IHS.v90 -installationDirectory /opt/IBM/WAS/IHS9.0 -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+ 
+ 
+ Installation of IHS webserver 
+
+steps to install webserver
+
+[root@ip-172-31-19-246 bin]# /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.IHS.v90_9.0.5.20170918_1844 com.ibm.java.jdk.v8_8.0.5027.20190108_0527 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.IHS.v90 -installationDirectory /opt/IBM/WAS/IHS9.0 -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+Enter the master password to unlock credentials storage:
+                 25%                50%                75%                100%
+------------------|------------------|------------------|------------------|
+............................................................................
+Installed com.ibm.websphere.IHS.v90_9.0.5.20170918_1844 to the /opt/IBM/WAS/IHS9.0 directory.
+Installed com.ibm.java.jdk.v8_8.0.5027.20190108_0527 to the /opt/IBM/WAS/IHS9.0 directory.
+[root@ip-172-31-19-246 bin]#
+
+
+
+steps to install Plugin
+
+
+/opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.PLG.v90_9.0.5.20170918_1844 com.ibm.java.jdk.v8_8.0.5027.20190108_0527 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.PLG.v90 -installationDirectory /opt/IBM/WAS/Plugin9.0 -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+
+
+
+[root@ip-172-31-19-246 WAS]# /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.PLG.v90_9.0.5.20170918_1844 com.ibm.java.jdk.v8_8.0.5027.20190108_0527 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.PLG.v90 -installationDirectory /opt/IBM/WAS/Plugin9.0 -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+Enter the master password to unlock credentials storage:
+                 25%                50%                75%                100%
+------------------|------------------|------------------|------------------|
+............................................................................
+Installed com.ibm.websphere.PLG.v90_9.0.5.20170918_1844 to the /opt/IBM/WAS/Plugin9.0 directory.
+Installed com.ibm.java.jdk.v8_8.0.5027.20190108_0527 to the /opt/IBM/WAS/Plugin9.0 directory.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1. Show the difference in Base and ND Admin console.
+	a. standaloe server you don't get start and stop option 
+	b. where in dmgr you can get start and stop button for server (wasadm )
+	c. Server option on both App console server and dmgr console
+	c. show System adminstration on both screen AppServ03 and dmgr
+	
+	
+	Types of websphere 
+	
+		1. Base - 	Base 9.0.5.24 	
+		2. ND -
+		3. Liberty - We use the seprate package installtion and configuration.
+		
+		JDBC - To connect applicaiton to DB 
+		
+			1. JDBC provide - 	Create new JDBC provider
+		    2. data source - Data source name - Schema name of Dabase 
+			3. J2C auth. - here we nedd to provide the Dabase user id and pa
+		mail get server /  - to send the mail for some statu of order/job/ect. 
+		mail 
+		
+		enable security in two way 
+		
+			1. using admin console - if you use this option you need to restart dmgr - DMGRAS
+			2. enableAdminSecurity ture -usernane wasadm -password wasadm
+			
+		1. Admin consle 
+		2. Command line .
+		
+		ip-172-31-19-246.eu-north-1.compute.internal 
+			
+		
+Web servers - we will create the webserver definition and and will connect to Webserve using this config.
+	
+
+ 
+2. AppServ01  - we will log in and chcck server detaile  ( Admin console will be disable this server we can see in DMGR)
+ 
+		1. Cell name will change to DMGR cell 
+ 
+3. dmgr - we will DMGR console and we will check all option (ip-172-31-19-246Cell01) 
+
+Fedration - DMGR should be up and running. 
+
+command line syntax - addNode.sh hostnameofdmgr SOAPdmgr 
+Admin consle we need a hostname of application SOAP Port of applicaiton 
+ 
+./addNode.sh ip-172-31-19-246.eu-north-1.compute.internal 8879
+
+Command to check user is which you have logged in : id 
+sudo su - wasadm/ wasadgrp 
+sudo su - root
+
+
+
+when you creat first profiles your by defaul port is 9060 - First profile, 9061,62
+                                                     8879
+
+ 
+ AppServ01 - We will have fedration process using command line - This ( many changes 
+ 
+
+4. Create one more AppServ04 profile and do the ferations 
+
+	Fedration giving the control of AppServ03 to dmgr for applicaiton server we fedrate this server to dmgr.
+	
+	Two tyeps 1. Command line and Admin consle.
+	
+	Data in dmgr is a master repositorymanager
+	Data in AppServ03 is a node leve repository 
+	
+	What are the changes. 
+	
+	1. Node agent will be activated 
+	2. Admin console of applicaiton server will be deactivated.
+	3. Node copy of AppServ03 will be copy to cell of dmgr
+	4. Cell name of AppServ04 will be change to cell name of dmgr. (
+				Before - 	/opt/IBM/WAS/9.0/profiles/AppServ04/config/cells/ip-172-31-19-246Node03Cell
+				After -     /opt/IBM/WAS/9.0/profiles/AppServ04/config/cells/ip-172-31-19-246Node03Cell
+				/opt/IBM/WAS/9.0/profiles/dmgr/config/cells/ip-172-31-19-246Cell01
+	5. Synchronization will be enable one way [epho no.]
+	-create -profileName AppServ04 -profilePath /opt/IBM/WAS/9.0/profiles/AppServ04 -templatePath /opt/IBM/WAS/9.0/profileTemplates/default/ -enableAdminSecurity true -adminUserName wasadm -adminPassword wasadm
+	
+	check hostname 
+	host name p-172-31-19-246.eu-north-1.compute.internal
+	
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+14/11/2025
+
+
+1. check with all the optioins which you have done in last class with client. Completed. 
+
+2. Today we will go throught the managemenet profile templates(Defualt profile dmgr )
+
+		#. Show all the templatePath indetails with options.
+		
+		/opt/IBM/WAS/9.0/profileTemplates/management
+		
+		1. DEPLOYMENT_MANAGER
+		
+		./manageprofiles.sh -create -profileName Dmgrprofile3 -profilePath /opt/IBM/WAS/9.0/profiles/Dmgrprofile3 -templatePath /opt/IBM/WAS/9.0/profileTemplates/management/ -serverType DEPLOYMENT_MANAGER -hostName ip-172-31-19-246.eu-north-1.compute.internal -enableAdminSecurity true -adminUserName wasadm -adminPassword wasadm123
+			
+		
+		
+		2. Custom profile (Custom profile) without server. Diff of Custom and App?
+		
+		     ./manageprofiles.sh -create -profileName customprofile2 -profilePath /opt/IBM/WAS/9.0/profiles/customprofile2 -templatePath /opt/IBM/WAS/9.0/profileTemplates/managed/
+				INSTCONFSUCCESS: Success: Profile customprofile2 now exists. Please consult /opt/IBM/WAS/9.0/profiles/customprofile2/logs/AboutThisProfile.txt for more information about this profile.
+
+			 
+			 INSTCONFSUCCESS
+			 INSTCONFFAILED
+			 INSTCONPARTIAL
+			 INSTCONFPARTIALSUCCESS
+
+		     ./addNode.sh ip-172-31-19-246.eu-north-1.compute.internal 8888
+
+			
+			After adding cutomer profile you don't get any server you have to create
+			
+
+		
+		3. AdminAgent profiles
+		
+			1. what is the user of Admin Agent profile?
+			2. When you login you need to select the nodes which you have to work.
+			2. Fedration process using registorNode.sh
+					
+			 ./manageprofiles.sh -create -profileName AdminAgentprofile -profilePath /opt/IBM/WAS/9.0/profiles/AdminAgentprofile -templatePath /opt/IBM/WAS/9.0/profileTemplates/management/ -serverType ADMIN_AGENT -hostName p-172-31-19-246.eu-north-1.compute.internal  -enableAdminSecurity true -adminUserName wasadm -adminPassword wasadm123
+				INSTCONFSUCCESS: Success: Profile AdminAgentprofile now exists. Please consult /opt/IBM/WAS/9.0/profiles/AdminAgentprofile/logs/AboutThisProfile.txt for more information about this profile.
+		
+			
+			./startServer.sh adminagent 
+			./startServer.sh adminagent ---
+			
+			1. logs in console - adinnagent
+			2. 
+			./manageprofiles.sh -create -profileName AppServ07 -profilePath /opt/IBM/WAS/9.0/profiles/AppServ07 -templatePath /opt/IBM/WAS/9.0/profileTemplates/default/ -enableAdminSecurity true -adminUserName wasadm -adminPassword wasadm123
+			
+			
+			./registerNode.sh -profilePath /opt/IBM/WAS/9.0/profiles/AppServ05/ - Run form Admin Agent location(/opt/IBM/WAS/9.0/profiles/AdminAgentprofile1/bin)
+			./addNode.sh 
+		
+			3. Access Admn Agent console and now it will show the drop donw box to select the registor applicaiton server. 
+			
+			Note : we can't registor applicaiton server with DMGR profiles , only you can do with Admin agent profile.
+				
+		4. Othere Commands :
+		
+			./manageprofiles.sh -listProfiles
+			./manageprofiles.sh -profileName AppServ01 -getPath
+			./manageprofiles.sh -backupProfile -profileName AppServ01 -backupFile /tmp/AppServ01.xml
+			./manageprofiles.sh -profileName AppServ01 -getPath
+			./manageprofiles.sh -restoreProfiles -backupFile /tmp/AppServ01.xmlC
+			./manageprofiles.sh -delete -profileName customprofile1 -profilePath /opt/IBM/WAS/9.0/profiles/customprofile1
+			
+			
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Cluster - It is a logical grouping of servers with similler configuration.
+
+in cluster we will have weight 0-20
+
+Cluster_member1 - 10 - 9 , 8 ... 0 then 10 
+cluster_member2 - 5 
+
+bydefault is - 2
+
+Why we need cluster ?
+	1. Work Load Management(WLM) - using round robin algorithm will mange the load.
+	2. High availabliity (HA)
+	3. Scalability 
+
+1. Standalone/Vartical Cluster- Host1 
+
+		In a vertical cluster, JVMs/Serves that reside on the same physical machine are clustered. 
+		
+		if the physical server goes down, the entire cluster also goes down.
+		
+			1. Create one DMGR profile - /opt/IBM/WAS/9.0/profiles/dmgr/bin
+			2. create AppServ01 and fedrate on DMGR
+			3. Show the nodes on first server  
+				Serve name - Cluster_member1
+		
+		
+2. Horizantal Cluster -
+
+		Pre-requisites - Add the inbound port in AWS console.
+
+		In a horizontal cluster, JVMs that reside on different physical machines are clustered. 
+		
+		The obvious advantage to a horizontal cluster is that if one physical server goes down, 
+		the other physical server can continue to produce the applications in the JVM, resulting in high-availability. 
+		Also, from a systems engineer perspective, a horizontal cluster lets the engineer do work on one cluster member without bringing down the applications being produced by the JVMs in the cluster.
+		For example, the engineer could bring down the server01 JVM, patch the server, restart the JVM, and bring it back up, without causing an outage, as the server02 JVM can still produce the application.
+		
+
+
+			Host 2 installation :- (16.171.170.59)
+			
+						curl -v telnet://16.171.170.59:8879 /8887
+			
+			1.Create AppServ01 profile
+			2.Fedration on first server with DMGR
+			3.start server 
+			4. Check DMGR console and show the noes 
+			5. Stop the both server and show the first host and second host in putty
+			6. Create new cluster member on host2 and show in putty. 
+		
+
+			First we installed InstallationManager then websphere
+
+			[root@ip-172-31-46-104 AppServer]# /opt/IBM/InstallationManager/tools/imcl install com.ibm.websphere.ND.v90_9.0.5.20170918_1844 com.ibm.java.jdk.v8_8.0.8025.20241024_0108 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.ND.v90 -installationDirectory /opt/IBM/WebSphere/AppServer/ -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+							25%                50%                75%                100%
+			------------------|------------------|------------------|------------------|
+			............................................................................
+			Installed com.ibm.websphere.ND.v90_9.0.5.20170918_1844 to the /opt/IBM/WebSphere/AppServer/ directory.
+			Installed com.ibm.java.jdk.v8_8.0.8025.20241024_0108 to the /opt/IBM/WebSphere/AppServer/ directory.
+			[root@ip-172-31-46-104 AppServer]#
+			
+			[root@ip-172-31-46-104 bin]# ./manageprofiles.sh -create -profileName AppServ02 -profilePath /opt/IBM/WebSphere/AppServer/profiles/AppServ02 -templatePath /opt/IBM/WebSphere/AppServer/profileTemplates/default/ -enableAdminSecurity true -adminUserName wasadm -adminPassword wasadm123
+			INSTCONFSUCCESS: Success: Profile AppServ01 now exists. Please consult /opt/IBM/WebSphere/AppServer/profiles/logs/AboutThisProfile.txt for more information about this profile.
+
+			hostname - ip-172-31-46-104.eu-north-1.compute.internal
+			
+			/opt/IBM/WebSphere/AppServer/profiles/AppServ02/bin			./addNode.sh ip-172-31-19-246.eu-north-1.compute.internal 8879
+			
+			
+			
+		
+FYI - in case you face any major problem in websphre there will be Websphere Support team you can raise the PMR and take the help.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/opt/IBM/WAS/9.0/profiles/AppServ04/bin/startNode.sh
+
+/opt/IBM/WAS/9.0/profiles/dmgr/bin/startManager.sh
+
+
+Display the cluster topology.
+
+1. Update the runtime weight.
+
+2. Display the hostnames for both Host1 and Host2, including their respective nodes.
+
+3. Show detailed synchronization information, including node updates.
+
+4. Create a new cluster member named **Cluster_member4_host1** on Host1.
+
+5. After creating the cluster member, synchronize the nodes and then start the new member.
+
+6. Demonstrate the stop and start operations from both the server level and cluster level — stop an individual member and start all members from the cluster.
+
+7. Display the cluster status in both **partial start** and **fully started** states.
+
+8. Show the Ripple Start option.
+
+9. Display the Deployment Manager configuration with all nodes and servers from the following directory path:
+
+  /opt/IBM/WAS/9.0/profiles/dmgr/config/cells/ip-172-31-19-246Cell01/nodes
+
+10. Reference IBM documentation for **Dynamic Workload Manager (DWLM)**:
+    [https://www.ibm.com/docs/en/was-zos/9.0.5?topic=settings-dynamic-workload-manager-dwlm-collection](https://www.ibm.com/docs/en/was-zos/9.0.5?topic=settings-dynamic-workload-manager-dwlm-collection)
+    (Example: `DM_CLM1_host1`)
+
+11. Note: Once a cluster member is created, its name cannot be modified — it must be unique within the node.
+
+12. In production environments where downtime is not acceptable, this approach can be used to ensure continuous availability[Ripple statrt button using]
+
+
+
+
+InformationADMS0200I: The configuration synchronization started for cell.
+InformationADMS0202I: Automatic synchronization mode is disabled for node: ip-172-31-19-246Node06.
+InformationADMS0201I: The configuration synchronization started for node: ip-172-31-19-246Node06.
+InformationADMS0205I: The configuration synchronization completed successfully for node: ip-172-31-19-246Node06.
+InformationADMS0203I: The automatic synchronization mode is enabled for node: ip-172-31-19-246Node06.
+InformationADMS0208I: The configuration synchronization complete for cell.
+
+[11/27/25 9:14:52:591 UTC] 00000001 P2PGroup      I   ODCF8020I: Peer layer starting; process=ip-172-31-19-246Cell01\ip-172-31-19-246Node06\Cluster_member4_host1; boot host=[ip-172-31-19-246.eu-north-1.compute.internal:11007, ip-172-31-19-246.eu-north-1.compute.internal:11016, ip-172-31-46-104.eu-north-1.compute.internal:11008, ip-172-31-19-246.eu-north-1.compute.internal:11014, ip-172-31-19-246.eu-north-1.compute.internal:11012].
+[11/27/25 9:14:52:595 UTC] 00000001 SonP2PShimImp I   ODCF8030I: Peer layer started; process=ip-172-31-19-246Cell01\ip-172-31-19-246Node06\Cluster_member4_host1.
+[11/27/25 9:14:52:599 UTC] 0000008a P2PGroup      I   ODCF8040I: Detected process ip-172-31-19-246Cell01\ip-172-31-19-246Node06\Cluster_member1_host1 started.
+
+
+MQ,SNS, etc. 
+JMS - Java meassing services 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+28-11-2025
+
+Websphere Deplolyment -
+
+Application is combination of WebContainer and EJB container or collection programs or modules. 
+
+1. Installtion,created profiles and cluster 
+
+/opt/IBM/WAS/9.0/profiles/AppServ05/installedApps/ip-172-31-19-246Node02Cell - Installed app.
+
+WC_deflult Host - post number 
+
+files like 
+.war - Web Application Archive file 
+.ear - Enterprise Archive file 
+.jar - Java Archive file
+.rar - Resource Architecture file
+
+EAR= WAR+JAR
+
+Web container will run the WAS - Will be having in web.xm
+EJB - container will run the JAR file with help of deployment descripto - EJB-JAR.xml 
+RAR - it will also have deployment descriptor RAR.xml .
+EAR - applicaiton.xml 
+
+
+1. Admin console 
+2. WS admin (wsadmin)
+3. jython / jacl
+4. cutom script 
+5. CICD pile 
+
+installable Apps   - We will have defaul applicaiton which is comming with product - /opt/IBM/WAS/9.0/installableApps
+
+wastemp - in case of DB/ deployment / config. 
+
+Installed Apps  - we will deploye application - /opt/IBM/WAS/9.0/profiles/AppServ05/installedApps/ip-172-31-19-246Node02Cell
+
+/opt/IBM/WAS/9.0/installableApps - 
+
+
+local machine  - we have to provide very less detailes ( only 3-4 stps will be  there )
+
+Remote machine - Other server 
+
+Fast path - we have to fill very few detail (3-4)
+
+Details path - we have to give all the details 
+1. Map to the modules [server,cluster]
+2. Provide option to comple JSP
+3. EJB depployment 
+4. Provide JSP reloading for webmodules
+5. Map shared libraries
+6. map JNDI name to bena 
+7. Map to DS
+8. Map to Viratul host
+9. map to context root
+10. Summery 
+
+/ - root 
+
+/snoop
+
+/clender
+
+
+when we start the application server the applicaiton will be start. 
+
+if we don't have maincontext root , we can subcontext root. - Dev team.
+
+.EAR - context root is not required
+.WAR - We have to give the context root. 
+
+http://hostname:port/cotextroot
+
+once we had a deployment please add the virtual host (your server name ) and port number (9062)
+
+issue - virtual host has not been define 
+
+Type of deployment in WebSphere
+1. Full deployment
+2. Partiall application 
+3. Module 
+
+
+1. Stop all services on server
+2. Deployment 
+3. Start WAS services 
+4. Validate applicaiton /check the logs 
+
+Hot deployement - dran and drop 
+
+pre deployment stps.
+
+1. Please take a backup in case (proprty files) .war_bkp 
+2. DB or any other backup
+3. Stop Cluster 
+4. Check package 
+
+
+Post deployment issue :
+
+
+1. Application not able to access. (clear browser,clear tmp,wstem)
+2. Application some of functinality is not working.
+3. Virtualhost not define 
+4. Package issue. (Jar dependencies miss/files)
+5. Database issue. (updaing table etc)
+
+Check - 
+
+1. ceck directly from Application server 
+2. check logs (systemou.log/systemerror.log/access.log/error.log)
+
+
+http://localhost:9080/cachemonitor/
+http://ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:9089/cachemonitor/
+http://ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:9083/cachemonitor/
+http://ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:9088/cachemonitor/
+
+
+http://ec2-13-53-126-111.eu-north-1.compute.amazonaws.com:9089/cachemonitor/
+http://ec2-13-53-126-111.eu-north-1.compute.amazonaws.com:9083/cachemonitor/
+http://ec2-13-53-126-111.eu-north-1.compute.amazonaws.com:9088/cachemonitor/
+
+before - /opt/IBM/WAS/9.0/profiles/AppServ07/installedApps/ip-172-31-19-246Cell01
+
+
+
+After  -  location on installed app - /opt/IBM/WAS/9.0/profiles/AppServ07/installedApps/ip-172-31-19-246Cell01
+
+https://icickbank.com - domain 
+
+
+https://hostname:9089/home/
+
+webserver/new/DB/LDAB 
+
+
+
+.*\.dll=755#.*\.so=755#.*\.a=755#.*\.sl=755
+
+r = 4
+w = 2
+x = 1
+
+Step 2: Map modules to servers - we have created the cluste - Demo 
+
+
+Installing...
+If there are enterprise beans in the application, the EJB deployment process can take several minutes. Do not save the configuration until the process completes.
+
+Check the SystemOut.log on the deployment manager or server where the application is deployed for specific information about the EJB deployment process as it occurs.
+
+ADMA5016I: Installation of Dynamic Cache Monitor started.
+
+ADMA5067I: Resource validation for application Dynamic Cache Monitor completed successfully.
+
+ADMA5058I: Application and module versions are validated with versions of deployment targets.
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+ADMA5081I: The bootstrap address for client module is configured in the WebSphere Application Server repository.
+
+ADMA5053I: The library references for the installed optional package are created.
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+ADMA5001I: The application binaries are saved in /opt/IBM/WAS/9.0/profiles/dmgr/wstemp/0/workspace/cells/ip-172-31-19-246Cell01/applications/Dynamic Cache Monitor.ear/Dynamic Cache Monitor.ear
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+SECJ0400I: Successfully updated the application Dynamic Cache Monitor with the appContextIDForSecurity information.
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+ADMA5005I: The application Dynamic Cache Monitor is configured in the WebSphere Application Server repository.
+
+ADMA5113I: Activation plan created successfully.
+
+ADMA5011I: The cleanup of the temp directory for application Dynamic Cache Monitor is complete.
+
+ADMA5013I: Application Dynamic Cache Monitor installed successfully.
+
+
+
+cells / ip-172-31-19-246Cell01 / nodes / ip-172-31-19-246Node06 / serverindex.xml  - you can get the port number in this files. 
+
+
+Step 17 : check the application using URL  >>
+          http://192.168.0.28:9080/cal/
+
+    where,
+                  cal - context root.
+    192.168.0.28 - ip / hostname.
+    9080 - WC_defaulthost
+
+
+http://ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:9083/cachemonitor
+
+WC_defaulthost	9089
+
+WC_adminhost	9083
+
+WC_defaulthost	9088
+
+
+must and should you host and and port nubmer should added in virtual host. 
+
+
+cells / ip-172-31-19-246Cell01 / virtualhosts.xml
+
+
+tom. 10 am / 
+
+thu - 10 . if 2 pm
+
+
+1. All options in details. 
+2. show the wsadmin objects
+
+
+
+
+
+Deplolyment using wsadmin script tool
+
+What are the activies done by using wasadmin 
+
+1. Admin control - by using this utility we can get the information like nodes,cells,portn. etc (start,stop servers,cluster)
+2. Admin App - Using this utility we can deploy the applicaiton.
+3. Admin config - we can perform the configuraiton related task. (,reset,remove etc)
+4. Admin task - Admin activies ( creating new server)
+
+
+AdminControl            Returns general help text for the AdminControl object
+AdminConfig             Returns general help text for the AdminConfig object
+AdminApp                Returns general help text for the AdminApp object
+AdminTask               Returns general help text for the AdminTask object
+wsadmin                 Returns general help text for the wsadmin script
+
+
+ ./wsadmin.sh -lang jython
+ ./wsadmin.sh -lang jacl
+
+Jacl = java + tcl + wsadmin 
+
+Jython  = java + python + wsadmin
+
+
+1. Admin App.
+
+
+Step 1 : connect to wasadmin mode first 
+
+ ./wsadmin.sh -lang jython -conntype NONE
+ 
+ print AdminApp.list()
+ 
+ 
+Step 2 : creat the python scrip for installtion sample applicatin and save with the name install_app.py
+
+/opt/IBM/WAS/9.0/installableApps/CacheMonitor.ear
+
+ear = "/opt/IBM/WAS/9.0/installableApps/CacheMonitor.ear"
+opts = ['-appname', 'CacheMonitor', '-cluster', 'Demo', '-usedefaultbindings']
+print AdminApp.install(ear, opts)
+AdminConfig.save()
+
+
+./wsadmin.sh -lang jython -f install_app.py
+WASX7209I: Connected to process "dmgr" on node ip-172-31-19-246CellManager01 using SOAP connector;  The type of process is: DeploymentManager
+WASX7327I: Contents of was.policy file:
+ //
+// Template policy file for enterprise application, this policy grants the enterprise application
+// java.security.AllPermission
+//
+
+grant codeBase "file:${application}" {
+  permission java.security.AllPermission;
+};
+
+
+ADMA5016I: Installation of CacheMonitor started.
+ADMA5058I: Application and module versions are validated with versions of deployment targets.
+ADMA5005I: The application CacheMonitor is configured in the WebSphere Application Server repository.
+ADMA5005I: The application CacheMonitor is configured in the WebSphere Application Server repository.
+ADMA5081I: The bootstrap address for client module is configured in the WebSphere Application Server repository.
+ADMA5053I: The library references for the installed optional package are created.
+ADMA5005I: The application CacheMonitor is configured in the WebSphere Application Server repository.
+ADMA5001I: The application binaries are saved in /opt/IBM/WAS/9.0/profiles/dmgr/wstemp/Script19add722ebb/workspace/cells/ip-172-31-19-246Cell01/applications/CacheMonitor.ear/CacheMonitor.ear
+ADMA5005I: The application CacheMonitor is configured in the WebSphere Application Server repository.
+SECJ0400I: Successfully updated the application CacheMonitor with the appContextIDForSecurity information.
+ADMA5005I: The application CacheMonitor is configured in the WebSphere Application Server repository.
+ADMA5005I: The application CacheMonitor is configured in the WebSphere Application Server repository.
+ADMA5113I: Activation plan created successfully.
+ADMA5011I: The cleanup of the temp directory for application CacheMonitor is complete.
+ADMA5013I: Application CacheMonitor installed successfully.
+
+step 3 : run the below command for deployment 
+
+
+/opt/IBM/WAS/9.0/profiles/AppServ07/bin/ 
+
+./wsadmin.sh -lang jython -f install_app.py
+
+
+
+step3 : start the cluster and check the applicaiton.
+
+./wsadmin.sh -lang jython -c "cluster=AdminControl.completeObjectName('type=Cluster,name=Demo,*'); AdminControl.invoke(cluster,'start')"
+WASX7209I: Connected to process "dmgr" on node ip-172-31-19-246CellManager01 using SOAP connector;  The type of process is: DeploymentManager
+u''
+
+
+stop the cluster 
+
+./wsadmin.sh -lang jython -c "cluster=AdminControl.completeObjectName('type=Cluster,name=Demo,*'); AdminControl.invoke(cluster,'stop')"
+
+
+to uninstall the applicaiton 
+
+./wsadmin.sh -lang jython -c "AdminApp.uninstall('CacheMonitor'); AdminConfig.save()"
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+JVM - Java Messaing service
+
+
+Filestore path - /opt/IBM/WAS/9.0/FileStore
+
+1. Create the filestore folere and create 3 filestore path 
+2. /opt/IBM/WAS/9.0/FileStore/log
+3. for evey cluter member meassing engin will be added to perform the messing activity./ to process the messages.
+/opt/IBM/WAS/9.0/FileStore/CM1FS/CM1FA
+CM2FA
+CM3FA
+
+4. Files are updated after creating SIB
+cells / ip-172-31-19-246Cell01 / clusters / Demo / sib-engines.xml	Updated
+cells / ip-172-31-19-246Cell01 / coregroups / DefaultCoreGroup / coregroup.xml	Updated
+cells / ip-172-31-19-246Cell01 / buses / DEMO SIB / sib-bus.xml	Updated
+cells / ip-172-31-19-246Cell01 / buses / DEMO SIB / sib-destinations.xml
+
+
+5. Engin is nothing but queue 
+6.JNDI/demoqueue - queue name/ and all other detisl will provide by the dev/MQ team will provide.
+
+7. You need to create queue 
+
+8. You need to connect factory 
+
+server 1 - JNDI/demoqueue
+
+ip-172-31-19-246.eu-north-1.compute.internal:7297
+ip-172-31-19-246.eu-north-1.compute.internal:7280
+ip-172-31-19-246.eu-north-1.compute.internal:7287
+
+
+JMS issue -
+
+1. JMS resources allocation/ - number of connection 
+2. Time out - Due to DB connection is having the issue.
+3. QMGR not running/
+4. Channel is not running (sender /receiver )
+
+storing messages in files/Database/S3 bucket
+
+All the Queue details will be provided by MQ team (Queue manager name , queue name,port nubmer etc.)
+
+Step 1: Log into WebSphere Admin Console
+
+Open browser → go to:
+
+http://<hostname>:9060/ibm/console
+
+
+Log in with admin credentials.
+
+✅ Step 2: Enable JMS Resources (Using WebSphere Default Messaging Provider)
+
+WebSphere uses the built-in Default Messaging Provider (SIBus).
+
+✅ Step 3: Create a Service Integration Bus (SIBus)
+
+Go to:
+
+Resources → Messaging → Service Integration → Buses
+
+
+Click New
+
+Enter Bus Name (example: TestBus)
+
+Keep defaults → Click Finish
+
+Save to master configuration.
+
+
+Changed Items	Status
+cells / ip-172-31-19-246Cell01 / buses / DEMO SIB / sib-bus.xml	Added
+cells / ip-172-31-19-246Cell01 / buses / DEMO SIB / sib-authorisations.xml	Added
+cells / ip-172-31-19-246Cell01 / buses / DEMO SIB / sib-destinations.xml
+
+
+-Xms50m -Xmx1879m 
+
+ 
+
+✅ Step 4: Add a Bus Member (Server/Cluster)
+
+Select your created bus → Add
+
+Choose:
+
+Server (for standalone WAS)
+
+Cluster (for ND environment)
+
+Accept defaults → Next → Finish
+
+Save configuration.
+
+
+cells / ip-172-31-19-246Cell01 / clusters / Demo / sib-engines.xml	Added
+cells / ip-172-31-19-246Cell01 / coregroups / DefaultCoreGroup / coregroup.xml	Updated - when we are using cluste member this coregroup.xml file will update. 
+cells / ip-172-31-19-246Cell01 / buses / DEMO SIB / sib-bus.xml	Updated
+cells / ip-172-31-19-246Cell01 / buses / DEMO SIB / sib-destinations.xml
+
+✅ Step 5: Create a Queue Destination
+
+Navigate to:
+
+Resources → Messaging → Service Integration → Buses → <YourBus> → Destinations
+
+
+Click New
+
+Choose Queue
+
+Enter:
+
+Field	Value Example
+Identifier	TEST.QUEUE
+Queue type	Point-to-Point
+
+Finish → Save.
+
+✅ Step 6: Create JMS Queue - A JMS provider enables messaging based on the Java Message Service (JMS). It provides J2EE connection factories to create connections for JMS destinations.
+
+Go to:
+
+Resources → JMS → Queues (WebSphere default messaging provider)
+
+
+Select the scope (Server / Cluster)
+
+Click New
+
+Fill:
+
+Parameter	Example
+Name	TestQueue
+JNDI Name	jms/TestQueue
+Bus Name	Select TestBus
+Queue Name	TEST.QUEUE
+
+Finish + Save.
+
+cells / ip-172-31-19-246Cell01 / resources.xml
+
+✅ Step 7: Create JMS Connection Factory
+
+Go to:
+
+Resources → JMS → Connection factories (WebSphere default messaging provider)
+
+
+Click New
+
+Enter:
+
+Parameter	Example
+Name	TestCF
+JNDI Name	jms/TestCF
+Bus Name	TestBus
+Type	Queue Connection Factory
+
+Additional settings (optional):
+
+Set Transport type = Bindings (local Java app)
+
+OR TCP for remote:
+
+host:port (e.g., server1node01:7276)
+
+
+Finish → Save.
+
+✅ Step 8: Restart the Server
+
+Restart WebSphere server/cluster for resources to take effect.
+
+🚀 Testing JMS Connectivity
+
+A simple test using JNDI in Java EE:
+
+InitialContext ctx = new InitialContext();
+QueueConnectionFactory cf = (QueueConnectionFactory) ctx.lookup("jms/TestCF");
+Queue queue = (Queue) ctx.lookup("jms/TestQueue");
+
+QueueConnection connection = cf.createQueueConnection();
+QueueSession session = connection.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
+
+QueueSender sender = session.createSender(queue);
+sender.send(session.createTextMessage("Hello WebSphere JMS!"));
+connection.close();
+
+
+1. in case you nodagent is running on server but you don't see the status on dmgr admin console
+
+2. synchronization -in case you have some on the servers ( missing ip's/hostname) 
+	1. check the connectivity from DMGR server to Application ; telnet hostname port 
+
+
+1. we have 3 components 1. DMGR 2. Application server 3. we have created the SIB with Security enabled.
+
+
+[12/5/25 9:16:57:404 UTC] 0000004b DefaultTokenP E   HMGR0149E: An attempt to open a connection to core group DefaultCoreGroup has been rejected. The sending process has a name of ip-172-31-19-246Cell01\ip-172-31-19-246CellManager01\dmgr and an IP address of /172.31.19.246. Global security in the local process is Enabled. Global security in the sending process is Disabled. The received token starts with -cf5a9ad:19a6d5bb933:-800. The exception is com.ibm.websphere.security.auth.WSLoginFailedException: Validation of LTPA token failed due to invalid keys or token type.
+	at com.ibm.ws.security.ltpa.LTPAServerObject.validateToken(LTPAServerObject.java:1187)
+	at com.ibm.ws.security.ltpa.LTPAServerObject.validateToken(LTPAServerObject.java:1104)
+	at com.ibm.ws.security.token.WSCredentialTokenMapper.validateLTPAToken(WSCredentialTokenMapper.java:1665)
+	at com.ibm.ws.hamanager.runtime.DefaultTokenProvider.authenticateMember(DefaultTokenProvider.java:214)
+	at com.ibm.ws.hamanager.coordinator.dcs.MemberAuthenticatorImpl.authenticateMember(MemberAuthenticatorImpl.java:87)
+	at com.ibm.ws.dcs.vri.transportAdapter.rmmImpl.ptpDiscovery.DiscoveryRcv.acceptStream(DiscoveryRcv.java:185)
+	at com.ibm.rmm.ptl.tchan.receiver.PacketProcessor.fetchStream(PacketProcessor.java:468)
+	at com.ibm.rmm.ptl.tchan.receiver.PacketProcessor.run(PacketProcessor.java:858)
+[12/5/25 9:37:59:370 UTC] 00000046 DefaultTokenP E   HMGR0149E: An attempt to open a connection to core group DefaultCoreGroup has been rejected. The sending process has a name of ip-172-31-19-246Cell01\ip-172-31-19-246CellManager01\dmgr and an IP address of /172.31.19.246. Global security in the local process is Enabled. Global security in the sending process is Disabled. The received token starts with -cf5a9ad:19a6d5bb933:-800. The exception is com.ibm.websphere.security.auth.WSLoginFailedException: Validation of LTPA token failed due to invalid keys or token type.
+	at com.ibm.ws.security.ltpa.LTPAServerObject.validateToken(LTPAServerObject.java:1187)
+	at com.ibm.ws.security.ltpa.LTPAServerObject.validateToken(LTPAServerObject.java:1104)
+	at com.ibm.ws.security.token.WSCredentialTokenMapper.validateLTPAToken(WSCredentialTokenMapper.java:1665)
+	at com.ibm.ws.hamanager.runtime.DefaultTokenProvider.authenticateMember(DefaultTokenProvider.java:214)
+	at com.ibm.ws.hamanager.coordinator.dcs.MemberAuthenticatorImpl.authenticateMember(MemberAuthenticatorImpl.java:87)
+	at com.ibm.ws.dcs.vri.transportAdapter.rmmImpl.ptpDiscovery.DiscoveryRcv.acceptStream(DiscoveryRcv.java:185)
+	at com.ibm.rmm.ptl.tchan.receiver.PacketProcessor.fetchStream(PacketProcessor.java:468)
+	at com.ibm.rmm.ptl.tchan.receiver.PacketProcessor.run(PacketProcessor.java:858)
+.
+[12/5/25 9:39:36:035 UTC] 00000059 SSLHandshakeE E   SSLC0008E: Unable to initialize SSL connection.  Unauthorized access was denied or security settings have expired.  Exception is javax.net.ssl.SSLException: Unrecognized SSL message, plaintext connection?
+	at com.ibm.jsse2.aj.i(aj.java:14)
+	at com.ibm.jsse2.aj.a(aj.java:155)
+	at com.ibm.jsse2.bg.f(bg.java:17)
+	at com.ibm.jsse2.bg.e(bg.java:26)
+	at com.ibm.jsse2.bg.unwrap(bg.java:16)
+	at javax.net.ssl.SSLEngine.unwrap(SSLEngine.java:30)
+	at com.ibm.ws.ssl.channel.impl.SSLConnectionLink.readyInbound(SSLConnectionLink.java:586)
+	at com.ibm.ws.ssl.channel.impl.SSLConnectionLink.ready(SSLConnectionLink.java:346)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:214)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:113)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:175)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture.fireCompletionActions(AsyncChannelFuture.java:161)
+	at com.ibm.io.async.AsyncFuture.completed(AsyncFuture.java:138)
+	at com.ibm.io.async.ResultHandler.complete(ResultHandler.java:204)
+	at com.ibm.io.async.ResultHandler.runEventProcessingLoop(ResultHandler.java:775)
+	at com.ibm.io.async.ResultHandler$2.run(ResultHandler.java:905)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1909)
+.
+RCA - It took time to synchronization nodes and after restart it got resovled. 
+
+Note :- Please note once you change the configuration it wlll take time to reflect at dmgr/nodes vise versa.
+
+
+Check below logs 
+
+[12/5/25 9:39:55:586 UTC] 000000f1 RoleBasedAuth A   SECJ0305I: The role-based authorization check failed for admin-authz operation NodeSync:isNodeSynchronized.  The user UNAUTHENTICATED (unique ID: unauthenticated) was not granted any of the following required roles: configurator, administrator, auditor, monitor, deployer, adminsecuritymanager, operator.
+[12/5/25 9:40:01:017 UTC] 000000f1 RoleBasedAuth A   SECJ0305I: The role-based authorization check failed for admin-authz operation ConfigRepository:refreshRepositoryEpoch.  The user UNAUTHENTICATED (unique ID: unauthenticated) was not granted any of the following required roles: administrator, configurator, auditor, adminsecuritymanager, deployer, operator.
+[12/5/25 9:40:05:406 UTC] 00000141 NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 9:40:24:246 UTC] 00000033 ServerStopped I   ODCF0009I: Marked server /cell/ip-172-31-19-246Cell01/node/ip-172-31-19-246CellManager01/server/dmgr STOPPED due to transaction: remote - markServerDown: ip-172-31-19-246Cell01\ip-172-31-19-246CellManager01\dmgr
+[12/5/25 9:41:05:407 UTC] 00000145 NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 9:41:16:869 UTC] 0000005b SSLHandshakeE E   SSLC0008E: Unable to initialize SSL connection.  Unauthorized access was denied or security settings have expired.  Exception is javax.net.ssl.SSLException: Unrecognized SSL message, plaintext connection?
+	at com.ibm.jsse2.aj.i(aj.java:14)
+	at com.ibm.jsse2.aj.a(aj.java:155)
+	at com.ibm.jsse2.bg.f(bg.java:17)
+	at com.ibm.jsse2.bg.e(bg.java:26)
+	at com.ibm.jsse2.bg.unwrap(bg.java:16)
+	at javax.net.ssl.SSLEngine.unwrap(SSLEngine.java:30)
+	at com.ibm.ws.ssl.channel.impl.SSLConnectionLink.readyInbound(SSLConnectionLink.java:586)
+	at com.ibm.ws.ssl.channel.impl.SSLConnectionLink.ready(SSLConnectionLink.java:346)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:214)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:113)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:175)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture.fireCompletionActions(AsyncChannelFuture.java:161)
+	at com.ibm.io.async.AsyncFuture.completed(AsyncFuture.java:138)
+	at com.ibm.io.async.ResultHandler.complete(ResultHandler.java:204)
+	at com.ibm.io.async.ResultHandler.runEventProcessingLoop(ResultHandler.java:775)
+	at com.ibm.io.async.ResultHandler$2.run(ResultHandler.java:905)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1909)
+.
+[12/5/25 9:42:05:412 UTC] 0000014a NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+************ Start Display Current Environment ************
+WebSphere Platform 9.0.0.5 [ND 9.0.0.5 cf051738.01] [JAVA8  ] running with process name ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent and process id 261664
+Host Operating System is Linux, version 6.12.0-55.41.1.el10_0.x86_64
+Java version = 1.8.0_411, Java Runtime Version = 8.0.8.25 - pxa6480sr8fp25-20240328_01(SR8 FP25), Java Compiler = j9jit29, Java VM name = IBM J9 VM
+was.install.root = /opt/IBM/WAS/9.0
+user.install.root = /opt/IBM/WAS/9.0/profiles/AppServ07
+Java Home = /opt/IBM/WAS/9.0/java/8.0/jre
+ws.ext.dirs = /opt/IBM/WAS/9.0/java/8.0/lib:/opt/IBM/WAS/9.0/profiles/AppServ07/classes:/opt/IBM/WAS/9.0/classes:/opt/IBM/WAS/9.0/lib:/opt/IBM/WAS/9.0/installedChannels:/opt/IBM/WAS/9.0/lib/ext:/opt/IBM/WAS/9.0/web/help:/opt/IBM/WAS/9.0/deploytool/itp/plugins/com.ibm.etools.ejbdeploy/runtime
+Classpath = /opt/IBM/WAS/9.0/profiles/AppServ07/properties:/opt/IBM/WAS/9.0/properties:/opt/IBM/WAS/9.0/lib/startup.jar:/opt/IBM/WAS/9.0/lib/bootstrap.jar:/opt/IBM/WAS/9.0/lib/jsf-nls.jar:/opt/IBM/WAS/9.0/lib/lmproxy.jar:/opt/IBM/WAS/9.0/lib/urlprotocols.jar:/opt/IBM/WAS/9.0/deploytool/itp/batchboot.jar:/opt/IBM/WAS/9.0/deploytool/itp/batch2.jar:/opt/IBM/WAS/9.0/java/8.0/lib/tools.jar
+Java Library path = /opt/IBM/WAS/9.0/lib/native/linux/x86_64/:/opt/IBM/WAS/9.0/java/8.0/jre/lib/amd64/compressedrefs:/opt/IBM/WAS/9.0/java/8.0/jre/lib/amd64:/opt/IBM/WAS/9.0/bin:/opt/IBM/WAS/9.0/nulldllsdir:/usr/lib64:/usr/lib:
+Orb Version = IBM Java ORB build orbdev-userlvl-20240305.0527
+************* End Display Current Environment *************
+[12/5/25 10:00:09:449 UTC] 00000001 ManagerAdmin  I   TRAS0017I: The startup trace state is *=info.
+[12/5/25 10:00:09:450 UTC] 00000001 ManagerAdmin  I   TRAS0111I: The message IDs that are in use are deprecated
+[12/5/25 10:00:09:463 UTC] 00000001 ModelMgr      I   WSVR0800I: Initializing core configuration models
+[12/5/25 10:00:09:701 UTC] 00000001 ComponentMeta I   WSVR0179I: The runtime provisioning feature is disabled. All components will be started.
+[12/5/25 10:00:09:749 UTC] 00000001 ProviderTrack I com.ibm.ffdc.osgi.ProviderTracker AddingService FFDC1007I: FFDC Provider Installed: com.ibm.ws.ffdc.impl.FfdcProvider@2328368
+[12/5/25 10:00:09:801 UTC] 00000001 AdminInitiali A   ADMN0015I: The administration service is initialized.
+[12/5/25 10:00:10:074 UTC] 00000001 PluginConfigS I   PLGC0057I: The plug-in configuration service started successfully.
+[12/5/25 10:00:10:110 UTC] 00000001 SSLComponentI I   CWPKI0001I: SSL service is initializing the configuration
+[12/5/25 10:00:10:114 UTC] 00000001 SSLConfigMana I   CWPKI0051I: The process has the java security property jdk.certpath.disabledAlgorithms set to [MD2, MD5, SHA1 jdkCA & usage TLSServer, RSA keySize < 1024, DSA keySize < 1024, EC keySize < 224, include jdk.disabled.namedCurves, SHA1 usage SignedJAR & denyAfter 2019-01-01].  The WebSphere Application server is setting the java security property jdk.certpath.disabledAlgorithms to [MD2, RSA keySize < 1024, MD5]. 
+[12/5/25 10:00:10:115 UTC] 00000001 SSLConfigMana I   CWPKI0051I: The process has the java security property jdk.tls.disabledAlgorithms set to [SSLv3, TLSv1, TLSv1.1, RC4, DES, MD5withRSA, DH keySize < 1024, DESede, EC keySize < 224, 3DES_EDE_CBC, anon, NULL, DES_CBC, include jdk.disabled.namedCurves].  The WebSphere Application server is setting the java security property jdk.tls.disabledAlgorithms to [SSLv3, RC4, DH keySize < 768, MD5withRSA]. 
+[12/5/25 10:00:10:116 UTC] 00000001 FIPSManager   I   CWPKI0044I: FIPS security mode is : No FIPS property found. 
+[12/5/25 10:00:10:118 UTC] 00000001 WSKeyStore    W   CWPKI0041W: One or more key stores are using the default password.
+[12/5/25 10:00:10:125 UTC] 00000001 SSLConfigMana I   CWPKI0027I: Disabling default hostname verification for HTTPS URL connections.
+[12/5/25 10:00:10:129 UTC] 00000001 SSLDiagnostic I   CWPKI0014I: The SSL component's FFDC Diagnostic Module com.ibm.ws.ssl.core.SSLDiagnosticModule registered successfully: true.
+[12/5/25 10:00:10:129 UTC] 00000001 SSLComponentI I   CWPKI0002I: SSL service initialization completed successfully
+[12/5/25 10:00:10:131 UTC] 00000001 DiagnosticCon I com.ibm.wsspi.rasdiag.DiagnosticConfigHome setStateCollectionSpec RASD0012I: Updating State Collection Spec from Uninitialized Value to .*:.*=0
+[12/5/25 10:00:10:135 UTC] 00000001 PMIImpl       A   CWPMI1001I: PMI is enabled
+[12/5/25 10:00:10:298 UTC] 00000001 ModelMgr      I   WSVR0801I: Initializing all server configuration models
+[12/5/25 10:00:10:645 UTC] 00000001 WorkSpaceMana A   WKSP0500I: Workspace configuration consistency check is disabled.
+[12/5/25 10:00:10:878 UTC] 00000001 XDAComponentI I   CWXDA0001I: XDA service XDAComponentImpl initialized successfully.
+[12/5/25 10:00:11:038 UTC] 00000001 ODCFactory    I   setFactoryClass = com.ibm.ws.odc.xd.XDODCFactory
+[12/5/25 10:00:11:040 UTC] 00000001 ODCConstructo I   setFactoryClass = com.ibm.ws.odc.xd.XDODCConstructor@7b288b2e
+[12/5/25 10:00:11:070 UTC] 00000001 SecurityDM    I   SECJ0231I: The Security component's FFDC Diagnostic Module com.ibm.ws.security.core.SecurityDM registered successfully: true.
+[12/5/25 10:00:11:092 UTC] 00000001 distSecurityC I   SECJ6004I: Security Auditing is disabled. 
+[12/5/25 10:00:11:097 UTC] 00000001 distSecurityC I   SECJ0309I: Java 2 Security is disabled.
+[12/5/25 10:00:11:098 UTC] 00000001 Configuration A   SECJ0215I: Successfully set JAAS login provider configuration class to com.ibm.ws.security.auth.login.Configuration.
+[12/5/25 10:00:11:101 UTC] 00000001 distSecurityC I   SECJ0240I: Security service initialization completed successfully
+[12/5/25 10:00:11:235 UTC] 00000001 GridConfigura I   CWLRB5871I: The GridConfigurator initialized successfully.
+[12/5/25 10:00:11:239 UTC] 00000001 GridDBConfigu I   CWLRB5874I: The GridDBConfigurator initialized successfully.
+[12/5/25 10:00:11:240 UTC] 00000001 BatchSensorCo I   CWLRB5902I: BatchSensorComponent initializing.
+[12/5/25 10:00:11:241 UTC] 00000001 BatchSensorCo I   CWLRB5903I: BatchSensorComponent initialized successfully.
+[12/5/25 10:00:11:257 UTC] 00000001 UserManagemen I   CWWIM6000I Starting bootstrap sequence for the dynamic reload manager.
+[12/5/25 10:00:11:258 UTC] 00000001 UserManagemen I   CWWIM6001I Waiting for notification that the server has finished starting.
+[12/5/25 10:00:11:259 UTC] 00000001 VisServiceCon I VisServiceConfigHelper getWriteInterval obj=com.ibm.ws.runtime.config.ConfigObjectImpl@44f6b20d[/opt/IBM/WAS/9.0/profiles/AppServ07/config/cells/ip-172-31-19-246Cell01/nodes/ip-172-31-19-246Node06/servers/nodeagent/server.xml#NameServer_1764123050337]
+[12/5/25 10:00:11:260 UTC] 00000001 VisServiceCon I VisServiceConfigHelper getWriteInterval obj=com.ibm.ws.runtime.config.ConfigObjectImpl@2c7f5d5a[/opt/IBM/WAS/9.0/profiles/AppServ07/config/cells/ip-172-31-19-246Cell01/nodes/ip-172-31-19-246Node06/servers/nodeagent/server.xml#NodeAgent_1764123050338]
+[12/5/25 10:00:11:377 UTC] 00000001 SSLComponentI I   CWPKI0003I: SSL service is starting
+[12/5/25 10:00:11:382 UTC] 00000001 SSLComponentI I   CWPKI0004I: SSL service started successfully
+[12/5/25 10:00:11:452 UTC] 00000001 CoordinatorIm I   HMGR0228I: The Coordinator is not an Active Coordinator for core group DefaultCoreGroup. The active coordinator set is [].
+[12/5/25 10:00:11:523 UTC] 00000001 MbuRmmAdapter I   DCSV1001I: DCS Stack DefaultCoreGroup at Member ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent: Created a new transport infrastructure instance successfully. Transport type is ChannelFramework. Version information is 1.9.8.20 - 14/10/13.
+[12/5/25 10:00:11:535 UTC] 00000001 DCSStackImpl  I   DCSV0005I: DCS Stack DefaultCoreGroup at Member ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent: Started. Stack version information: DCSBV_WAS6_1_20060409. Stack protocol information: 61002.
+[12/5/25 10:00:11:537 UTC] 00000046 ViewReceiver  I   DCSV1033I: DCS Stack DefaultCoreGroup at Member ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent: Confirmed all new view members in view identifier (1:0.ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent). View channel type is View|Ptp.
+[12/5/25 10:00:11:541 UTC] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCP_1 is listening on host *  (IPv6) port 9355.
+[12/5/25 10:00:11:542 UTC] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain DCS.
+[12/5/25 10:00:11:544 UTC] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain DCS-Secure.
+[12/5/25 10:00:11:545 UTC] 00000001 DCSPluginImpl I   HMGR0001I: The DCS Core Stack transport has been started for core group DefaultCoreGroup. There are 5 members.
+[12/5/25 10:00:11:553 UTC] 00000001 BBChoiceConfi I   CWOBB2000I: The cell's configuration calls for the use of the overlay-based implementation of the Bulletin Board.
+[12/5/25 10:00:11:597 UTC] 00000040 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain chain_0.
+[12/5/25 10:00:11:609 UTC] 00000001 Peer          I   ODCF8509I: The unstructured overlay UDP Channel UDP_0 is listening on host 172.31.19.246 port 11016.
+[12/5/25 10:00:11:639 UTC] 00000001 TCPChannel    I   TCPC0001I: TCP Channel sonIncomingTcpConnectorInboundChannel_SonIncomingTCPSubsystem_0_11015 is listening on host ip-172-31-19-246.eu-north-1.compute.internal  (IPv4: 172.31.19.246) port 11015.
+[12/5/25 10:00:11:640 UTC] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain sonIncomingTcpInputChain_SonIncomingTCPSubsystem_0_11015.
+[12/5/25 10:00:11:644 UTC] 00000001 Peer          I   ODCF8510I: The unstructured overlay is setting up: 172.31.19.246  udp_port=11016  tcp_port=11015.
+[12/5/25 10:00:11:678 UTC] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain sonOutputTcpOutputChain_0.
+[12/5/25 10:00:11:708 UTC] 00000001 InterestManag I   CWOBB3000I: The bulletin board interest aware membership service has initialized.
+[12/5/25 10:00:11:718 UTC] 00000001 BBFactoryImpl I   CWOBB1000I: The overlay-based bulletin board has been initialized in process ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent in core group <null> in cell ip-172-31-19-246Cell01.
+[12/5/25 10:00:11:732 UTC] 0000003b MbuRmmAdapter I   DCSV1032I: DCS Stack DefaultCoreGroup at Member ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent: Connected a defined member ip-172-31-19-246Cell01\ip-172-31-19-246CellManager01\dmgr.
+[12/5/25 10:00:11:758 UTC] 00000056 Peer          I   ODCF8531I: Added neighbor ip=172.31.19.246 udp=11007 tcp=11008 ID=929ddbce8b5a8ee71a3007e9c5bdb8c9c083a889 version=0;cellName=ip-172-31-19-246Cell01;bridgedCells=[];structuredGateway=true;properties={MEMBER_STARTUP_TIME=1764927478607, MEMBER_VERSION=4, memberName=ip-172-31-19-246Cell01\ip-172-31-19-246CellManager01\dmgr, epoch=1764927479360, inOdc=1, ODC_PUBLISHER_ONLY=false}, neighbor set size is now 1.
+[12/5/25 10:00:11:762 UTC] 00000056 Peer          I   ODCF8516I: The unstructured overlay is operational, without security: 172.31.19.246  udp_port=11016  tcp_port=11015.
+[12/5/25 10:00:11:766 UTC] 00000001 DocumentBuild I   DCUT0001I: Dependency VESPA is at level a1602.08143023 built on 2016-01-08T19:31:28Z
+[12/5/25 10:00:11:767 UTC] 00000001 DocumentBuild I   DCUT0001I: Dependency SERV1 is at level cf051732.02 built on 2017-08-10T20:02:35Z
+[12/5/25 10:00:11:771 UTC] 00000001 CoordinatorCo I   HMGR0011I: The High Availability Manager is configured to be the bulletin board provider. 
+[12/5/25 10:00:11:799 UTC] 00000001 DragDropDeplo I   CWLDD0103I: Monitored directory application deployment service has been configured to be off.
+[12/5/25 10:00:11:801 UTC] 00000001 ExternalNodeS I   XNMI0010I: The external node stats service started successfully.
+[12/5/25 10:00:11:828 UTC] 00000001 NameServerImp A   NMSV0018I: Name server available on bootstrap port 2816.
+[12/5/25 10:00:11:863 UTC] 00000001 NodeDetectCom I   ASND0004I: Detected 2 processor(s) operating at 2400 MHz with 7517 Mb of total system memory.
+[12/5/25 10:00:11:890 UTC] 00000001 RuntimeServic I   CWXDA0012I: XDA service SonAgentService is disabled.
+[12/5/25 10:00:11:891 UTC] 00000001 RuntimeServic I   CWXDA0012I: XDA service SecurityService is disabled.
+[12/5/25 10:00:11:924 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service ServicesContainer initialized successfully.
+[12/5/25 10:00:11:926 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service HttpService initialized successfully.
+[12/5/25 10:00:11:926 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service HttpOutBoundService initialized successfully.
+[12/5/25 10:00:11:927 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service NodeManagerService initialized successfully.
+[12/5/25 10:00:11:929 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service FileService initialized successfully.
+[12/5/25 10:00:11:934 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service ProcessService initialized successfully.
+[12/5/25 10:00:11:936 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service RemoteProcessService initialized successfully.
+[12/5/25 10:00:11:938 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service CatalogService initialized successfully.
+[12/5/25 10:00:11:939 UTC] 00000001 ODCFactory    I   setFactoryClass = com.ibm.ws.odc.xd.XDODCFactory
+[12/5/25 10:00:11:940 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service XDAgentPrepODCService initialized successfully.
+[12/5/25 10:00:11:942 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service RemoteAgentServiceComponent initialized successfully.
+[12/5/25 10:00:11:944 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service AsyncPmiServer initialized successfully.
+[12/5/25 10:00:11:945 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service AsyncPmiClient initialized successfully.
+[12/5/25 10:00:11:955 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service NodeDetect initialized successfully.
+[12/5/25 10:00:11:958 UTC] 00000001 RuntimeServic I   CWXDA0012I: XDA service RuntimeReplicationService is disabled.
+[12/5/25 10:00:11:962 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service PHPService initialized successfully.
+[12/5/25 10:00:11:964 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service DiscoveryService initialized successfully.
+[12/5/25 10:00:11:968 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service ServerHandler initialized successfully.
+[12/5/25 10:00:11:969 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service XDAgentODCService initialized successfully.
+[12/5/25 10:00:11:971 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service HADmgrListenerService initialized successfully.
+[12/5/25 10:00:11:972 UTC] 00000001 RuntimeServic I   CWXDA0012I: XDA service XDAgentDiscoveryServiceImpl is disabled.
+[12/5/25 10:00:11:973 UTC] 00000001 RuntimeServic I   CWXDA0012I: XDA service VVNodeDetectRuntimeServiceImpl is disabled.
+[12/5/25 10:00:11:975 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service BBSonAgentService initialized successfully.
+[12/5/25 10:00:11:976 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service Hypervisor initialized successfully.
+[12/5/25 10:00:11:977 UTC] 00000001 RuntimeServic I   CWXDA0001I: XDA service WCAService initialized successfully.
+[12/5/25 10:00:11:978 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service ServicesContainer started successfully.
+[12/5/25 10:00:11:987 UTC] 00000001 TCPChannel    I   TCPC0001I: TCP Channel XDA_TCP_CHANNEL is listening on host ip-172-31-19-246.eu-north-1.compute.internal  (IPv4: 172.31.19.246) port 7067.
+[12/5/25 10:00:11:988 UTC] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain XDA_CHAIN.
+[12/5/25 10:00:11:989 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service HttpService started successfully.
+[12/5/25 10:00:11:994 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service HttpOutBoundService started successfully.
+[12/5/25 10:00:12:001 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service NodeManagerService started successfully.
+[12/5/25 10:00:12:001 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service FileService started successfully.
+[12/5/25 10:00:12:015 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service ProcessService started successfully.
+[12/5/25 10:00:12:017 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service RemoteProcessService started successfully.
+[12/5/25 10:00:12:017 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service CatalogService started successfully.
+[12/5/25 10:00:12:018 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service XDAgentPrepODCService started successfully.
+[12/5/25 10:00:12:020 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service RemoteAgentServiceComponent started successfully.
+[12/5/25 10:00:12:021 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service AsyncPmiServer started successfully.
+[12/5/25 10:00:12:021 UTC] 00000001 RuntimeServic I   CWXDA0012I: XDA service AsyncPmiClient is disabled.
+[12/5/25 10:00:12:053 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service NodeDetect started successfully.
+[12/5/25 10:00:12:058 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service PHPService started successfully.
+[12/5/25 10:00:12:088 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service DiscoveryService started successfully.
+[12/5/25 10:00:12:096 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service ServerHandler started successfully.
+[12/5/25 10:00:12:099 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service XDAgentODCService started successfully.
+[12/5/25 10:00:12:105 UTC] 00000001 XDWsGroupMana I   ODCF8010I: Peer layer setting up.
+[12/5/25 10:00:12:116 UTC] 00000001 P2PGroup      I   ODCF8020I: Peer layer starting; process=ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent; boot host=[ip-172-31-19-246.eu-north-1.compute.internal:11007, ip-172-31-19-246.eu-north-1.compute.internal:11016].
+[12/5/25 10:00:12:131 UTC] 00000001 SonP2PShimImp I   ODCF8030I: Peer layer started; process=ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent.
+[12/5/25 10:00:12:135 UTC] 0000006b P2PGroup      I   ODCF8040I: Detected process ip-172-31-19-246Cell01\ip-172-31-19-246CellManager01\dmgr started.
+[12/5/25 10:00:12:179 UTC] 00000066 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain XD_OUTBOUND.
+[12/5/25 10:00:13:134 UTC] 00000001 ODCTreeImpl   I   ODCF0008I: Partial Routing information was received after waiting for 1 seconds.
+[12/5/25 10:00:13:136 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service HADmgrListenerService started successfully.
+[12/5/25 10:00:13:137 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service BBSonAgentService started successfully.
+[12/5/25 10:00:13:140 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service Hypervisor started successfully.
+[12/5/25 10:00:13:144 UTC] 00000001 RuntimeServic I   CWXDA0002I: XDA service WCAService started successfully.
+[12/5/25 10:00:13:145 UTC] 00000001 RuntimeManage I   CWXDA9009I: XDAgent launched successfully.
+[12/5/25 10:00:13:146 UTC] 00000001 XDAComponentI I   CWXDA0002I: XDA service XDAComponentImpl started successfully.
+[12/5/25 10:00:13:159 UTC] 00000001 XD            I   DCUT0002I: Loaded 64 bit native library: ProcessCPU64
+[12/5/25 10:00:13:164 UTC] 00000001 XD            I   DCUT0002I: Loaded 64 bit native library: NodeDetect64
+[12/5/25 10:00:13:175 UTC] 00000001 XD            I   DCUT0002I: Loaded 64 bit native library: HeapDetect64
+[12/5/25 10:00:13:231 UTC] 00000001 AsyncPmiBridg I   ASPS0010I: In management overlay network, with name=ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent
+[12/5/25 10:00:13:286 UTC] 00000001 XD            I   DCUT0002I: Loaded 64 bit native library: NodeDetect64
+[12/5/25 10:00:13:502 UTC] 00000001 TreeBuilder   I   INIT 180 ms. nodes:51
+[12/5/25 10:00:13:644 UTC] 00000001 JMXSoapAdapte A   ADMC0013I: The SOAP connector is available at port 8882
+[12/5/25 10:00:13:650 UTC] 00000001 TCPChannel    I   TCPC0001I: TCP Channel TCPInboundChannel_ipcc.Default_IPC_Connector_Name is listening on host localhost  (IPv4: 127.0.0.1) port 9635.
+[12/5/25 10:00:13:650 UTC] 00000001 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain IPCCInboundChain.Default_IPC_Connector_Name.
+[12/5/25 10:00:13:651 UTC] 00000001 IPCConnectorS I   ADMC0070I: The IPC connector is available at port 9635
+[12/5/25 10:00:13:652 UTC] 00000001 distSecurityC I   securityServiceStarted is true
+[12/5/25 10:00:13:653 UTC] 00000001 distSecurityC I   SECJ0243I: Security service started successfully
+[12/5/25 10:00:13:655 UTC] 00000001 distSecurityC I   SECJ0210I: Security enabled false
+[12/5/25 10:00:13:655 UTC] 00000001 JMSRegistrati A   WMSG1611I: The installed level of the WebSphere MQ messaging provider is 9.0.0.1.
+[12/5/25 10:00:13:659 UTC] 00000001 JMSRegistrati I   WMSG1703I: RAR implementation version 9.0.0.1-p900-001-170411
+[12/5/25 10:00:13:711 UTC] 00000001 GridConfigura I   CWLRB5873I: The GridConfiguratorMBean was activated successfully.
+[12/5/25 10:00:13:714 UTC] 00000001 BatchSensorCo I   CWLRB5904I: BatchSensorComponent starting...
+[12/5/25 10:00:13:733 UTC] 00000001 BatchSensorCo I   CWLRB5905I: Successfully activated GridEndpointSensorMBean.
+[12/5/25 10:00:13:924 UTC] 00000001 WsmmConfigFac I   ARFM5007I: ARFM configuration for cell ip-172-31-19-246Cell01 is { arfmManageCpu=true arfmQueueMode=cluster ARFM.Mode=Automatic ARFM.MagicNOverride=-1 ARFM.MagicNMode=false aggregationPeriod=5.0 sec ctlCycleMinLength=59.0 sec smoothingWindow=12 maxQueueLen=1000 cpuLimit=100% cpuLimitForCappedVMs=95.0% WorkProfiler.Period=1.0 min WorkProfiler.HalfLife=10.0 min WorkProfiler.AlphaSmoothingHalfLife=10.0 min UseODRs=true WorkProfiler.UseProcessCPU=true WorkProfiler.UseOverhead=false goodnessWeightThreshold=20.0 goodnessWeightFactor=20.0 rhoWeightThreshold=20.0 rhoWeightFactor=8.0 goodnessThreshold=20.0 timeoutFactor=-1.0 timeoutRelaxMinutes=5.0 stuckTension=1.0 initialNominalSrvTime=100 inactivityMinutes=5.0 borrowFactorLimit=1.0 limitBorrowingByPackedPower=false serverStatsWaitTime=2000 nomSrvTimeHalfLife=60000 ratioHalfLife=600000 dlgDspRateHalfLife=600000 msgDspRateHalfLife=300000 initialMsgDlgRatioHalfLife=600000 initialMsgDlgRatio=6.0 msgDlgRatioBadTime=300000 highMemUtilLimit=1.0 profilerSolver=null profilerCorrelationLimit=0.95 profilerCorrelationWithYLimit=0.14 profilerCyclesBetweenSaves=15 memoryOverloadProtectionControlBroadcastPeriodSec=30 memoryOverloadProtectionControlBroadcastShortPeriodSec=15 memoryMarginRatio_fromCell=null maxNonFullGcMemoryReleaseMBOverride=-1 explicitGcPeriodSecOverride=-1 gcReleasesQuicklyOverride=null gcOptimizesThroughputOverride=null memUtilUpHalflife=1000000.0 memUtilDownHalflife=0.0 limitPower=false detectTxcViolations=false detectSvcViolations=false averagingWindowInMS=180000 intervalPerIndividualCountsInMS=10000 minStdDevRatio=0.25 maxZoneFactor=0.99 rampUpFactor=0.95 initialMaxRatePerSec=3.4028235E38 storageServiceWaitTimeInMs=5000 rampUpWithoutFeedbackInMs=180000 moc6AveragingWindowInMS=50000 moc6IntervalPerIndividualCountsInMS=1000 moc6UsePersistentStorage=true usePersistentStorage=false useSlope=true fastRampUp=true closeToMaxFraction=0.5 minSlopePointRate=5.0 minSlopePointRateDiff=5.0 concurrencyDivisor=null workProfilerServerStartupDelayMillis=61440 workProfilerMinimumCPUUtilization=0.003000000026077032 minimumCPURhoMultiplier=0.75 minimumCPURhoWeight=5.0 EnableFilters=true SipCpuOverloadProtection=true HttpAdmCtlForCpuOverloadProtection=true SipAdmCtlForCpuOverloadProtection=true AutoMemoryOverloadProtection=true}.
+[12/5/25 10:00:14:934 UTC] 00000001 ODCTreeImpl   I   ODCF0008I: Partial Routing information was received after waiting for 1 seconds.
+[12/5/25 10:00:14:979 UTC] 00000001 RMIConnectorC A   ADMC0026I: The RMI Connector is available at port 2816
+[12/5/25 10:00:14:985 UTC] 00000001 JMXConnectors I   ADMC0058I: The JMX JSR160RMI connector is available at port 2816
+[12/5/25 10:00:14:991 UTC] 0000007c UserManagemen I   CWWIM6002I Received notification that the server has finished starting.
+[12/5/25 10:00:15:136 UTC] 00000084 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain IPCCOutboundChain.
+[12/5/25 10:00:15:151 UTC] 00000089 DiscoveryMBea I   ADMD0023I: The system discovered process (name: dmgr, type: DeploymentManager, pid: 260751)
+[12/5/25 10:00:15:762 UTC] 0000003a RoleViewLeade I   DCSV8054I: DCS Stack DefaultCoreGroup at Member ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent: View change in process. 
+[12/5/25 10:00:15:777 UTC] 0000003b VSyncAlgo2    I   DCSV2004I: DCS Stack DefaultCoreGroup at Member ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent: View synchronization completed successfully. The View Identifier is (1:0.ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent). The internal details are The leader equals ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent, ccv equals ((1:0.ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent).1.0).
+[12/5/25 10:00:15:778 UTC] 00000091 NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:00:15:804 UTC] 0000003a MBRStateXchg  I   DCSV8070I: DCS Stack DefaultCoreGroup at Member ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent: Updated HA Manager state. New state version is CoreGroupConfigV2 : MemberName dmgr, DMGR true, time read 1764927478266, number coordinators 1, numberPreferred 0, numberProcesses 5, version 62f717341490b03c99132dd84abaf94ab4b9b810, dcs protocol version 6.1.0, ham protocol version 6.0.2.31 
+[12/5/25 10:00:15:809 UTC] 0000003a CoordinatorCo I   HMGR0086I: This server is updating its core group configuration. The new document version is CoreGroupConfigV2 : MemberName dmgr, DMGR true, time read 1764927478266, number coordinators 1, numberPreferred 0, numberProcesses 5, version 62f717341490b03c99132dd84abaf94ab4b9b810, dcs protocol version 6.1.0, ham protocol version 6.0.2.31.
+[12/5/25 10:00:15:811 UTC] 0000003a CoordinatorIm I   HMGR0228I: The Coordinator is not an Active Coordinator for core group DefaultCoreGroup. The active coordinator set is [ip-172-31-19-246Cell01\ip-172-31-19-246CellManager01\dmgr].
+[12/5/25 10:00:15:812 UTC] 00000049 ViewReceiver  I   DCSV1033I: DCS Stack DefaultCoreGroup at Member ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent: Confirmed all new view members in view identifier (3:0.ip-172-31-19-246Cell01\ip-172-31-19-246CellManager01\dmgr). View channel type is View|Ptp.
+[12/5/25 10:00:15:821 UTC] 0000003a CoordinatorIm I   HMGR0218I: A new core group view has been installed. The core group is DefaultCoreGroup. The view identifier is (3:0.ip-172-31-19-246Cell01\ip-172-31-19-246CellManager01\dmgr). The number of members in the new view is 2.
+[12/5/25 10:00:15:821 UTC] 0000003a CoreGroupMemb I   DCSV8050I: DCS Stack DefaultCoreGroup at Member ip-172-31-19-246Cell01\ip-172-31-19-246Node06\nodeagent: New view installed, identifier (3:0.ip-172-31-19-246Cell01\ip-172-31-19-246CellManager01\dmgr), view size is 2 (AV=2, CD=2, CN=2, DF=5)
+[12/5/25 10:00:16:071 UTC] 0000005d NGUtil$Server I   ASND0002I: Detected server nodeagent started on node ip-172-31-19-246Node06
+[12/5/25 10:00:16:095 UTC] 00000001 ServerStopped I   ODCF0009I: Marked server /cell/ip-172-31-19-246Cell01/node/ip-172-31-19-246Node06/server/nodeagent STARTED due to transaction: local - TreeBuilder.setMyServerState
+[12/5/25 10:00:16:097 UTC] 00000001 WsServerImpl  A   WSVR0001I: Server nodeagent open for e-business
+[12/5/25 10:00:16:130 UTC] 00000084 WSChannelFram A   CHFW0019I: The Transport Channel Service has started chain IPCCOutboundChainSecured.
+[12/5/25 10:00:16:168 UTC] 0000007f ThreadPool    I   WSVR0630I: Growable thread pool "ProcessDiscovery" has been expanded beyond its initially-defined maximum capacity.  The pool size is currently "3".
+[12/5/25 10:00:17:029 UTC] 00000098 DiscoveryMBea I   ADMD0023I: The system discovered process (name: Cluster_member3_host1, type: ManagedProcess, pid: 254441)
+[12/5/25 10:00:17:032 UTC] 00000097 DiscoveryMBea I   ADMD0023I: The system discovered process (name: Cluster_member2_host1, type: ManagedProcess, pid: 255482)
+[12/5/25 10:00:17:033 UTC] 00000096 DiscoveryMBea I   ADMD0023I: The system discovered process (name: Cluster_member1_host1, type: ManagedProcess, pid: 254439)
+[12/5/25 10:00:17:118 UTC] 000000a0 DMAdapter     I com.ibm.ws.ffdc.impl.DMAdapter getAnalysisEngine FFDC1009I: Analysis Engine using data base: /opt/IBM/WAS/9.0/properties/logbr/ffdc/adv/ffdcdb.xml
+[12/5/25 10:00:17:202 UTC] 0000007d FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WAS/9.0/profiles/AppServ07/logs/ffdc/nodeagent_9459b66e_25.12.05_10.00.17.0847186241558316557842.txt com.ibm.ws.management.AdminServiceImpl.invoke 693
+[12/5/25 10:00:17:277 UTC] 000000a0 FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WAS/9.0/profiles/AppServ07/logs/ffdc/nodeagent_567a8e03_25.12.05_10.00.17.0732503810107577664714.txt com.ibm.ws.management.status.AbstractStatusCache.invoke 618
+[12/5/25 10:00:17:590 UTC] 00000090 FfdcProvider  W com.ibm.ws.ffdc.impl.FfdcProvider logIncident FFDC1003I: FFDC Incident emitted on /opt/IBM/WAS/9.0/profiles/AppServ07/logs/ffdc/nodeagent_f0e30d8b_25.12.05_10.00.17.5896975162504391604166.txt com.ibm.ws.management.AdminServiceImpl.invoke 422
+[12/5/25 10:00:19:151 UTC] 0000006b ServerStopped I   ODCF0009I: Marked server /cell/ip-172-31-19-246Cell01/node/ip-172-31-19-246CellManager01/server/dmgr STARTED due to transaction: remote - getTreeResponse from ip-172-31-19-246Cell01\ip-172-31-19-246CellManager01\dmgr
+[12/5/25 10:00:19:157 UTC] 00000069 ODCTreeImpl   I   ODCF0007I: Routing information was received. 
+[12/5/25 10:00:24:013 UTC] 0000005d NGUtil$Server I   ASND0002I: Detected server dmgr started on node ip-172-31-19-246CellManager01
+[12/5/25 10:01:01:716 UTC] 00000042 DefaultTokenP I   HMGR0149E: An attempt to open a connection to core group DefaultCoreGroup has been rejected. The sending process has a name of ip-172-31-19-246Cell01\ip-172-31-19-246Node06\Cluster_member2_host1 and an IP address of /172.31.19.246. Global security in the local process is Disabled. Global security in the sending process is Enabled. The received token starts with ï¿½ï¿½8ï¿½t.
+ï¿½ï¿½Jï¿½ï¿½ï¿½
+7ï¿½vCï¿½;ï¿½Bï¿½. The exception is <null>.
+[12/5/25 10:01:02:661 UTC] 00000042 DefaultTokenP I   HMGR0149E: An attempt to open a connection to core group DefaultCoreGroup has been rejected. The sending process has a name of ip-172-31-19-246Cell01\ip-172-31-19-246Node06\Cluster_member3_host1 and an IP address of /172.31.19.246. Global security in the local process is Disabled. Global security in the sending process is Enabled. The received token starts with ï¿½ï¿½8ï¿½t.
+ï¿½ï¿½Jï¿½ï¿½ï¿½
+7ï¿½vCï¿½;ï¿½Bï¿½. The exception is <null>.
+[12/5/25 10:01:07:691 UTC] 00000042 DefaultTokenP I   HMGR0149E: An attempt to open a connection to core group DefaultCoreGroup has been rejected. The sending process has a name of ip-172-31-19-246Cell01\ip-172-31-19-246Node06\Cluster_member1_host1 and an IP address of /172.31.19.246. Global security in the local process is Disabled. Global security in the sending process is Enabled. The received token starts with ï¿½ï¿½8ï¿½t.
+ï¿½ï¿½Jï¿½ï¿½ï¿½
+7ï¿½vCï¿½;ï¿½Bï¿½. The exception is <null>.
+[12/5/25 10:01:15:286 UTC] 000000bb NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:02:13:242 UTC] 000000c3 HAManagedItem I   HAMI0023I: Controller com.ibm.ws.xd.pmi.async.server.AsyncPmiBridgeRegularEndOverlay changed state from INACTIVE to ACTIVE_DORMANT
+[12/5/25 10:02:15:298 UTC] 000000c5 NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:03:15:288 UTC] 000000ca NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:04:15:289 UTC] 000000d0 NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:05:15:291 UTC] 000000d5 NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:05:36:078 UTC] 0000006e FileRepositor A   ADMR0012I: The repository epoch is refreshed.
+[12/5/25 10:05:36:080 UTC] 0000006e FileRepositor A   Repository epoch refresh
+[12/5/25 10:05:36:807 UTC] 000000dd NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:06:15:293 UTC] 000000e0 NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:07:15:296 UTC] 000000e4 NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:08:15:305 UTC] 000000e8 NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:09:15:294 UTC] 000000ec NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:10:15:299 UTC] 000000f0 NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+[12/5/25 10:11:15:295 UTC] 000000f4 NodeSyncTask  A   ADMS0003I: The configuration synchronization completed successfully.
+
+
+[root@ip-172-31-19-246 bin]# ./stopNode.sh
+ADMU0116I: Tool information is being logged in file
+           /opt/IBM/WAS/9.0/profiles/AppServ07/logs/nodeagent/stopServer.log
+ADMU0128I: Starting tool with the AppServ07 profile
+ADMU3100I: Reading configuration for server: nodeagent
+ADMU3201I: Server stop request issued. Waiting for stop status.
+ADMU4000I: Server nodeagent stop completed.
+
+
+[root@ip-172-31-19-246 bin]# ./syncNode.sh 16.171.63.159 8879
+ADMU0116I: Tool information is being logged in file
+           /opt/IBM/WAS/9.0/profiles/AppServ07/logs/syncNode.log
+ADMU0128I: Starting tool with the AppServ07 profile
+ADMU0401I: Begin syncNode operation for node ip-172-31-19-246Node06 with
+           Deployment Manager 16.171.63.159: 8879
+ADMU0016I: Synchronizing configuration between node and cell.
+ADMU0402I: The configuration for node ip-172-31-19-246Node06 has been
+           synchronized with Deployment Manager 16.171.63.159: 8879
+[root@ip-172-31-19-246 bin]#
+
+
+
+- in case you are doing any acitivy on application serve level and if it is broken then wha tyou have to do 
+
+- make sure that both configuration is matching 
+
+
+
+ADMU0116I: Tool information is being logged in file
+           /opt/IBM/WAS/9.0/profiles/AppServ07/logs/syncNode.log
+ADMU0128I: Starting tool with the AppServ07 profile
+ADMU0401I: Begin syncNode operation for node ip-172-31-19-246Node06 with
+           Deployment Manager 16.171.63.159: 8879
+ADMU0403E: The syncNode command may only be run when the node agent is stopped.
+            Either stop the node agent or use the administrative console or
+           wsadmin to synchronize the node.
+
+[root@ip-172-31-19-246 bin]# ./stopNode.sh
+ADMU0116I: Tool information is being logged in file
+           /opt/IBM/WAS/9.0/profiles/AppServ07/logs/nodeagent/stopServer.log
+ADMU0128I: Starting tool with the AppServ07 profile
+ADMU3100I: Reading configuration for server: nodeagent
+ADMU3201I: Server stop request issued. Waiting for stop status.
+ADMU4000I: Server nodeagent stop completed.
+
+[root@ip-172-31-19-246 bin]# ./syncNode.sh 16.171.63.159 8879
+ADMU0116I: Tool information is being logged in file
+           /opt/IBM/WAS/9.0/profiles/AppServ07/logs/syncNode.log
+ADMU0128I: Starting tool with the AppServ07 profile
+ADMU0401I: Begin syncNode operation for node ip-172-31-19-246Node06 with
+           Deployment Manager 16.171.63.159: 8879
+ADMU0016I: Synchronizing configuration between node and cell.
+ADMU0402I: The configuration for node ip-172-31-19-246Node06 has been
+           synchronized with Deployment Manager 16.171.63.159: 8879
+[root@ip-172-31-19-246 bin]# hostname
+ip-172-31-19-246.eu-north-1.compute.internal
+[root@ip-172-31-19-246 bin]# ./syncNode.sh ip-172-31-19-246.eu-north-1.compute.internal 8879
+ADMU0116I: Tool information is being logged in file
+           /opt/IBM/WAS/9.0/profiles/AppServ07/logs/syncNode.log
+ADMU0128I: Starting tool with the AppServ07 profile
+ADMU0401I: Begin syncNode operation for node ip-172-31-19-246Node06 with
+           Deployment Manager ip-172-31-19-246.eu-north-1.compute.internal:
+           8879
+ADMU0016I: Synchronizing configuration between node and cell.
+ADMU0402I: The configuration for node ip-172-31-19-246Node06 has been
+           synchronized with Deployment Manager
+           ip-172-31-19-246.eu-north-1.compute.internal: 8879
+[root@ip-172-31-19-246 bin]#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+09/12/2025
+
+Websphere Dabase connectivity coponents 
+
+1. JDBC provide
+2. DataSource 
+3. J2C Autthenctication. 
+
+
+-- Properties 
+
+-- After / Database issues in Websphere environment
+
+1. JDBC Provider : - it will provide the runtime environment for connection ( WAS App server to DB server)
+
+	- Connection will be used by application, to make interaction with database. 
+	
+    - Datbase - ORACLE,SQL,DB2 ect. 
+
+
+2. DataSource : is nothing but connection pool 
+
+   - Coonnection pool will proivde reday use connection and it is reusable connection. -
+   
+   - Dev can writ the code to create the connection in the program. this kind kind of connection ar not ready to user and reusable.
+   
+   - once we create JDBC providers, the we can create any number of DataSource (DS) on single JDBC provider. 
+   
+   - we should consider the infrastructure as well.
+   
+   1. Connection pool is data source is local transaction. (it will not ask for the commit )
+   2. XA data source is glble transaction ( TM manager for DB wan not availability at that time /cash/ rollback )
+   
+      The transaction which interact with multi DB , will follow the 2 phase commit 
+	  
+		1. Transction manager form Application server will ask/ check the resources (Dabase sever) whether they are ready to commit or not. 
+   
+   - To maintain the connection pool we are having pool manager therad thi is also maintain by on f th conneciton pool properties. (reap time) by defualt 180 sec.
+  
+     
+Types of JDBC provides : 
+
+	Type1 - JDBC , ODBC
+	Type2 - Thick Driver 
+	Type3 - Network driver
+	Type4 - Think driver - with java.
+	
+	1. Entire pool
+    2. Failing connection 
+Properties and prameters : 
+
+	1. Maximum conneciton : - Specifies the max number of connection / you can create. 10 connect.
+	2. Min conneciton :- specifies the minimum number of connection. (0)
+	3. Reap time : the interval in second between runs of pool maintainer thread. 
+	4. Connection Time out : Number of sceconds a request for a connection waits , when there are not coonection available in pool. ( 180 ssec)
+    5. unused timeout : The interval in seconds after an idle or unused connection is disconnection. (1800 sec , 30min)
+	6. Aged Time : Specifies the interval in seconds before physical conneciton is discarded. [0]
+	 
+Purge Policy : - How to purge conneciton when a stale conneciton or fatal conneciton error is detected. 
+	
+  1. Entire pool - it will discarded all connection 
+  2. Failing connection - only failed connection will discard.
+  
+  
+  
+
+	
+logs for Dabase : - /opt/IBM/WAS/9.0/profiles/AppServ07/tranlog/ip-172-31-19-246Cell01/ip-172-31-19-246Node06/Cluster_member1_host1/transaction/tranlog
+
+
+what are the issue we can face : - 
+
+1. user id got lock 
+2. Password expired
+3. Dabase directory to full 
+4. Due to network connect at DB server side issue ,( you application will not able to access)
+5. Due to Port connection not open (white list)
+6. Host name is not added in the server list.
+7. 
+
+When we installed the websphere Derby database will be install bydefault.
+
+datasource name - OraDataSource
+JNDI name - JNDI/OraDataSource
+
+http://ec2-16-171-63-159.eu-north-1.compute.amazonaws.com/
+
+
+
+jdbc:oracle:thin:@ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:1521:orclpdb - Oracle 
+
+DB 2 database we are using - All the details.
+
+port number - should be white listed.
+
+user name - user
+value - system
+
+Add one more custom propery 
+
+Name - password 
+pass - wasadm123
+
+
+Error  - The test connection operation failed for data source OraDataSource on server dmgr at node ip-172-31-19-246CellManager01 with the following exception: java.sql.SQLException: ORA-12541: Cannot connect. No listener at host ec2-16-171-63-159.eu-north-1.compute.amazonaws.com port 1521. (CONNECTION_ID=ya4I/2f1QOmNTMLCWWim0A==) https://docs.oracle.com/error-help/db/ora-12541/ DSRA0010E: SQL State = 66000, Error Code = 12,541. View JVM logs for further details.
+
+Name- built-in-derby-datasource
+JNDI Name - jdbc/built-in-derby-datasource
+
+
+jdbc:oracle:thin:@ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:1521:ORCL
+jdbc:oracle:thin:@//ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:1521/ORCLPDB1
+
+
+Grid endpoint job logs directory
+
+
+
+
+ij> connect 'jdbc:derby://localhost:1527/derbyDB;create=true';
+
+
+
+/opt/IBM/WAS/9.0/derby/lib/derby.jar
+/opt/IBM/WAS/9.0/derby/lib/derbyclient.jar
+
+
+jdbc:oracle:thin:@ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:1521:ORCL - Custom Database. 
+
+jdbc:derby://ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:1527:MyDerbyDB
+
+${USER_INSTALL_ROOT}/databases/${SERVER}/DefaultDB - Default Database 
+
+
+1. Steps to create JDBC Provider details. 
+
+databaseName	derby
+Provider type : Derby JDBC Provider
+Implementation type : XA Data Source
+JDBC Provider Name - Derby JDBC Provider (XA)3
+
+2. Steps to creat Data Source
+
+DS Name  - built-in-derby-datasource3
+
+JNDI Name - jdbc/built-in-derby-datasource3
+
+
+3. J2C Authotenticatoin 
+
+	DB user id :- 
+	DB pass :- 
+
+
+ which file will get update once we update uid /pass of database - cells / DESKTOP-VB2UEE5Node01Cell / security.xml
+ 
+ 
+Data base - ${USER_INSTALL_ROOT}/databases/${SERVER}/DefaultDB
+
+serverName	localhost
+portNumber	1527
+user	dbuser
+password	dbpassword
+
+jdbc:derby://ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:1527/MyDerbyDB
+jdbc:derby://ec2-16-171-63-159.eu-north-1.compute.amazonaws.com:1527/MyDerbyD;create=true
+${APP_INSTALL_ROOT}/${CELL}/DefaultApplication.ear/DefaultDB
+
+
+name - Derby JDBC Provider
+${DERBY_JDBC_DRIVER_PATH}/derby.jar
+
+database name - ${APP_INSTALL_ROOT}/${CELL}/DefaultApplication.ear/DefaultDB
+
+DS name - built-in-derby-datasource2
+JNDI name - jdbc/built-in-derby-datasource
+Database name - ${USER_INSTALL_ROOT}/databases/${SERVER}/DefaultDB
+
+local of jar file in local/server.
+
+/opt/IBM/WAS/9.0/derby/lib
+
+
+http://localhost:9061/ivt
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+profile creation template path 
+
+C:\Program Files\IBM\WebSphere\AppServer_1\bin\ProfileManagement
+C:\Program Files\IBM\WebSphere\AppServer_1\bin\ProfileManagement\.\pmt.bat
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+profile cell
+
+uid - wasadm
+pass - wasadm123
+
+
+IBM HTTPServer version -  9.0.5.24
+
+
+https://hostname:port/cotextroot
+
+
+com.ibm.websphere.IHS.v90_9.0.5024.20250528_1830 
+
+[root@ip-172-31-46-104 AppServer]# /opt/IBM/InstallationManager/tools/imcl install com.ibm.websphere.IHS.v90_9.0.5024.20250528_1830 com.ibm.java.jdk.v8_8.0.8025.20241024_0108 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.ND.v90 -installationDirectory C:\Program Files\IBM\HTTPServer\ -sharedResourcesDirectory C:\Program Files\IBM\IMShared -acceptLicense -showProgress -prompt
+
+
+To check plugin version 
+PS C:\Program Files\IBM\WebSphere\Plugins\bin> .\versionInfo.bat 
+
+Webserve available in market 
+
+1. IBM HTTPS Server ( which we are using now ) ( if you application server is on linux and webserver is on windows in this can we have to use IIS)
+2. Apache 
+3. Sun one 
+4. Lotus Domino
+5. IIS (microsoft)
+
+
+main file of webserver is httpd.conf (all configuraitn)
+
+logs - access.log and error.log
+500 - Servicess are not running 
+501
+502
+503 - physical server may not available 
+504 - 
+599
+
+webserver bydefault port is 80
+secure port is 443
+
+C:\Program Files\IBM\HTTPServer\conf
+
+
+Section 1: Global Environment
+
+ 1. Server perfomance tunning parmeters.
+ 2. load modules
+
+Section 2: 'Main' server configuration
+
+	1. Server detail like hostname ,port,uid,pass
+	2. Path,document root,log detisl 
+	
+
+Section 3: Viratul hots 
+
+	1. Use config for hoomepage and assinging tports and website details. 
+	2. SSL and document root. 
+
+WebServer installtion and configuration 
+
++++++++++++++++++++++++++++++++WEBSERVER Installation IHS ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Installation of IHS webserver 
+
+steps to install webserver
+
+[root@ip-172-31-19-246 bin]# /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.IHS.v90_9.0.5.20170918_1844 com.ibm.java.jdk.v8_8.0.5027.20190108_0527 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.IHS.v90 -installationDirectory /opt/IBM/WAS/IHS9.0 -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+Enter the master password to unlock credentials storage:
+                 25%                50%                75%                100%
+------------------|------------------|------------------|------------------|
+............................................................................
+Installed com.ibm.websphere.IHS.v90_9.0.5.20170918_1844 to the /opt/IBM/WAS/IHS9.0 directory.
+Installed com.ibm.java.jdk.v8_8.0.5027.20190108_0527 to the /opt/IBM/WAS/IHS9.0 directory.
+[root@ip-172-31-19-246 bin]#
+
+To Start webserver 
+./apachectl -k start
+[root@ip-172-31-19-246 bin]# ps -ef | grep httpd
+root        3863       1  0 14:13 ?        00:00:00 /opt/IBM/WAS/IHS9.0/bin/httpd -d /opt/IBM/WAS/IHS9.0 -k start
+nobody      3864    3863  0 14:13 ?        00:00:00 /opt/IBM/WAS/IHS9.0/bin/httpd -d /opt/IBM/WAS/IHS9.0 -k start
+nobody      3865    3863  0 14:13 ?        00:00:00 /opt/IBM/WAS/IHS9.0/bin/httpd -d /opt/IBM/WAS/IHS9.0 -k start
+nobody      3866    3863  0 14:13 ?        00:00:00 /opt/IBM/WAS/IHS9.0/bin/httpd -d /opt/IBM/WAS/IHS9.0 -k start
+root        5070    2517  0 14:30 pts/1    00:00:00 grep --color=auto httpd
+
+./apachectl -k stop
+
+ /opt/IBM/WAS/IHS9.0/bin/versionInfo.sh
+http://ec2-13-53-126-111.eu-north-1.compute.amazonaws.com:9089/cachemonitor/
+http://ec2-13-53-126-111.eu-north-1.compute.amazonaws.com:9083/cachemonitor/
+http://ec2-13-53-126-111.eu-north-1.compute.amazonaws.com:9088/cachemonitor/
+
+
+local application access url from Application server 
+
+https://localhost:9444/cachemonitor/
+
+check the IHS installtion 
+
+http://ec2-13-53-126-111.eu-north-1.compute.amazonaws.com:80/cachemonitor/ - using webserver 
+https://ec2-13-53-126-111.eu-north-1.compute.amazonaws.com:9089/cachemonitor/ - using application server 
+
+com.ibm.websphere.PLG.v90_9.0.5.20170918_1844
+
+++++++++++++++++++++++++++++++++++++++++++++++++ PLUGIN Installation +++++++++++++++++++++++++++++++++++
+
+steps to install Plugin
+
+
+/opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.PLG.v90_9.0.5.20170918_1844 com.ibm.java.jdk.v8_8.0.5027.20190108_0527 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.PLG.v90 -installationDirectory /opt/IBM/WAS/Plugin9.0 -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+
+
+
+[root@ip-172-31-19-246 WAS]# /opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.PLG.v90_9.0.5.20170918_1844 com.ibm.java.jdk.v8_8.0.5027.20190108_0527 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.PLG.v90 -installationDirectory /opt/IBM/WAS/Plugin9.0 -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+Enter the master password to unlock credentials storage:
+                 25%                50%                75%                100%
+------------------|------------------|------------------|------------------|
+............................................................................
+Installed com.ibm.websphere.PLG.v90_9.0.5.20170918_1844 to the /opt/IBM/WAS/Plugin9.0 directory.
+Installed com.ibm.java.jdk.v8_8.0.5027.20190108_0527 to the /opt/IBM/WAS/Plugin9.0 directory.
+
+
+types of Webserver 
+
+1. Managed - we can gernrate and propogate the plugin using admin console
+2. Unmanged - Copy manullyly plugin-cfg.xml
+
+
+Genrate plugin 
+----------------
+
+InformationPLGC0005I: Plug-in configuration file = /opt/IBM/WAS/9.0/profiles/dmgr/config/cells/ip-172-31-19-246Cell01/nodes/ip-172-31-19-246Node06/servers/webserver/plugin-cfg.xml
+InformationPLGC0052I: Plug-in configuration file generation is complete for the Web server. ip-172-31-19-246Cell01.ip-172-31-19-246Node06.webserver.
+
+
+Propagate Plugin 
+------------------
+
+InformationPLGC0062I: The plug-in configuration file is propagated from /opt/IBM/WAS/9.0/profiles/dmgr/config/cells/ip-172-31-19-246Cell01/nodes/ip-172-31-19-246Node06/servers/webserver/plugin-cfg.xml to /opt/IBM/WAS/Plugin9.0/config/webserver/plugin-cfg.xml on the Web server computer.
+InformationPLGC0048I: The propagation of the plug-in configuration file is complete for the Web server. ip-172-31-19-246Cell01.ip-172-31-19-246Node06.webserver.
+InformationPLGC0074I: The node is already synchronized and the plug-in configuration file is already propagated. ip-172-31-19-246Cell01.ip-172-31-19-246Node06.
+
+App Server locaiton - /opt/IBM/WAS/9.0/profiles/dmgr/config/cells/ip-172-31-19-246Cell01/nodes/ip-172-31-19-246Node06/servers/webserver/plugin-cfg.xml
+Plugin installtion location - /opt/IBM/WAS/Plugin9.0/config/webserver/plugin-cfg.xml
+
+LoadModule was_ap22_module /opt/IBM/WAS/Plugin9.0/bin/64bits/mod_was_ap22_http.so
+
+WebSpherePluginConfig /opt/IBM/WAS/Plugin9.0/config/webserver/plugin-cfg.xml
+
+
+logs - 
+
+Webserver - /opt/IBM/WAS/IHS9.0/logs
+
+Plug in  - /opt/IBM/WAS/Plugin9.0/logs/webserver
+
+What are the changes 
+----------------------
+
+	1. Changes in virtual host.
+	2. Creating of deleting servers or cluster 
+	3. Deploying or deleting new appliction.
+	
+Genrate Plug-in
+----------------
+
+InformationPLGC0005I: Plug-in configuration file = /opt/IBM/WAS/9.0/profiles/dmgr/config/cells/ip-172-31-19-246Cell01/nodes/ip-172-31-19-246Node06/servers/webserver1/plugin-cfg.xml
+InformationPLGC0052I: Plug-in configuration file generation is complete for the Web server. ip-172-31-19-246Cell01.ip-172-31-19-246Node06.webserver1.
+
+
+Propagate Plug-in
+------------------
+InformationPLGC0062I: The plug-in configuration file is propagated from /opt/IBM/WAS/9.0/profiles/dmgr/config/cells/ip-172-31-19-246Cell01/nodes/ip-172-31-19-246Node06/servers/webserver1/plugin-cfg.xml to /opt/IBM/WAS/Plugin9.0/config/webserver1/plugin-cfg.xml on the Web server computer.
+InformationPLGC0048I: The propagation of the plug-in configuration file is complete for the Web server. ip-172-31-19-246Cell01.ip-172-31-19-246Node06.webserver1.
+InformationPLGC0074I: The node is already synchronized and the plug-in configuration file is already propagated. ip-172-31-19-246Cell01.ip-172-31-19-246Node06.
+
+From - /opt/IBM/WAS/9.0/profiles/dmgr/config/cells/ip-172-31-19-246Cell01/nodes/ip-172-31-19-246Node06/servers/webserver1/plugin-cfg.xml
+
+To - /opt/IBM/WAS/Plugin9.0/config/webserver1/plugin-cfg.xml
+
+
+issues releated to webserver and plugin 
+
+1. check plug-in file is saame size or content.
+2. DR Drill activy was there
+
+DR drill activty - to chaning the master servers to slave servers.
+
+
+1. httpd.conf 
+2. plugin
+
+
+
+
+#    ErrorDocument 400 /error/HTTP_BAD_REQUEST.html.var
+#    ErrorDocument 401 /error/HTTP_UNAUTHORIZED.html.var
+#    ErrorDocument 403 /error/HTTP_FORBIDDEN.html.var
+#    ErrorDocument 404 /error/HTTP_NOT_FOUND.html.var
+#    ErrorDocument 405 /error/HTTP_METHOD_NOT_ALLOWED.html.var
+#    ErrorDocument 408 /error/HTTP_REQUEST_TIME_OUT.html.var
+#    ErrorDocument 410 /error/HTTP_GONE.html.var
+#    ErrorDocument 411 /error/HTTP_LENGTH_REQUIRED.html.var
+#    ErrorDocument 412 /error/HTTP_PRECONDITION_FAILED.html.var
+#    ErrorDocument 413 /error/HTTP_REQUEST_ENTITY_TOO_LARGE.html.var
+#    ErrorDocument 414 /error/HTTP_REQUEST_URI_TOO_LARGE.html.var
+#    ErrorDocument 415 /error/HTTP_SERVICE_UNAVAILABLE.html.var
+#    ErrorDocument 500 /error/HTTP_INTERNAL_SERVER_ERROR.html.var
+#    ErrorDocument 501 /error/HTTP_NOT_IMPLEMENTED.html.var
+#    ErrorDocument 502 /error/HTTP_BAD_GATEWAY.html.var
+#    ErrorDocument 503 /error/HTTP_SERVICE_UNAVAILABLE.html.var
+#    ErrorDocument 506 /error/HTTP_VARIANT_ALSO_VARIES.html.var
+
+
+Access application using webserver 
+
+http://ec2-13-53-126-111.eu-north-1.compute.amazonaws.com/cachemonitor/
+
+Access application using AppServer
+
+http://ec2-13-53-126-111.eu-north-1.compute.amazonaws.com:9089/cachemonitor/
+
+Log sample 
+
+223.185.42.251 - - [22/Dec/2025:05:28:41 +0000] "GET /cachemonitor/navigator.jsp HTTP/1.1" 200 43521 4546 ip-172-31-19-246.eu-north-:9089 +
+223.185.42.251 - - [22/Dec/2025:05:28:41 +0000] "GET /cachemonitor/selectInstance.jsp HTTP/1.1" 200 42958 1940 ip-172-31-19-246.eu-north-:9089 +
+223.185.42.251 - - [22/Dec/2025:05:28:41 +0000] "GET /cachemonitor/statistics.jsp HTTP/1.1" 200 42389 1483 ip-172-31-19-246.eu-north-:9089 +
+223.185.42.251 - - [22/Dec/2025:05:28:42 +0000] "GET /cachemonitor/statistics.jsp HTTP/1.1" 200 42389 1888 ip-172-31-19-246.eu-north-:9089 +
+223.185.42.251 - - [22/Dec/2025:05:29:42 +0000] "GET /cachemonitor/statistics.jsp HTTP/1.1" 200 42389 2928 ip-172-31-19-246.eu-north-:9089 +
+223.185.42.251 - - [22/Dec/2025:05:30:34 +0000] "-" 408 - 31 - -
+223.185.42.251 - - [22/Dec/2025:05:30:43 +0000] "GET /cachemonitor/statistics.jsp HTTP/1.1" 200 42389 2677 ip-172-31-19-246.eu-north-:9089 +
+223.185.42.251 - - [22/Dec/2025:05:31:35 +0000] "-" 408 - 21 - -
+223.185.42.251 - - [22/Dec/2025:05:31:44 +0000] "GET /cachemonitor/statistics.jsp HTTP/1.1" 200 42389 2334 ip-172-31-19-246.eu-north-:9089 +
+223.185.42.251 - - [22/Dec/2025:05:32:36 +0000] "-" 408 - 35 - -
+223.185.42.251 - - [22/Dec/2025:05:32:45 +0000] "GET /cachemonitor/statistics.jsp HTTP/1.1" 200 42389 3223 ip-172-31-19-246.eu-north-:9089 +
+
+windows gen plugin 
+
+ C:\Program Files\IBM\WebSphere\AppServer_1\profiles\Dmgr01\config\cells\DESKTOP-VB2UEE5Cell01\nodes\DESKTOP-VB2UEE5Node02\servers\webserver\
+ 
+ show/hide Messages
+InformationPLGC0005I: Plug-in configuration file = C:\Program Files\IBM\WebSphere\AppServer_1\profiles\Dmgr01\config\cells\DESKTOP-VB2UEE5Cell01\nodes\DESKTOP-VB2UEE5Node02\servers\webserver\plugin-cfg.xml
+InformationPLGC0052I: Plug-in configuration file generation is complete for the Web server. DESKTOP-VB2UEE5Cell01.DESKTOP-VB2UEE5Node02.webserver.
+
+windows gen propagated
+
+InformationPLGC0062I: The plug-in configuration file is propagated from C:\Program Files\IBM\WebSphere\AppServer_1\profiles\Dmgr01\config\cells\DESKTOP-VB2UEE5Cell01\nodes\DESKTOP-VB2UEE5Node02\servers\webserver\plugin-cfg.xml to c:\Program Files\IBM\WebSphere\Plugins\config\webserver\plugin-cfg.xml on the Web server computer.
+InformationPLGC0048I: The propagation of the plug-in configuration file is complete for the Web server. DESKTOP-VB2UEE5Cell01.DESKTOP-VB2UEE5Node02.webserver.
+InformationPLGC0074I: The node is already synchronized and the plug-in configuration file is already propagated. DESKTOP-VB2UEE5Cell01.DESKTOP-VB2UEE5Node02.
+
+
+
+
+local application access url from Application server - using Application server 
+
+https://localhost:9444/cachemonitor/
+
+
+Local application access server from webserver - 
+
+http://localhost:80/cachemonitor/
+http://localhost/cachemonitor/  
+
+
+1. you have to chekc urself that application 
+2. then check the logs take the action. 
+
+URL - 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1. show the webserver certificate on browser before apply certificate.(other website as well)
+
+DigiCert Global CA G2
+
+GlobalSign RSA OV SSL CA 2018
+
+vinafi 
+
+IHS SSL configuration 
+
+Using IBM ikeyMa key Management Utility 
+
+
+What are the certificate format/extentiaon 
+
+webserver - .kdb,.sth and .rdb password
+
+what is diff bet self sign cert and third cert. 
+
+1. self sign - we are the signing the certificate 
+2. Third 
+
+
+1. Self sign certificate configuration 
+
+Open Ikeyman Utility 
+
+cd C:\Program Files\IBM\HTTPServer\bin\ikeyMan.sh
+
+click on "keydatabase tab file" > new
+key database type : CMS
+
+File Name : Enter a suitable name 
+
+Location : enter the loction of key file name and click ok. 
+
+Enter password ofr key database 
+
+Select "Expiration time" and enter a value for validity 
+
+select " stash password to a file" and click on ok 
+
+Please make sure DB type is CMS and in the name field above created key database is seleceted. 
+
+in "key database content " select "personal Certificate " and click on "new Self singed " button.
+
+Enter the a sutable key label
+
+Specify other details and click on OK (In common name specify you hostname)
+
+
+Restart IHS and test the hitting IHS hostname (with port number 80 configured)
+
+http://localhost:80
+
+https://localhost:443
+
+Genrate and propagate the plug-in
+
+Enable IHS configuration of SSL
+
+open httpd.conf file and edit the file.
+#LoadModule ibm_ssl_module modules/mod_ibm_ssl.so
+#Listen 0.0.0.0:443
+## IPv6 support:
+#Listen [::]:443
+#SSLCheckCertificateExpiration 30
+#<VirtualHost *:443>
+#  ServerName localhost
+#  SSLEnable
+# Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+#</VirtualHost>
+#KeyFile "C:/Program Files/IBM/HTTPServer/conf/ihsserverkey.kdb"
+#SSLStashFile "C:/Program Files/IBM/HTTPServer/conf/ihsserverkey.sth"
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1. Create the key Database file.
+
+1. Create CSR - in this we have provide all the deatils.
+
+2. We have send this CRS to CA (
+
+3. we will receive the certificat from CA ( Personal,Server cert, Root, Intermedia) 
+
+4. import the certificate (.arm) in .kdb 
+
+5. Restart the webserver 
+
+
+1. Personal cert is valid for 365 
+2. Root and intermedia cert is valid for 10/5 year (as org policy).
+
+2. Third party CA Certificate configuraiton  -https://getacert.com/cert/getacert_csr.pl /https://getacert.com/
+
+
+Personal - Cert is having private key 
+Signer cert /root CA - havig public key. 
+
+Webserver CSR extentiaon is .arm , we will in format of cer
+
+
+Cannot parse certificates in file 'C:\Program Files\IBM\HTTPServer\conf\localhost-2026-01-06-045528.rdb'. It is not a valid certificate file.
+
+Open Ikeyman Utility 
+
+cd C:\Program Files\IBM\HTTPServer\bin\ikeyMan.sh
+
+click on "keydatabase tab file" > new
+key database type : CMS
+
+cacertkey.kdb
+
+File Name : Enter a suitable name 
+
+Location : enter the loction of key file name and click ok. 
+
+Enter password ofr key database 
+
+Select "Expiration time" and enter a value for validity 
+
+select " stash password to a file" and click on ok 
+
+Please make sure DB type is CMS and in the name field above created key database is seleceted. 
+
+in "key database content " select "personal Certificate request " and click on "new" button.
+
+
+
+postalCode	545654
+ST	KA
+L	Bangluru
+O	IT
+OU	Development
+CN	localhost / FQDN 
+C	IN
+
+
+Enter the name for the CSR file at last field and click OK.
+
+you will get the prompt CSR created. click on ok.
+
+take the Genrated CSR file and send to Certificate Authority.
+They will sing the certificate and give you back 2 certificate 
+
+1. Server Certificate (Personal Certificate)
+2. Root Certificate
+3. Intermediate Certificate 
+
+1. Install Root Certificate
+Open Ikeyman Utility 
+
+cd C:\Program Files\IBM\HTTPServer\bin\ikeyMan.sh
+
+click on "keydatabase file " tab > open your key database file 
+
+And select the "signer Certificate " click on Add -> select the locaiton of root certificate and click on ok.
+
+
+2. Server Certificate (Personal Certificate)
+
+In "key database content" select the "personal Certificate"
+click on "Receive" browse your server certificate , you will get notification prompt "validation Successfull" click on ok .
+
+Enabel IHS Configuration. 
+
+LoadModule ibm_ssl_module modules/mod_ibm_ssl.so
+Listen 0.0.0.0:443/
+#IPv6 support:
+Listen [::]:443
+SSLCheckCertificateExpiration 30
+<VirtualHost *:443>
+  ServerName localhost
+  SSLEnable
+ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</VirtualHost>
+KeyFile "C:/Program Files/IBM/HTTPServer/conf/cacertkey.kdb"
+SSLStashFile "C:/Program Files/IBM/HTTPServer/conf/cacertkey.sth"
+
+
+Restart IHS  and check the SSL certificate.
+
+
+
+root cert 
+intermendiat cert 
+Server cert (personal cetificate )
+
+Discuss the issue with related issues. 
+
+
+https://getacert.com/
+
+openssl req -new -newkey rsa:1024 -nodes -out own_getacert_com.csr -keyout own_getacert_com.key -subj "/C=US/ST=Washington/L=Seattle/O=getaCert/CN=*.getacert.com"
+
+
+what are the issue we may face after applying the certificat 
+
+Certicate issue s/hostname
+1. DNS missmach 
+2. typo miss in info 
+3. In main certficate we many not have the root or intermedia cert. 
+4. SSL hadsheck error
+5. SSL HandShake Error (DNS) ( you have one cert at your end and ther is one more system is connected with your mainframe system)
+6. SSL HandShake Error  (Certificate comman name missmatch entery)
+7. Unable to login in application home page
+hostname form where it having the Handshake error. 
+
+
+1. You server /nodeage 
+2. Take the back up if requried. 
+3. then start the dpeloyment 
+4. Stat the servers 
+5. syn it. 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                         
+
+pass - password						 
+								 
+old config 
+
+## IPv6 support: #Listen [::]:443 #SSLCheckCertificateExpiration 30 #<VirtualHost *:443> # ServerName 192.168.1.3 # SSLEnable # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" #</VirtualHost> #KeyFile C:/Program Files/IBM/HTTPServer/conf/ihsserverkey.kdb
+
+to check the port is listing 
+
+ .\apache.exe -k status
+  
+ with secure port 443
+ 
+ https://localhost/
+  
+ Create sth file 
+ 
+ PS C:\Program Files\IBM\HTTPServer\bin> .\gskcapicmd.bat -keydb -stashpw -db "C:\Program Files\IBM\HTTPServer\conf\ihsserverkey.kdb"
+Source database password : ********
+
+check port 80 listing 
+
+PS C:\Program Files\IBM\HTTPServer\bin> .\apache.exe -k status
+(OS 10048)Only one usage of each socket address (protocol/network address/port) is normally permitted.  : AH00072: make_sock: could not bind to address 0.0.0.0:80
+AH00451: no listening sockets available, shutting down
+AH00015: Unable to open logs
+PS C:\Program Files\IBM\HTTPServer\bin
+
+
+netstat -an | grep 443
+
+telenate hostname 443
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+3. LDAP userusers and gorups 
+
+1. Create user and crete gorups
+2. Add user in group 
+3. Give the permission to group 
+4. Give the prermission to user 
+5. Give the roles to group
+6. Give the roles to user 
+
+1. WAS user
+2. OS user 
+s (repository)
+
+
+Roles in Websphere - 
+----------------------
+
+1. Monitor 
+
+	1. View the Websphere Application server configuraitn.
+	2. View the current state of the Application server 
+	
+2. Configurator 
+
+	1. Create resources
+	2. Map an applicaiton server 
+	3. Install and uninstall the applicaiton
+	4. Deplolyment
+	5. Assign the user and group
+	6. setup the security for applicaiton
+	
+3. Operator 
+	
+	1. Stop and stat the server 
+	2. Monitor the server status in the admin console 
+	
+4. Adiministrator
+	
+	1. Modify the seerver user ID and pass.
+	2. Config authentication and authorization
+	3. Enabel and disable amdin security 
+	4. can configure LADP
+	5. Create and update the fedrated repositories
+	
+
+5. Deployer
+
+	1. user granted this role can complete both config actiona and runtime opration on applicaiton.
+
+
+Steps to create users and gorup and assinged the roles 
+
+
+1. click on user and gorup 
+
+	a. click on create user and give all the deatils
+	
+2. Create gorup 
+
+	a. click  on manage group 
+	
+3. Assign the roles to user 
+
+
+
+Changed Items	Status
+cells / DESKTOP-VB2UEE5Cell01 / admin-authz.xml
+
+https://www.freekb.net/Article?id=1853
+
+monitor /wasadm
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+LAB Understand and perform websphere Perfomanc Tunning 
+
+why Perfomanc and monitoring come in picture and when ? and how to slove it ?
+
+1. Changing the heap size of an application server 
+
+	a. First option 
+	
+		1. Think about the acrchetecure
+		2. Initial and max heap size - Initial Heap Size (Xms): 1024 MB/ Maximum Heap Size (Xmx): 2048 MB
+		3. If you have 1 GB and you are using full size setting and in case your application need additional size while application server load increased. 
+			in case you have 1GB then you can use 512MB so that rest will be available to using additional load 
+	b. Second option 
+	
+		1. Edit server.xml file (initalheapsize and maxheapsize) in JVM enteris tag 
+		 
+		 Note : please take back up of sever.xml file before editing.
+		 
+		
+2. Chaning the heap size of an deployment manage (dmgr)
+
+	a. system administrator and click on deployement manager 
+	b. we can change from dmgr node sever.xml file 
+	
+3.  Chang the healp size of nodeagent 
+
+	a. system administration -> nodeagent -> java and process managment 
+	b. we can change from node -> nodeagent -> server.xml
+
+4. Heap Utilization Monitoring
+
+	a. Go to Monitoring and Tunning select JVM and monitore the heap utilization 
+	
+	
+5. Application servers > server1 > Thread pools > WebContainer 
+
+6. Data source Connection Pool Tunning.
+
+	1. (max connection and min connection based on hardwared connection)
+	2. Example , we have one app server, max cap is 10 -- > 10 databse conneciton session
+	3. Example of cluste , cluste1 having Max 10 conneciton letus say and we have 2 cluster member - 2*10 = 20 connection 
+		
+
+
+Thread Pools	Request processing
+JDBC Connection Pool	Database connections
+Web Container	Web requests
+Session Management	User sessions
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Session Management 
+
+Synchronization is the process of replicating the changes config directory form deployment manager to applicaiton server and give the interval. 
+
+
+1. Node Agent running 
+
+	1. Automic sync.
+		
+		1. whenever sever is running the  changes did't update. 
+		
+		go to the Node agent and click on file sync services and check the Automatic sync check box. 
+		
+	2. Manul sync.
+	
+	    In mater repository every file and folder has a number that is "EPOCH 	NUMBER "
+		
+		If we have done any chagnes in the maste repository taht changes will be updated in the node level repository. 
+	
+	
+	
+	3. Full sync 
+	
+		1. If does't compare epoch numbeers , just copy entire data form master repository and past to node level repository 
+		
+		2. epoch number won't be changed if we do any manuall sync. 
+		
+		
+		
+
+
+2. Node Agent stopped 
+
+
+
+
+Tow type of Session Management
+
+1. Memory to Memory Replication
+
+	1. JVM memory - went down. 
+
+2 Dabase 
+ 
+ 
+Replication domain - JVM will conten the session data for users. 
+
+issue after deployment 
+
+1. Port should be not in the virtual host 
+2. server is not running 
+3. Plugin gernrate and propogate 
+4. Virtual http port should be added. 
+5. Same virtaul host mapped to application 
+6. Application modules should be mapped to same server. 
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Trubleshooting 
+
+1. How to Genrate heap dump 
+
+	1. wsadmin command line
+	2. Admin consoel 
+	3. Using properties adding in the JVM 
+	4. Kill -9 PID
+	5. Application servers > server1 > Performance and Diagnostic Advisor Configuration > Enable automatic heap dump collection
+
+		Heap dump 
+		wsadmin.bat -lang jython -c "AdminControl.invoke(AdminControl.queryNames('type=JVM,process=server1,*'), 'generateHeapDump')"
+
+		-XX:+HeapDumpOnOutOfMemoryError
+		-XX:HeapDumpPath=/path/to/heapdumps
+
+
+2. How to genrate Thread dump
+   
+   	1. wsadmin command line
+	2. Admin consoel 
+	3. Using properties adding in the JVM 
+	4. Kill -9 PID
+
+		hread dump
+		wsadmin.bat -lang jython -c "AdminControl.invoke(AdminControl.queryNames('type=JVM,process=server1,*'), 'dumpThreads')"
+		eap Analyzer link - https://www.ibm.com/support/pages/node/7159924?dest=/ibm-heapanalyzer
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Performance
+
+
+PMI - Perfomanc monitoring infrastructure
+
+Bsic - Application date 
+
+Extended - App + Major Webspehere components date
+
+
+TVP - Tivoli Perfomanc view 
+
+
+we can monitor the component like servelet, EJBs , JVM runtime , heap memory , garbage coolector etc.
+
+custom - specific module. 
+
+1. Heap Memory (Dump) : - If server perfomance is not good , server is getting started automatically or if is genrating helap dump automatically. 
+
+	1. we need ot genrate the heap dump 
+	
+    2. Admin console we can add one custom property like IBM-HEAP_DUMP  , value is ture. 
+	
+	C:\Program Files\IBM\WebSphere\AppServer_1\profiles\AppSrv01
+	
+	3. Heap dump will conten the java objects information.
+	
+	4. Garbage collection will follow the the mark and Sweep algorithm.
+	
+	5. After genrating heap dump we will/PMR team will analyze the heap analyzer tool
+	
+	https://www.ibm.com/support/pages/node/7159924?dest=/ibm-heapanalyzer
+	https://www.ibm.com/support/pages/tools-analysing-java-heap-dumps
+	
+	6. if we find  any memory leak issue will search for fix pack availability or we can can create ticke with devolpmen tema to check why the applicatioin memory leak. 
+
+    7. If you fell that heap memory is not sufficient, please create the CR, change and increase the heap memory.
+	
+	8. we can increase the member of cluste. 
+	
+	IMP - Please make sure that understand the infra capcity. 
+	
+	
+	1. How long objects are there. 
+	2. which one is parent object and whic one child. 
+
+
+2. Thread Dump : Thread dump is also called java core dump to analyze the theread dump we are having thread analyzer. 
+
+		1. Thread initialization
+		2. Time of thread whe is creaated (start time and end of thread)
+		3. if there are any hung thread 
+		4. If any dead locks thread.
+		
+		the are using IBM BPM - Threads (100) 101... system become inresposive.
+		
+		5. Dead locks : If is a dead lock situation the it is due to lack of resources and in that case we will raise the ticke to dev to provide sufficen resources. 
+		
+		6. if it is server releated issue we will increase the tread pool. ( we shold have the change request )
+		
+		7. where there is issue alway create 2-3 dumps ( heap/thread)
+	
+Logs files and How to enable the Trace (in Webspehre,Websere and Plugin)
+
+	In WAS JVM - App server, nodeagent, DMGR
+	
+	1. In App server we have JVM (Running thiem issue)
+	
+		systemout.log
+		systemerro.log
+		
+	2. Process logs (out of memory user when we have any perfomance related issue)
+	
+		nativstdout.log
+		nativstderror.log 
+	
+	3. IHS logs 
+	
+		access.log
+		error.log
+		
+	4. Plugin log 
+	
+		http.plugin.log 
+
+    5. FFDC logs (First failure data capture)
+	
+		activity.log - it will binary format IBM PMR team ( for one profile we have this single logs only) C:\Program Files\IBM\WebSphere\AppServer_1\profiles\AppSrv01\logs\ffdc
+	
+	
+	6. Trace - Proivdes complete information , we have to enalbe the trace in case any major issue need to check and disbale after issue resovle. 
+	
+	   Go to Logging and tracing and select the 	server1 and selcect Diagnostic trace service -> click on Change log detail levels and give the right log level 
+	   
+	   
+	SystemOut_Currenttimestamp.log
+	
+	
+	7. Trace enable for Plugin 
+	
+		got to admin console and click on Web servers > webserver > Plug-in properties -> 
+		
+		
+		
+Error in Websphere or issues 
+
+	1. Hung thread
+	2. out of member exception 
+	3. Disk space 
+	4. CPU starvation 
+	5. SSL HandShake 
+	6. synchronization issue.
+	
+	
+	
+1. Hung Thread. ( Snapshot of all the live running threads inside our applicaiton server. 
+
+	Hung - Might be responsible for same applicaiton and not for other applicaiton 
+	Hung threads will written in systemout.log
+	when the threas are in hung state the applicaiton is degarded.
+	
+	Reasons for hung threads. 
+	
+	1. if we instll fault applicaiton on server.
+	
+	
+	Example : if we have recived one request and i.e not completed Thread1 and agin we got one more request Thread in the case Dead lock situation 
+	
+	
+	2. If the code is running in to infite gorup/loop then alos we have the hung thread. 
+		when the conneciton pool is not closed it will go to inifinite gorup 
+		
+		Error - Database connetion not able to open.
+	
+	3. if any resources (DB) is down the also we will get the hung thread.
+	
+		app Server  -> DB Server 
+		
+
+	If  any thread running more then 10 min and thread will become make as hung thread and it will write in systemout.log.
+	
+	
+	we have to genrate thread dump  ( Before restarting applicaiton we have to genrat thread dump)
+	
+	whate state in the hung theread 
+	
+	1. running threads
+	2. stopped 
+	3. Deadlock threads
+	4. 
+	
+	Genrate thread dump way 
+	
+	1. wadmin 
+	2. Admin console
+	3. Environmental properti
+		
+	java core / thread dump are same 
+	
+		
+	Grabage collection setting 
+
+	-Xverbosegclog:C:\WAS\logs\gc_%pid_%Y%m%d_%H%M%S.log
+	
+
+show how to change the log level detials 
+
+
+change the log level detaile
+
+Logging and tracing > server1 > Diagnostic trace service > Change log detail levels
+
+🔹 WebSphere Log Levels (Trace Levels)
+
+WebSphere does not use ERROR / INFO / DEBUG directly like Log4j.
+Instead, it uses trace specifications.
+
+🔸 Main Options You Can Use
+Level	What it means	Trace Spec
+❌ OFF	No logging	*=off
+🔴 ERROR (Critical only)	Errors & failures	*=severe
+🟠 WARNING	Errors + warnings	*=warning
+🔵 INFO (Normal prod level)	Informational messages	*=info - production recommended.
+🟣 DEBUG	Detailed debugging	*=fine - Temporary - when we have to debug any issue in detail with dev team.
+🟣 DEBUG+	Very detailed	*=finer
+🟣 TRACE	Maximum detail	*=finest
+🟣 ALL	Everything	*=all  - Full Trace (Short time only) - to check all the connection detials from all the systems.
+
+
+Once you update the log in level you have to restart the server to take effective way. 
+
+WebServer log level 
+
+		show the webserver log level as well - LogLevel warn
+		
+		C:\Program Files\IBM\HTTPServer\conf\httpd.conf - file where we can change the logs.
+		
+		and show the security vunlarability as well in webspehre 
+		
+		Show all the option for trubleshooting in admin console
+		
+		
+Plugin Log level Details 
+
+		1. we can change in plugin-cfg file directly 
+		
+			C:\Program Files\IBM\WebSphere\Plugins\config\webserver\plugin-cfg.xml
+			LogLevel="Error"
+		
+		2. we can change the log in level form admin console.
+		
+			go to Web servers > webserver > Plug-in properties>	Plug-in logging > Log level : Error\warn\trace\debug
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+SSL 
+
+CN=localhost, OU=Dev, O=IT, L=Bangluru, ST=KA, POSTALCODE=123456, C=IN 
+
+
+Cureent NodeLevel SSL certifcate
+--------------------------------
+Common Name (CN)	DESKTOP-VB2UEE5
+Organization (O)	IBM
+Organizational Unit (OU)	DESKTOP-VB2UEE5CellManager01
+Common Name (CN)	DESKTOP-VB2UEE5
+Organization (O)	IBM
+Organizational Unit (OU)	DESKTOP-VB2UEE5CellManager01
+Issued On	Thursday, December 18, 2025 at 7:09:07 AM
+Expires On	Friday, December 18, 2026 at 7:09:07 AM
+Certificate	9dd03ffd89856363a85faebece32f21f4738b2ac621cba850a8728ad2d1c01c4
+Public Key	7521a2077883cf2d64e829bc071ced12147b52f3ca1c7ab2c100ec786c833684
+
+
+Current CELL Level SSL certifcate 
+----------------------------------
+
+Common Name (CN)	localhost
+Organization (O)	IT
+Organizational Unit (OU)	Dev
+Common Name (CN)	localhost
+Organization (O)	IT
+Organizational Unit (OU)	Dev
+Issued On	Sunday, January 25, 2026 at 4:29:12 PM
+Expires On	Monday, January 25, 2027 at 4:29:12 PM
+Certificate	b308ca7bd23feb99e9a622ca325172a84539944b93eebb29b4bf48121018972e
+Public Key	b8c16f1d792ba52daa87825f60fdf7c03936b73bfde6a6cf67ba138a4b3863d1
+
+
+
+Steps to create self signed certifcate for NodeDefaultKeyStore - Application certificate
+
+alias name - selfsigned
+version 
+algorith 
+keysiz - using default
+
+command name - localhost
+
+
+CN=localhost, OU=Dev, O=IT, L=Bangluru, ST=KA, POSTALCODE=568975, C=IN
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Websphere Liberty server 
+
+lightweight
+
+https://www.ibm.com/docs/en/was-liberty/base?topic=management-liberty-features
+
+   
+
+Replication Domamin
+
+

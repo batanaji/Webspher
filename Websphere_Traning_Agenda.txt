@@ -1,0 +1,25 @@
+WebSphere Application Server Architecturce with WL all versions (ZOS,LINUX,UNIX) - Completed. 
+Installation configuration on z/OS 8.5 - Completed
+Profiles (Application server , DMGR, Cell, Admin Agent, Secur proxy) - Completed
+Fedration - Completed
+Synchronization - Completed ( we will discuss)
+clustering and WLM ( many Appser 01 - 0-20 (10) - Completed 
+Configure the auto scaling feature and define auto scaling policies - Completed
+Deployment ( Hot, cold, wasadm, CICD, OC) WLP ( many type deployment ) - Completed
+JDBC - Completed
+Use the IBM HTTP and web server plug-in with Liberty servers(managed and unmanged) - completed. 
+Monitoring and Troubleshooting(all Scenarios, issues which i have faced live, log analysis, thread dump, heap dump, IBM PRM,OOM ,SSL, etc) - Completed
+Resources and Security (JDBC,Datasouce,J2C) ( what layer security ) - Completed
+Configure SSL communication in Liberty (https /http) SSL (keytool. openssl, gski,) - Completed
+Performance Tuning and Optimization (ibm.com) - Completed
+Use Jython scripts to administer Liberty servers - Completed
+All Scenarios will be covered. - Completed.
+Configure Dynamic Routing - check in case any.
+Integration with Mainframe Systems  - NA.
+Backup, Recovery, and Maintenance - Show to backconfig.sh file
+LDAP/APM/F5 - load blancing - Creqte
+Create a Liberty profile server - In Progresss.
+Use the Admin Center to manage Liberty servers - In progress.
+Handwritten notes will be provided - In progress.
+
+

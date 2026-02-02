@@ -1,0 +1,119 @@
+5. FFDC Logs (First Failure Data Capture)
+
+FFDC logs are generated automatically when a failure occurs in WebSphere. These logs help the IBM PMR support team analyze issues at the time of failure.
+
+File Name: activity.log
+
+Format: Binary format (can be analyzed by IBM PMR team only)
+
+Note: For each profile, only a single FFDC log is generated
+
+Location:
+
+C:\Program Files\IBM\WebSphere\AppServer_1\profiles\AppSrv01\logs\ffdc
+
+6. Trace Logs
+
+Trace logs provide complete and detailed information about application and server behavior. Tracing should be enabled only when required for major issue analysis and disabled after the issue is resolved to avoid performance impact.
+
+Steps to Enable Trace:
+
+Fletcher Logging and Tracing
+2. Select server1
+3. Choose Diagnostic Trace Service
+4. Click Change Log Detail Levels
+5. Provide the required trace specification and save
+
+Log File Generated:
+SystemOut_<CurrentTimestamp>.log
+
+7. Enabling Trace for Web Server Plugin
+
+To enable trace for the WebSphere Plugin:
+
+Go to the Admin Console
+
+Navigate to:
+Web Servers → webserver → Plug-in Properties
+
+Enable the required trace settings and save the configuration
+
+Common WebSphere Errors / Issues
+
+Hung Thread
+
+Out of Memory Exception
+
+Disk Space Issues
+
+CPU Starvation
+
+SSL Handshake Issues
+
+Synchronization Issues
+
+1. Hung Thread
+
+A hung thread represents a snapshot of live running threads inside the application server.
+
+A hung thread may impact a specific application, not necessarily all applications.
+
+Hung thread details are written to SystemOut.log.
+
+When threads are hung, application performance degrades.
+
+Causes of Hung Threads:
+1. Faulty Application Deployment
+
+If a faulty application is installed on the server, threads may not complete execution.
+
+Example:
+
+A request is received and assigned to Thread1, but it does not complete.
+
+Another request arrives and attempts to use the same resource.
+
+This can result in a deadlock situation.
+
+2. Infinite Loop in Code
+
+If the application code runs into an infinite loop, the thread remains occupied.
+
+If database connections are not closed properly, it may cause connection pool exhaustion.
+
+This may lead to errors such as:
+“Unable to open database connection.”
+
+3. Backend Resource Issues
+
+If dependent resources such as the Database Server are down, application threads may hang.
+
+Application Server → Database Server
+
+Hung Thread Detection
+
+If a thread runs for more than 10 minutes, it is marked as a Hung Thread.
+
+Hung thread information is logged in SystemOut.log.
+
+Thread Dump Generation
+
+Before restarting the application server, thread dumps must be generated to analyze the issue.
+
+Thread dumps help identify the state of hung threads, such as:
+
+Running threads
+
+Stopped threads
+
+Deadlocked threads
+
+Ways to Generate Thread Dump
+
+Using wsadmin
+
+Using Admin Console
+
+Using command line:
+
+wsadmin.bat -lang jython -c "AdminControl.invoke(AdminControl.queryNames('type=JVM,process=server1,*'), 'dumpThreads')"
