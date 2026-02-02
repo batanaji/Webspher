@@ -1,0 +1,51 @@
+[root@ip-172-31-19-246 bin]# ./addNode.sh ip-172-31-19-246.eu-north-1.compute.internal 8879
+ADMU0116I: Tool information is being logged in file
+           /opt/IBM/WAS/9.0/profiles/AppServ03/logs/addNode.log
+ADMU0128I: Starting tool with the AppServ03 profile
+CWPKI0308I: Adding signer alias "root_1" to local keystore
+           "ClientDefaultTrustStore" with the following SHA digest:
+           D2:C6:B4:29:40:00:56:AD:49:7F:24:25:AB:BA:7F:95:A0:03:62:19
+ADMU0001I: Begin federation of node ip-172-31-19-246Node02 with Deployment
+           Manager at ip-172-31-19-246.eu-north-1.compute.internal:8879.
+ADMU0009I: Successfully connected to Deployment Manager Server:
+           ip-172-31-19-246.eu-north-1.compute.internal:8879
+ADMU0505I: Servers found in configuration:
+ADMU0506I: Server name: server1
+ADMU2010I: Stopping all server processes for node ip-172-31-19-246Node02
+ADMU0510I: Server server1 is now STOPPED
+ADMU0024I: Deleting the old backup directory.
+ADMU0015I: Backing up the original cell repository.
+ADMU0012I: Creating Node Agent configuration for node: ip-172-31-19-246Node02
+ADMU0014I: Adding node ip-172-31-19-246Node02 configuration to cell:
+           ip-172-31-19-246Cell01
+ADMU0016I: Synchronizing configuration between node and cell.
+ADMU0018I: Launching Node Agent process for node: ip-172-31-19-246Node02
+ADMU0020I: Reading configuration for Node Agent process: nodeagent
+ADMU0022I: Node Agent launched. Waiting for initialization status.
+ADMU0030I: Node Agent initialization completed successfully. Process id is:
+           27354
+
+
+ADMU0300I: The node ip-172-31-19-246Node02 was successfully added to the
+           ip-172-31-19-246Cell01 cell.
+
+
+ADMU0306I: Note:
+ADMU0302I: Any cell-level documents from the standalone ip-172-31-19-246Cell01
+           configuration have not been migrated to the new cell.
+ADMU0307I: You might want to:
+ADMU0303I: Update the configuration on the ip-172-31-19-246Cell01 Deployment
+           Manager with values from the old cell-level documents.
+
+
+ADMU0306I: Note:
+ADMU0304I: Because -includeapps was not specified, applications installed on
+           the standalone node were not installed on the new cell.
+ADMU0307I: You might want to:
+ADMU0305I: Install applications onto the ip-172-31-19-246Cell01 cell using
+           wsadmin $AdminApp or the Administrative Console.
+
+
+ADMU0003I: Node ip-172-31-19-246Node02 has been successfully federated.
+
+-includeapps default a

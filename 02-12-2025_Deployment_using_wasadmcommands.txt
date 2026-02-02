@@ -1,0 +1,49 @@
+Application Deployment Using wsadmin Script
+The wsadmin tool in IBM WebSphere Application Server (WAS) allows administrators to automate configuration and deployment tasks using scripting languages such as Jython or JACL.
+
+Key Functions Available in wsadmin
+UtilityPurposeAdminControlAllows runtime operations such as viewing node, cell, and port details; starting or stopping servers and clusters.AdminConfigUsed for configuration-related tasks (create, modify, reset, remove configurations).AdminAppUsed for application deployment, updating, or uninstalling applications.AdminTaskProvides advanced administration tasks, such as creating servers or configuring resources.wsadminDisplays general help for the scripting environment.
+
+Supported Scripting Languages
+./wsadmin.sh -lang jython
+./wsadmin.sh -lang jacl
+
+LanguageMeaningJACLJava + TCL + wsadminJythonJava + Python + wsadmin
+Note: Jython is the recommended scripting language in newer WAS versions.
+
+Example: Deploying an Application Using AdminApp
+Step 1: Launch wsadmin
+./wsadmin.sh -lang jython -conntype NONE
+
+Check installed applications:
+print AdminApp.list()
+
+
+Step 2: Create a Deployment Script
+Create a script named: install_app.py
+ear = "/opt/IBM/WAS/9.0/installableApps/CacheMonitor.ear"
+opts = ['-appname', 'CacheMonitor', '-cluster', 'Demo', '-usedefaultbindings']
+print AdminApp.install(ear, opts)
+AdminConfig.save()
+
+Run the script:
+./wsadmin.sh -lang jython -f install_app.py
+
+If successful, messages similar to the following will appear:
+ADMA5016I: Installation of CacheMonitor started.
+ADMA5013I: Application CacheMonitor installed successfully.
+
+
+Step 3: Start the Cluster and Verify Deployment
+./wsadmin.sh -lang jython -c "cluster=AdminControl.completeObjectName('type=Cluster,name=Demo,*'); AdminControl.invoke(cluster,'start')"
+
+
+Stopping the Cluster
+./wsadmin.sh -lang jython -c "cluster=AdminControl.completeObjectName('type=Cluster,name=Demo,*'); AdminControl.invoke(cluster,'stop')"
+
+
+Uninstalling the Application
+./wsadmin.sh -lang jython -c "AdminApp.uninstall('CacheMonitor'); AdminConfig.save()"
+
+
+

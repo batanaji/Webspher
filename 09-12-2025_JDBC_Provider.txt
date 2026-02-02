@@ -1,0 +1,76 @@
+WebSphere Database Connectivity Components
+
+WebSphere uses several components to establish and manage connections between the application server and the database:
+
+JDBC Provider
+
+DataSource
+
+J2C Authentication
+
+Component Details
+1. JDBC Provider
+
+The JDBC provider acts as the runtime environment that enables communication between the WebSphere Application Server (WAS) and the database.
+
+Once configured, applications can use this connection to interact with the backend database.
+
+Supported databases include Oracle, SQL Server, DB2, etc.
+
+2. DataSource
+
+A DataSource represents a connection pool.
+
+It provides ready-to-use and reusable database connections, improving performance and reducing overhead.
+
+Without a DataSource, developers would need to write code to create database connections manually, which are not pooled or reusable.
+
+After defining a JDBC provider, multiple DataSources can be created under it—depending on infrastructure requirements.
+
+Types of Transaction Management:
+
+Local Transactions → simple DataSource (non-XA)
+
+XA DataSource → supports global transactions, often used when multiple databases are involved.
+
+XA DataSources follow a two-phase commit process:
+
+The Transaction Manager checks whether all participating database systems are ready to commit.
+
+If confirmed, the transaction is committed globally; otherwise, it is rolled back.
+
+Connection pools are maintained by a Pool Manager thread. One important setting controlling this is the Reap Time, which defaults to 180 seconds.
+
+Types of JDBC Drivers
+Type	Description
+Type 1	JDBC-ODBC Bridge
+Type 2	Thick Driver
+Type 3	Network Driver
+Type 4	Thin Driver (Pure Java)
+Important Connection Pool Properties
+Property	Meaning
+Maximum Connections	Maximum number of connections allowed in the pool
+Minimum Connections	Minimum number of connections kept ready
+Reap Time	Interval (in seconds) between maintenance runs for cleanup
+Connection Timeout	Time a request waits if no connection is available
+Unused Timeout	Time after which an idle connection is removed (Default: 1800 sec or 30 min)
+Aged Timeout	Time after which a physical connection is discarded
+Purge Policy
+
+Defines how WebSphere handles stale or failed connections:
+
+Policy	Behavior
+Entire Pool	All connections are discarded
+Failing Connection Only	Only the connection that failed is discarded
+Database-Related Logs Location
+/opt/IBM/WAS/9.0/profiles/AppServ07/tranlog/<cell>/<node>/<cluster_member>/transaction/tranlog
+
+Common Issues in WebSphere Database Connectivity
+
+User ID locked.
+
+Password expired.
+
+Database storage full.
+
+Network connectivity issues between WAS and database.

@@ -1,0 +1,67 @@
+Cluster - It is a logical grouping of servers with similler configuration.
+
+in cluster we will have weight 0-20
+
+Cluster_member1 - 10 - 9 , 8 ... 0 then 10 
+cluster_member2 - 5 
+
+bydefault is - 2
+
+Why we need cluster ?
+	1. Work Load Management(WLM) - using round robin algorithm will mange the load.
+	2. High availabliity (HA)
+	3. Scalability 
+
+1. Standalone/Vartical Cluster- Host1 
+
+		In a vertical cluster, JVMs/Serves that reside on the same physical machine are clustered. 
+		
+		if the physical server goes down, the entire cluster also goes down.
+		
+			1. Create one DMGR profile - /opt/IBM/WAS/9.0/profiles/dmgr/bin
+			2. create AppServ01 and fedrate on DMGR
+			3. Show the nodes on first server  
+				Serve name - Cluster_member1
+		
+		
+2. Horizantal Cluster -
+
+		Pre-requisites - Add the inbound port in AWS console.
+
+		In a horizontal cluster, JVMs that reside on different physical machines are clustered. 
+		
+		The obvious advantage to a horizontal cluster is that if one physical server goes down, 
+		the other physical server can continue to produce the applications in the JVM, resulting in high-availability. 
+		Also, from a systems engineer perspective, a horizontal cluster lets the engineer do work on one cluster member without bringing down the applications being produced by the JVMs in the cluster.
+		For example, the engineer could bring down the server01 JVM, patch the server, restart the JVM, and bring it back up, without causing an outage, as the server02 JVM can still produce the application.
+		
+
+
+			Host 2 installation :- (16.171.170.59)
+			
+						curl -v telnet://16.171.170.59:8879 /8887
+			
+			1.Create AppServ01 profile
+			2.Fedration on first server with DMGR
+			3.start server 
+			4. Check DMGR console and show the noes 
+			5. Stop the both server and show the first host and second host in putty
+			6. Create new cluster member on host2 and show in putty. 
+		
+
+			First we installed InstallationManager then websphere
+
+			[root@ip-172-31-46-104 AppServer]# /opt/IBM/InstallationManager/tools/imcl install com.ibm.websphere.ND.v90_9.0.5.20170918_1844 com.ibm.java.jdk.v8_8.0.8025.20241024_0108 -repositories https://www.ibm.com/software/repositorymanager/com.ibm.websphere.ND.v90 -installationDirectory /opt/IBM/WebSphere/AppServer/ -sharedResourcesDirectory /opt/IBM/IMShared -acceptLicense -showProgress -prompt
+							25%                50%                75%                100%
+			------------------|------------------|------------------|------------------|
+			............................................................................
+			Installed com.ibm.websphere.ND.v90_9.0.5.20170918_1844 to the /opt/IBM/WebSphere/AppServer/ directory.
+			Installed com.ibm.java.jdk.v8_8.0.8025.20241024_0108 to the /opt/IBM/WebSphere/AppServer/ directory.
+			[root@ip-172-31-46-104 AppServer]#
+			
+			[root@ip-172-31-46-104 bin]# ./manageprofiles.sh -create -profileName AppServ02 -profilePath /opt/IBM/WebSphere/AppServer/profiles/AppServ02 -templatePath /opt/IBM/WebSphere/AppServer/profileTemplates/default/ -enableAdminSecurity true -adminUserName wasadm -adminPassword wasadm123
+			INSTCONFSUCCESS: Success: Profile AppServ01 now exists. Please consult /opt/IBM/WebSphere/AppServer/profiles/logs/AboutThisProfile.txt for more information about this profile.
+
+			hostname - ip-172-31-46-104.eu-north-1.compute.internal
+			
+			/opt/IBM/WebSphere/AppServer/profiles/AppServ02/bin			./addNode.sh ip-172-31-19-246.eu-north-1.compute.internal 8879

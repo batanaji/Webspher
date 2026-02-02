@@ -1,0 +1,91 @@
+14-11-2025
+----------
+
+1. Show the difference in Base and ND Admin console.
+	a. standaloe server you don't get start and stop option 
+	b. where in dmgr you can get start and stop button for server (wasadm )
+	c. Server option on both App console server and dmgr console
+	c. show System adminstration on both screen AppServ03 and dmgr
+	
+	
+	Types of websphere flower
+	
+		1. Base - 	Base 9.0.5.24 	
+		2. ND - 
+		3. Liberty - We use the seprate package installtion and configuration.
+		
+		JDBC - To connect applicaiton to DB 
+		
+			1. JDBC provide - 	Create new JDBC provider
+		    2. data source - Data source name - Schema name of Dabase 
+			3. J2C auth. - here we nedd to provide the Dabase user id and pa
+		mail get server /  - to send the mail for some statu of order/job/ect. 
+		mail 
+		
+		enable security in two way 
+		
+			1. using admin console - if you use this option you need to restart dmgr - DMGRAS
+			2. enableAdminSecurity ture -usernane wasadm -password wasadm
+			
+		1. Admin consle 
+		2. Command line .
+		
+		ip-172-31-19-246.eu-north-1.compute.internal 
+			
+		
+Web servers - we will create the webserver definition and and will connect to Webserve using this config.
+	
+
+ 
+2. AppServ01  - we will log in and chcck server detaile  ( Admin console will be disable this server we can see in DMGR)
+ 
+		1. Cell name will change to DMGR cell 
+ 
+3. dmgr - we will DMGR console and we will check all option (ip-172-31-19-246Cell01) 
+
+Fedration - DMGR should be up and running. 
+
+command line syntax - addNode.sh hostnameofdmgr SOAPdmgr 
+Admin consle we need a hostname of application SOAP Port of applicaiton 
+ 
+./addNode.sh ip-172-31-19-246.eu-north-1.compute.internal 8879
+
+Command to check user is which you have logged in : id 
+sudo su - wasadm/ wasadgrp 
+sudo su - root
+
+
+
+when you creat first profiles your by defaul port is 9060 - First profile, 9061,62
+                                                     8879
+
+ 
+ AppServ01 - We will have fedration process using command line - This ( many changes 
+ 
+
+4. Create one more AppServ04 profile and do the ferations 
+
+	Fedration giving the control of AppServ03 to dmgr for applicaiton server we fedrate this server to dmgr.
+	
+	Two tyeps 1. Command line and Admin consle.
+	
+	Data in dmgr is a master repositorymanager
+	Data in AppServ03 is a node leve repository 
+	
+	What are the changes. 
+	
+	1. Node agent will be activated 
+	2. Admin console of applicaiton server will be deactivated.
+	3. Node copy of AppServ03 will be copy to cell of dmgr
+	4. Cell name of AppServ04 will be change to cell name of dmgr. (
+				Before - 	/opt/IBM/WAS/9.0/profiles/AppServ04/config/cells/ip-172-31-19-246Node03Cell
+				After -     /opt/IBM/WAS/9.0/profiles/AppServ04/config/cells/ip-172-31-19-246Node03Cell
+				/opt/IBM/WAS/9.0/profiles/dmgr/config/cells/ip-172-31-19-246Cell01
+	5. Synchronization will be enable one way [epho no.]
+	-create -profileName AppServ04 -profilePath /opt/IBM/WAS/9.0/profiles/AppServ04 -templatePath /opt/IBM/WAS/9.0/profileTemplates/default/ -enableAdminSecurity true -adminUserName wasadm -adminPassword wasadm
+	
+	check hostname 
+	host name p-172-31-19-246.eu-north-1.compute.internal
+	
+	
+	Cell profiles

@@ -1,0 +1,30 @@
+Display the cluster topology.
+
+1. Update the runtime weight.
+
+2. Display the hostnames for both Host1 and Host2, including their respective nodes.
+
+3. Show detailed synchronization information, including node updates.
+
+4. Create a new cluster member named **Cluster_member4_host1** on Host1.
+
+5. After creating the cluster member, synchronize the nodes and then start the new member.
+
+6. Demonstrate the stop and start operations from both the server level and cluster level — stop an individual member and start all members from the cluster.
+
+7. Display the cluster status in both **partial start** and **fully started** states.
+
+8. Show the Ripple Start option.
+
+9. Display the Deployment Manager configuration with all nodes and servers from the following directory path:
+
+  /opt/IBM/WAS/9.0/profiles/dmgr/config/cells/ip-172-31-19-246Cell01/nodes
+
+10. Reference IBM documentation for **Dynamic Workload Manager (DWLM)**:
+    [https://www.ibm.com/docs/en/was-zos/9.0.5?topic=settings-dynamic-workload-manager-dwlm-collection](https://www.ibm.com/docs/en/was-zos/9.0.5?topic=settings-dynamic-workload-manager-dwlm-collection)
+    (Example: `DM_CLM1_host1`)
+
+11. Note: Once a cluster member is created, its name cannot be modified — it must be unique within the node.
+
+12. In production environments where downtime is not acceptable, this approach can be used to ensure continuous availability[Ripple statrt button using]
+

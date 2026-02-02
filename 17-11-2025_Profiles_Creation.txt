@@ -1,0 +1,64 @@
+1. Today we will go throught the managemenet profile templates(Defualt profile dmgr )
+
+		#. Show all the templatePath indetails with options.
+		
+		/opt/IBM/WAS/9.0/profileTemplates/management
+		
+		1. DEPLOYMENT_MANAGER
+		
+		./manageprofiles.sh -create -profileName Dmgrprofile3 -profilePath /opt/IBM/WAS/9.0/profiles/Dmgrprofile3 -templatePath /opt/IBM/WAS/9.0/profileTemplates/management/ -serverType DEPLOYMENT_MANAGER -hostName ip-172-31-19-246.eu-north-1.compute.internal -enableAdminSecurity true -adminUserName wasadm -adminPassword wasadm123
+			
+		
+		
+		2. Custom profile (Custom profile) without server. Diff of Custom and App?
+		
+		     ./manageprofiles.sh -create -profileName customprofile2 -profilePath /opt/IBM/WAS/9.0/profiles/customprofile2 -templatePath /opt/IBM/WAS/9.0/profileTemplates/managed/
+				INSTCONFSUCCESS: Success: Profile customprofile2 now exists. Please consult /opt/IBM/WAS/9.0/profiles/customprofile2/logs/AboutThisProfile.txt for more information about this profile.
+
+			 
+			 INSTCONFSUCCESS
+			 INSTCONFFAILED
+			 INSTCONPARTIAL
+
+		     ./addNode.sh ip-172-31-19-246.eu-north-1.compute.internal 8888
+
+			
+			After adding cutomer profile you don't get any server you have to create
+			
+
+		
+		3. AdminAgent profiles
+		
+			1. what is the user of Admin Agent profile?
+			2. When you login you need to select the nodes which you have to work.
+			2. Fedration process using registorNode.sh
+					
+			 ./manageprofiles.sh -create -profileName AdminAgentprofile -profilePath /opt/IBM/WAS/9.0/profiles/AdminAgentprofile -templatePath /opt/IBM/WAS/9.0/profileTemplates/management/ -serverType ADMIN_AGENT -hostName p-172-31-19-246.eu-north-1.compute.internal  -enableAdminSecurity true -adminUserName wasadm -adminPassword wasadm123
+				INSTCONFSUCCESS: Success: Profile AdminAgentprofile now exists. Please consult /opt/IBM/WAS/9.0/profiles/AdminAgentprofile/logs/AboutThisProfile.txt for more information about this profile.
+		
+			
+			./startServer.sh server1 
+			./startServer.sh adminagent
+			
+						
+			2. 
+			./manageprofiles.sh -create -profileName AppServ05 -profilePath /opt/IBM/WAS/9.0/profiles/AppServ05 -templatePath /opt/IBM/WAS/9.0/profileTemplates/default/
+			
+			
+			./registerNode.sh -profilePath /opt/IBM/WAS/9.0/profiles/AppServ05/ - Run form Admin Agent location(/opt/IBM/WAS/9.0/profiles/AdminAgentprofile1/bin)
+		
+			3. Access Admn Agent console and now it will show the drop donw box to select the registor applicaiton server. 
+			
+			Note : we can't registor applicaiton server with DMGR profiles , only you can do with Admin agent profile.
+				
+		4. Othere Commands :
+		
+			./manageprofiles.sh -listProfiles
+			./manageprofiles.sh -profileName AppServ01 -getPath
+			./manageprofiles.sh -backupProfile -profileName AppServ01 -backupFile /tmp/AppServ01.xml
+			./manageprofiles.sh -profileName AppServ01 -getPath
+			./manageprofiles.sh -restoreProfiles -backupFile /tmp/AppServ01.xml
+			./manageprofiles.sh -delete -profileName customprofile1 -profilePath /opt/IBM/WAS/9.0/profiles/customprofile1
+			
+			
+2. In next session we will discussion one celll profile and start cluster concept (1. Vertical and Horizanl cluster)

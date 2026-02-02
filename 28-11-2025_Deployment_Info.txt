@@ -1,0 +1,91 @@
+28-11-2025
+
+Websphere Deplolyment -
+
+Application is combination of WebContainer and EJB container or collection programs or modules. 
+
+1. Installtion,created profiles and cluster 
+
+/opt/IBM/WAS/9.0/profiles/AppServ05/installedApps/ip-172-31-19-246Node02Cell - Installed app.
+
+WC_deflult Host - post number 
+
+files like 
+.war - Web Application Archive file 
+.ear - Enterprise Archive file 
+.jar - Java Archive file
+.rar - Resource Architecture file
+
+EAR= WAR+JAR
+
+Web container will run the WAS - Will be having in web.xm
+EJB - container will run the JAR file with help of deployment descripto - EJB-JAR.xml 
+RAR - it will also have deployment descriptor RAR.xml .
+EAR - applicaiton.xml 
+
+
+1. Admin console 
+2. WS admin 
+3. jython / jacl
+4. cutom script 
+5. CICD pile 
+
+installable Apps   - We will have defaul applicaiton which is comming with product installation - /opt/IBM/WAS/9.0/installableApps
+
+wastemp - in case of DB/ deployment / config. 
+
+Installed Apps  - we will deploye application - /opt/IBM/WAS/9.0/profiles/AppServ05/installedApps/ip-172-31-19-246Node02Cell
+
+/opt/IBM/WAS/9.0/installableApps - 
+
+
+local machine  - Downloaded in loacl
+
+Remote machine - Other server 
+
+Fast path - we have to fill very few detail (3-4)
+
+Details path - we have to give all the details 
+1. Map to the modules [server,cluster]
+2. Provide option to comple JSP
+3. EJB depployment 
+4. Provide JSP reloading for webmodules
+5. Map shared libraries
+6. map JNDI name to bena 
+7. Map to DS
+8. Map to Viratul host
+9. map to context root
+10. Summery 
+
+/ - root 
+
+/snoop
+
+/clender
+
+
+when we start the application server the applicaiton will be start. 
+
+if we don't have maincontext root , we can subcontext root. - Dev team.
+
+.EAR - context root is not required
+.WAR - We have to give the context root. 
+
+http://hostname:port/cotextroot
+
+once we had a deployment please add the virtual host (your server name ) and port number (9062)
+
+issue - virtual host has not been define 
+
+Type of deployment in WebSphere
+1. Full deployment
+2. Partiall application 
+3. Module 
+
+
+1. Stop all services on server
+2. Deployment 
+3. Start WAS services 
+4. Validate applicaiton /check the logs 
+
+Hot deployement - dran and drop 

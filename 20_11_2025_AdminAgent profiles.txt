@@ -1,0 +1,62 @@
+		
+		3. AdminAgent profiles
+		
+			1. what is the user of Admin Agent profile?
+			2. When you login you need to select the nodes which you have to work.
+			2. Fedration process using registorNode.sh
+					
+			 ./manageprofiles.sh -create -profileName AdminAgentprofile -profilePath /opt/IBM/WAS/9.0/profiles/AdminAgentprofile -templatePath /opt/IBM/WAS/9.0/profileTemplates/management/ -serverType ADMIN_AGENT -hostName p-172-31-19-246.eu-north-1.compute.internal  -enableAdminSecurity true -adminUserName wasadm -adminPassword wasadm123
+				INSTCONFSUCCESS: Success: Profile AdminAgentprofile now exists. Please consult /opt/IBM/WAS/9.0/profiles/AdminAgentprofile/logs/AboutThisProfile.txt for more information about this profile.
+		
+			
+			./startServer.sh adminagent 
+			./startServer.sh adminagent ---
+			
+			1. logs in console - adinnagent
+			2. 
+			./manageprofiles.sh -create -profileName AppServ05 -profilePath /opt/IBM/WAS/9.0/profiles/AppServ05 -templatePath /opt/IBM/WAS/9.0/profileTemplates/default/ -enableAdminSecurity true -adminUserName wasadm -adminPassword wasadm123
+			
+			
+			./registerNode.sh -profilePath /opt/IBM/WAS/9.0/profiles/AppServ05/ - Run form Admin Agent location(/opt/IBM/WAS/9.0/profiles/AdminAgentprofile1/bin)
+			./addNode.sh 
+		
+			3. Access Admn Agent console and now it will show the drop donw box to select the registor applicaiton server. 
+			
+			Note : we can't registor applicaiton server with DMGR profiles , only you can do with Admin agent profile.
+				
+		4. Othere Commands :
+		
+			./manageprofiles.sh -listProfiles
+			./manageprofiles.sh -profileName AppServ01 -getPath
+			./manageprofiles.sh -backupProfile -profileName AppServ01 -backupFile /tmp/AppServ01.xml
+			./manageprofiles.sh -profileName AppServ01 -getPath
+			./manageprofiles.sh -restoreProfiles -backupFile /tmp/AppServ01.xmlC
+			./manageprofiles.sh -delete -profileName customprofile1 -profilePath /opt/IBM/WAS/9.0/profiles/customprofile1
+			
+			
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Cluster - It is a logical grouping of servers with similler configuration.
+
+in cluster we will have weight 0-20
+
+Cluster_member1 - 10 - 9 , 8 ... 0 then 10 
+cluster_member2 - 5 
+
+bydefault is - 2
+
+Why we need cluster ?
+	1. Work Load Management(WLM) - using round robin algorithm will mange the load.
+	2. High availabliity (HA)
+	3. Scalability 
+
+1. Standalone/Vartical Cluster- 
+
+		In a vertical cluster, JVMs/Serves that reside on the same physical machine are clustered. 
+		
+		if the physical server goes down, the entire cluster also goes down.
+		
+			1. Create one DMGR profile
+			2. create AppServ01 and fedrate on DMGR
+			3. Show the nodes on first server  
+				Serve name - Cluster_member1
