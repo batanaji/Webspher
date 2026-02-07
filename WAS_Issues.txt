@@ -1,0 +1,126 @@
+3. Hard disk storage (Disk Space)
+
+Problem with application logs:
+Application logs can become very large and thus fill up the available storage space, e.g. in the directory
+/app/websphere/.
+
+Impact of Server Patching:
+During server patching activities, directories for other components may become full, impacting server operation.
+Verification:
+Check disk space using the commands df -hor df -g(memory check).
+
+Increased log generation in case of errors:
+When problems occur in the application or the database, more logs are written, which can quickly fill up directories.
+
+In such cases, we receive tickets or alerts (Impact 1 / Impact / Priority Application).
+
+Example:
+ntivesteero.log– Size approx. 1 GB
+
+4. CPU Starvation (CPU usage problem)
+
+Point 1: Too many threads, too little CPU
+
+Scenario:
+WebSphere is configured with a large thread pool (e.g., 300 threads), but the server only has 2–4 CPU cores.
+The threads are ready to execute, but the CPU cannot handle them all simultaneously.
+
+Effects:
+
+Very high CPU usage (90–100%)
+
+The application becomes extremely slow.
+
+Requests are timed out.
+
+Solution:
+
+Reducing the WebSphere thread pool size
+
+Increasing the number of CPU cores (scale-up or additional nodes)
+
+Correct capacity planning based on the load
+
+Note:
+CPU starvation occurs when WebSphere threads are available, but the CPU is too busy to execute them.
+
+5. SSL Handshake Problem
+
+An SSL handshake problem was detected during the IHS SSL configuration, specifically at line number 2422 .
+
+6. Synchronisationsproblem in WebSphere
+
+A WebSphere synchronization problem occurs when configuration changes in the Deployment Manager (DMGR) are not applied to the nodes.
+
+Possible influencing factors:
+
+Change of the database system time
+
+Application server
+
+Scenario 1: Application changes are not visible on the node.
+
+Description:
+An application is updated in the Deployment Manager (DMGR), but the changes are not visible on the Node Agent / Application Server.
+
+What happens:
+
+Changes are saved in the DMGR.
+
+Node is not being synchronized
+
+Old configuration remains active
+
+Symptoms:
+
+Old UI or old logic still visible
+
+No errors during deployment
+
+Different application behavior on different nodes
+
+Cause:
+
+Node Agent is stopped
+
+Automatic synchronization is disabled.
+
+Solution:
+
+Start Node Agent
+
+Perform manual synchronization:
+System Administration > Nodes > Full Resynchronize
+
+Alternatively: Stop the Node Agent and resynchronize.
+
+Certificate update at the application level (node ​​level)
+
+Problem:
+Certificate was updated at the application level.
+
+Impact:
+Synchronization did not work correctly.
+
+RCA (Root Cause Analysis):
+
+The configuration between the DMGR Admin Console and the Application Node was not synchronized or identical.
+
+The hostname did not match between the node and the Deployment Manager (DMGR).
+
+Solution steps
+
+DMGR page:
+
+DMGR stoppen (stopManager.sh)
+
+Disable security ( enable=falsein security.xml)
+
+Start DMGR ( startManager.sh)
+
+Node-Level (Application Server):
+
+Stop Node Agent
+
+Perform synchronization:
+syncNode.sh <Hostname_des_DMGR> 8879
